@@ -5,12 +5,11 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import SharedComponents.CustomJPanel;
 import SharedComponents.TitleLablel;
 
-public class BubbleSortView extends JPanel {
-    JLabel title = new TitleLablel("Bubble Sort");
+public class BubbleSortView extends CustomJPanel {
     public BubbleSortView() {
-        this.add(title);
-        this.setBackground(new Color(0x343434));
+        super("Bubble Sort");
     }
 }
