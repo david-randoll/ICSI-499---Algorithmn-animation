@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/res/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/res/Styles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qSLzr4xOSo8a8CGUkcp6lv1zTF" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="" />
+      <created>1617068309130</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617068309130</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
