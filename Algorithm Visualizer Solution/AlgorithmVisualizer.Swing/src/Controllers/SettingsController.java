@@ -20,7 +20,9 @@ public class SettingsController {
     }
 
     private void InitController(){
+        
 
+        //Initialize DB connection
     }
 
 }
