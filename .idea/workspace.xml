@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/res/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/res/Styles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +48,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
