@@ -1,3 +1,5 @@
+import Shared.DataAccess;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
@@ -7,9 +9,10 @@ public class BinarySearch {
     static Color BACKGROUND_COLOR = new Color(52,52,52);
 
     public static void main(String[] args){
-        int[] data = buildData(20);
+        DataAccess dataAccess = new DataAccess();
+        int [] data = dataAccess.GetData();
         Arrays.sort(data);
-        int searchFor = 25; //0-100
+        int searchFor = 5; //0-100
 
         Frame main = new Frame();
         JPanel cards = new JPanel(new CardLayout()); //create panel with card layout
@@ -75,15 +78,6 @@ public class BinarySearch {
 
         // if we reach here, then element was
         // not present
-        return output;
-    }
-
-    static int[] buildData(int n){
-        Random rand = new Random();
-        int[] output = new int[n];
-        for(int i = 0; i < output.length; i++){
-            output[i] = rand.nextInt(100);
-        }
         return output;
     }
 
