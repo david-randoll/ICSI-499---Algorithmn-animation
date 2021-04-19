@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="" />
+    <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +19,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1q4zexWYGkqVeBjz3RaRv5iDC1p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ICSI 412/Assignment 3/Assignment 3 Skeleton/com/company" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="SharedComponents" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\David Randoll\Documents\GitHub\ICSI-499---Algorithmn-animation\Algorithm Visualizer Solution\AlgorithmVisualizer.Swing\src" />
+      <recent name="C:\Users\David Randoll\Documents\GitHub\ICSI-499---Algorithmn-animation\Algorithm Visualizer Solution\AlgorithmVisualizer.Swing" />
+      <recent name="C:\Users\David Randoll\Documents\GitHub\ICSI-499---Algorithmn-animation\Algorithm Visualizer Solution\AlgorithmVisualizer.Swing\src\res" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,7 +49,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BinarySearch">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BinarySearch" />
+      <module name="AlgorithmVisualizer.Swing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Startup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Startup" />
       <module name="AlgorithmVisualizer.Swing" />
@@ -38,6 +66,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.Startup" />
       </list>
     </recent_temporary>
@@ -54,5 +83,18 @@
       <updated>1616353748282</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
