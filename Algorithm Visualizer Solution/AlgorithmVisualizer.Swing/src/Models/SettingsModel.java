@@ -3,7 +3,7 @@ package Models;
 public class SettingsModel {
     private String color = "";
     private String fontColor = "";
-    private String fontSize = 0;
+    private int fontSize;
 
     public void setColor(String color){
         this.color = color;
@@ -25,7 +25,7 @@ public class SettingsModel {
         return this.fontColor;
     }
 
-    public String getFontSize(){
+    public int getFontSize(){
         return this.fontSize;
     }
 }

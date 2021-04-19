@@ -18,7 +18,7 @@ public class HomeController {
     public void InitController() {
     
     }
-
+/*
     private void actionPerformed(ActionEvent e){
 
         //go to settings page button
@@ -31,4 +31,5 @@ public class HomeController {
             frame.setVisible(true);
         }
     }
+    */
 }

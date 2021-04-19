@@ -1,16 +1,18 @@
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-import Controllers.HomeController;
+import Controllers.*;
 import Controllers.SortingAlgorithms.BubbleSortController;
-import Models.HomeModel;
+import Models.*;
 import Models.SortingAlgorithms.BubbleSortModel;
-import Views.HomeView;
+import Views.*;
 import Views.SortingAlgorithms.BubbleSortView;
+import SharedComponents.*;
 
-public class Startup {
+public class Startup implements ActionListener {
     public static void main(String[] args) {
         HomeModel homeModel = new HomeModel();
         HomeView homeView = new HomeView();
@@ -22,12 +24,23 @@ public class Startup {
 
         SettingsModel settingsModel = new SettingsModel();
         SettingsView settingsView = new SettingsView();
-        SettingsController settingsController = new SettingsController(settingsModel, settingsView);
+        SettingsController settingsController = new SettingsController(settingsView, settingsModel);
 
         JFrame frame = new JFrame();
         frame.setSize(600,200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(bubbleSortView);
+        frame.add(new SubmitButton("Settings").addActionListener(this));
+
+        // frame.add(homeView);
+        frame.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e){
+        JFrame frame = new JFrame();
+        frame.setSize(600,200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(Startup.settingsView);
         // frame.add(homeView);
         frame.setVisible(true);
     }
