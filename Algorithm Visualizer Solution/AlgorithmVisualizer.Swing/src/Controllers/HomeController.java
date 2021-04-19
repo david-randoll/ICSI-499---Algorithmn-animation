@@ -16,6 +16,6 @@ public class HomeController {
         //set default element value for the user
     }
     public void InitController() {
-        //initialized event listeners
+    
     }
 }
