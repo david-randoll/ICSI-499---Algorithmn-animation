@@ -18,4 +18,17 @@ public class HomeController {
     public void InitController() {
     
     }
+
+    private void actionPerformed(ActionEvent e){
+
+        //go to settings page button
+        else if(){//event is settings button. UPDATE
+            JFrame frame = new JFrame();
+            frame.setSize(600,200);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.add(Startup.settingsView);
+            // frame.add(homeView);
+            frame.setVisible(true);
+        }
+    }
 }

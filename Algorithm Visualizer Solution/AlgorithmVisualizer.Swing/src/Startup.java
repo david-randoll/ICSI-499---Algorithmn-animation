@@ -20,6 +20,10 @@ public class Startup {
         BubbleSortView bubbleSortView = new BubbleSortView();
         BubbleSortController bubbleSortController = new BubbleSortController(bubbleSortModel, bubbleSortView);
 
+        SettingsModel settingsModel = new SettingsModel();
+        SettingsView settingsView = new SettingsView();
+        SettingsController settingsController = new SettingsController(settingsModel, settingsView);
+
         JFrame frame = new JFrame();
         frame.setSize(600,200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
