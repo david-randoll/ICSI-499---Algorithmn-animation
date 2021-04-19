@@ -15,12 +15,14 @@ public class ApacheHttpClientPost {
 
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpPost postRequest = new HttpPost(
-            "http://localhost:8080/RESTfulExample/json/product/post"); //CHANGE THIS
+            "http://localhost:8080/AlgoAnimation/json/post"); //CHANGE THIS
 
-        StringEntity input = new StringEntity("{\"UserId\":feedback}");
+        StringEntity input = new StringEntity(str, "UTF-8");
         input.setContentType("application/json");
         postRequest.setEntity(input);
+        postRequest.setHeader("FeedBack", feedback);
 
+    
         HttpResponse response = httpClient.execute(postRequest);
         
         //Failed to post
