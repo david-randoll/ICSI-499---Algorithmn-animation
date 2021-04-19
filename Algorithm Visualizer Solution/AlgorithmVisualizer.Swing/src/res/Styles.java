@@ -1,7 +1,9 @@
 package res;
 
 public class Styles {
-    public static int PAGE_TITLE_FOREGROUNGCOLOR = 0x5D8EFF;
+    public static int PRIMARY_COLOR = 0x5D8EFF;
+
+    public static int RECTANGLE_COLOR = 0xffffff;
 
     public static int PAGE_TITLE_FONTSIZE = 60;
 

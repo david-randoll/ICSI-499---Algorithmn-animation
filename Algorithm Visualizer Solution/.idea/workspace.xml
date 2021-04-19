@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BubbleSortView.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BubbleSortView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/res/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/res/Styles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/SharedComponents/CustomJPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/SharedComponents/CustomJPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/SharedComponents/TitleLablel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Views/SortingAlgorithms/BubbleSortView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Views/SortingAlgorithms/BubbleSortView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/res/Styles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/res/Styles.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,5 +107,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
