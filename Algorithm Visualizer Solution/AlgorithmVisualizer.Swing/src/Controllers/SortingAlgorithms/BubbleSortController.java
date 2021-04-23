@@ -1,9 +1,10 @@
 package Controllers.SortingAlgorithms;
 
+import Controllers.Controller;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Views.SortingAlgorithms.BubbleSortView;
 
-public class BubbleSortController {
+public class BubbleSortController implements Controller {
     private BubbleSortModel bubbleSortModel;
     private BubbleSortView bubbleSortView;
     public BubbleSortController(BubbleSortModel bubbleSortModel, BubbleSortView bubbleSortView) {
@@ -12,7 +13,7 @@ public class BubbleSortController {
         InitView();
         InitController();
     }
-    private void InitView() {
+    public void InitView() {
         //set default element value for the user
     }
     public void InitController() {

@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+    <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Models/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BubbleSortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BubbleSortController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Models/SortingAlgorithms/BinarySearchModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Models/SortingAlgorithms/BinarySearchModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Startup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BinarySearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BinarySearchController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BubbleSortController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BubbleSortController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Models/SortingAlgorithms/BinarySearchModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Models/SortingAlgorithms/BinarySearchModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Startup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Startup.class" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
