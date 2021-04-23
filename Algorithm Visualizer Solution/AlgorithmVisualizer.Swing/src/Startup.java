@@ -8,7 +8,10 @@ import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
 import Models.SortingAlgorithms.BubbleSortModel;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 import Shared.AppFrame;
 import SharedComponents.Frame;
 >>>>>>> Stashed changes

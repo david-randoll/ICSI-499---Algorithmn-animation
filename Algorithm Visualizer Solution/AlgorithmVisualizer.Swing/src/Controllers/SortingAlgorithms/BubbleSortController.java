@@ -4,6 +4,14 @@ import Controllers.Controller;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Views.SortingAlgorithms.BubbleSortView;
 
+<<<<<<< Updated upstream
+=======
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+>>>>>>> Stashed changes
 public class BubbleSortController implements Controller {
     private BubbleSortModel bubbleSortModel;
     private BubbleSortView bubbleSortView;
