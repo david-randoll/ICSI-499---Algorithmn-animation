@@ -1,26 +1,21 @@
 package Controllers.SortingAlgorithms;
 
+import Controllers.Controller;
 import Models.SortingAlgorithms.BinarySearchModel;
-import SharedComponents.Frame;
 import Views.SortingAlgorithms.BinarySearchView;
 
-public class BinarySearchController {
+public class BinarySearchController implements Controller {
 
-    private Frame appFrame = new Frame();
     private BinarySearchView view = new BinarySearchView();
     private BinarySearchModel model = new BinarySearchModel();
 
-    private void InitView() {
-        //set default element value for the user
-        appFrame.setVisible(true);
-        view.animatePanels(appFrame, model.Panels);
-
+    public void InitView() {
+        view.animatePanels(model);
     }
+
     public void InitController() {
-        //initialized event listeners
         InitView();
     }
-
 
 }
 

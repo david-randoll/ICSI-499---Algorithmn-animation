@@ -1,5 +1,6 @@
 package Controllers.SortingAlgorithms;
 
+import Controllers.Controller;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.DataAccess;
 import Views.SortingAlgorithms.BubbleSortView;
@@ -10,7 +11,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class BubbleSortController {
+public class BubbleSortController implements Controller {
     private BubbleSortModel bubbleSortModel;
     private BubbleSortView bubbleSortView;
     public BubbleSortController(BubbleSortModel bubbleSortModel, BubbleSortView bubbleSortView) {
@@ -19,7 +20,7 @@ public class BubbleSortController {
         InitView();
         InitController();
     }
-    private void InitView() {
+    public void InitView() {
         //set default element value for the user
     }
     public void InitController() {

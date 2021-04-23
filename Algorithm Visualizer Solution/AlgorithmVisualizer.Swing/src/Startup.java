@@ -9,6 +9,7 @@ import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
 import Models.SortingAlgorithms.BinarySearchModel;
 import Models.SortingAlgorithms.BubbleSortModel;
+import Shared.AppFrame;
 import SharedComponents.Frame;
 import Views.HomeView;
 import Views.SortingAlgorithms.BinarySearchView;
@@ -23,7 +24,7 @@ public class Startup {
         //BubbleSortModel bubbleSortModel = new BubbleSortModel();
         //BubbleSortView bubbleSortView = new BubbleSortView();
         //BubbleSortController bubbleSortController = new BubbleSortController(bubbleSortModel, bubbleSortView);
-//
+
         //JFrame frame = new JFrame();
         //frame.setSize(600,200);
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,10 +32,9 @@ public class Startup {
         //// frame.add(homeView);
         //frame.setVisible(true);
 
-        BinarySearchModel model = new BinarySearchModel();
-        BinarySearchView view = new BinarySearchView();
-        BinarySearchController controller = new BinarySearchController();
+        AppFrame appFrame = new AppFrame(); //Initialize application's frame
 
+        BinarySearchController controller = new BinarySearchController();
         controller.InitController();
 
     }

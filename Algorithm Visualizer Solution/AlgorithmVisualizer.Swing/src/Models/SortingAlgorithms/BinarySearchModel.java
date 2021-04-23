@@ -1,26 +1,29 @@
 package Models.SortingAlgorithms;
+
+import Models.Model;
 import Shared.DataAccess;
-import SharedComponents.Frame;
 import SharedComponents.Panel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
-public class BinarySearchModel {
+public class BinarySearchModel implements Model {
+
     public static JPanel Panels = new JPanel(new CardLayout());
 
-    public BinarySearchModel(){
+    public BinarySearchModel() {
         DataAccess dataAccess = new DataAccess();
         int[] data = dataAccess.GetSortedData();
         int searchValue = dataAccess.GetSearchValue();
-        ArrayList<Panel> panels = binarySearch(data, searchValue);
+        ArrayList<Panel> panels = run(data, searchValue);
 
-        for(int i = 0; i < panels.size(); i++){
+        for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<Panel> binarySearch(int arr[], int x) {
+    public ArrayList<Panel> run(int arr[], int x) {
 
         ArrayList<Panel> output = new ArrayList<>();
 
@@ -41,7 +44,7 @@ public class BinarySearchModel {
                 return output;
 
             // If x greater, ignore left half
-            if (arr[m] < x){
+            if (arr[m] < x) {
                 l = m + 1;
             }
 
