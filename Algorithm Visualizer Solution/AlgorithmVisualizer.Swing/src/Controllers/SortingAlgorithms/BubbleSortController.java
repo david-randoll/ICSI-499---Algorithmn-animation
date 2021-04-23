@@ -11,6 +11,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 public class BubbleSortController implements Controller {
     private BubbleSortModel bubbleSortModel;
