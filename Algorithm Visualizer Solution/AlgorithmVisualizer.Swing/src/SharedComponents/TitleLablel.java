@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 public class TitleLablel extends JLabel {
     public TitleLablel(String title) {
         this.setText(title);
-        this.setForeground(new Color(Styles.PAGE_TITLE_FOREGROUNGCOLOR));
+        this.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         this.setFont(new Font(this.getFont().getFamily(),Font.BOLD,Styles.PAGE_TITLE_FONTSIZE));
         this.setBorder(BorderFactory.createEmptyBorder(75, 0, 0, 0));
     }
