@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346ac176-1da9-4b89-a8d7-799f74e8f425" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Models/SortingAlgorithms/BinarySearchModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/ApplicationFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/Frame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/Panel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BubbleSortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BubbleSortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/Startup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/res/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/res/Styles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch$Panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/BinarySearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BubbleSortController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Controllers/SortingAlgorithms/BubbleSortController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Shared/DataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Shared/DataAccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/SharedComponents/CustomJPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/SharedComponents/CustomJPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Startup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/Startup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/res/Styles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgorithmVisualizer.Swing/res/Styles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmVisualizer.Swing/src/BinarySearch.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,22 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="ProjectId" id="1q4zexWYGkqVeBjz3RaRv5iDC1p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ICSI 412/Assignment 3/Assignment 3 Skeleton/com/company" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -66,9 +37,21 @@
       <recent name="C:\Users\David Randoll\Documents\GitHub\ICSI-499---Algorithmn-animation\Algorithm Visualizer Solution\AlgorithmVisualizer.Swing\src\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Startup">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.BinarySearch">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Unused.BinarySearch" />
+      <option name="MAIN_CLASS_NAME" value="BinarySearch" />
       <module name="AlgorithmVisualizer.Swing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,12 +66,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Startup" />
         <item itemvalue="Application.BinarySearch" />
+        <item itemvalue="Application.Startup" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -107,11 +89,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

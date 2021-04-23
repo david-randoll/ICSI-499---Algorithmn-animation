@@ -10,6 +10,6 @@ public class CustomJPanel extends JPanel {
     public CustomJPanel(String titleName) {
         titleLabel = new TitleLablel(titleName);
         this.add(this.titleLabel);
-        this.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        this.setBackground(new Color(Styles.APP_BACKGROUNDCOLOR));
     }
 }

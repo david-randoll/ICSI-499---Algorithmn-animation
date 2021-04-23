@@ -1,14 +1,7 @@
 package Controllers.SortingAlgorithms;
 
 import Models.SortingAlgorithms.BubbleSortModel;
-import Shared.DataAccess;
 import Views.SortingAlgorithms.BubbleSortView;
-import res.Styles;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BubbleSortController {
     private BubbleSortModel bubbleSortModel;
@@ -25,16 +18,4 @@ public class BubbleSortController {
     public void InitController() {
         //initialized event listeners
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-
