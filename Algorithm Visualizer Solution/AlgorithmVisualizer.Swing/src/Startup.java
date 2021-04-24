@@ -4,40 +4,40 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import Controllers.*;
+import Controllers.HomeController;
+import Controllers.SortingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
-import Models.*;
+import Models.HomeModel;
+import Models.SortingAlgorithms.BinarySearchModel;
 import Models.SortingAlgorithms.BubbleSortModel;
-import Views.*;
+import Shared.AppFrame;
+import SharedComponents.Frame;
+import Views.HomeView;
+import Views.SortingAlgorithms.BinarySearchView;
 import Views.SortingAlgorithms.BubbleSortView;
 import SharedComponents.*;
 
 public class Startup implements ActionListener {
     public static void main(String[] args) {
+        //HomeModel homeModel = new HomeModel();
+        //HomeView homeView = new HomeView();
+        //HomeController homeController = new HomeController(homeModel, homeView);
+        //
+        //BubbleSortModel bubbleSortModel = new BubbleSortModel();
+        //BubbleSortView bubbleSortView = new BubbleSortView();
+        //BubbleSortController bubbleSortController = new BubbleSortController(bubbleSortModel, bubbleSortView);
 
-        HomeModel homeModel = new HomeModel();
-        HomeView homeView = new HomeView();
-        HomeController homeController = new HomeController(homeModel, homeView);
-        
+        //JFrame frame = new JFrame();
+        //frame.setSize(600,200);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.add(bubbleSortView);
+        //// frame.add(homeView);
+        //frame.setVisible(true);
 
+        AppFrame appFrame = new AppFrame(); //Initialize application's frame
 
-       /* JFrame frame = new JFrame();
-        frame.setSize(600,200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(bubbleSortView);
-        frame.add(new SubmitButton("Settings").addActionListener(this));
+        BinarySearchController controller = new BinarySearchController();
+        controller.InitController();
 
-        // frame.add(homeView);
-        frame.setVisible(true);*/
-
-    }
-
-    public void actionPerformed(ActionEvent e){
-       /* JFrame frame = new JFrame();
-        frame.setSize(600,200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(settingsView);
-        // frame.add(homeView);
-        frame.setVisible(true);*/
     }
 }

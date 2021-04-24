@@ -12,10 +12,6 @@ public class CustomJPanel extends JPanel {
         this.setLayout(null);
         titleLabel.setLocation(250,50);
         this.add(this.titleLabel);
-        //this.setBackground(new Color(Styles.APP_BACKGROUNDCOLOR));
-        this.setPreferredSize(new Dimension(500, 600));
-
-
-
+        this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
 }
