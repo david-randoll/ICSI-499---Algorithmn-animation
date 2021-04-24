@@ -29,7 +29,7 @@ public class BinarySearchModel implements Model {
 
         int l = 0, r = arr.length - 1;
 
-        Panel firstPanel = new Panel("Binary Search", arr, null);
+        Panel firstPanel = new Panel("Binary Search", arr, null, "");
         output.add(firstPanel);
 
         while (l <= r) {
@@ -37,12 +37,14 @@ public class BinarySearchModel implements Model {
             int m = l + (r - l) / 2;
             Integer [] indices = {m};
 
-            Panel newPanel = new Panel("Binary Search", arr, indices);
+            Panel newPanel = new Panel("Binary Search", arr, indices, "");
             output.add(newPanel);
 
             // Check if x is present at mid
-            if (arr[m] == x)
+            if (arr[m] == x) {
+                output.add(new Panel("Binary Search", arr, indices, "found"));
                 return output;
+            }
 
             // If x greater, ignore left half
             if (arr[m] < x) {

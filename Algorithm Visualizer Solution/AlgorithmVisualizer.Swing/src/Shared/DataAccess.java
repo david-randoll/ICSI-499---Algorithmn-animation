@@ -11,7 +11,7 @@ public class DataAccess {
     public DataAccess() {
         this.data = new int[] {5,2,7,3,5};
         this.data = RandomData(15,100);
-        this.SEARCH_VALUE = 25;
+        this.SEARCH_VALUE = 30;
     }
     public void SetData(int[] data){
         this.data = data;
