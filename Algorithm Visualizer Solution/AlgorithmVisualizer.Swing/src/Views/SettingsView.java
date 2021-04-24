@@ -1,13 +1,13 @@
 package Views;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import SharedComponents.*;
 
 
 public class SettingsView extends JPanel {
 
+    JPanel panel;
     public JButton submit = new JButton("Submit");
     public JButton fontSizeSubmit = new JButton("Submit");
     public JButton fontColorSubmit = new JButton("Submit");
@@ -16,12 +16,8 @@ public class SettingsView extends JPanel {
     public InputBox fontColor = new InputBox("Enter color");
 
     public SettingsView(){
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.add(submit);
-        panel.add(fontSizeSubmit);
-        panel.add(fontColorSubmit);
-        panel.add(feedbackForm);
-        panel.add(fontSize);
-        panel.add(fontColor);
+        this.add(this.panel);
     }
 }

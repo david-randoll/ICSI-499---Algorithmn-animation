@@ -1,15 +1,16 @@
 package Controllers;
 
 import Models.SettingsModel;
+import Views.HomeView;
 import Views.SettingsView;
 import res.Styles;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Action;
+import javax.swing.*;
 
 public class SettingsController implements ActionListener{
-    private SettingsView settingsView;
+    public SettingsView settingsView;
     private SettingsModel settingsModel;
 
     public SettingsController(SettingsView settingsView, SettingsModel settingsModel) {
@@ -21,7 +22,9 @@ public class SettingsController implements ActionListener{
 
 
     private void InitView(){
+        this.settingsView.setSize(600,200);
 
+        //homeView.add(frame);
     }
 
     private void InitController(){
@@ -31,8 +34,9 @@ public class SettingsController implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        //Feedback form submit buton
+        //Feedback form submit button
         if(e.getSource() == this.settingsView.submit){
+            System.out.println("Testing settings button");
             String feedback = this.settingsView.feedbackForm.getText();
 
             //Connecting to Java spring Rest API

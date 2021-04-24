@@ -1,6 +1,6 @@
 package Views.SortingAlgorithms;
 
-import java.awt.Color;
+import java.awt.*;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,6 +10,6 @@ import SharedComponents.TitleLablel;
 
 public class BubbleSortView extends CustomJPanel {
     public BubbleSortView() {
-        super("Bubble Sort");
+        super("Bubble Sort", new FlowLayout(FlowLayout.LEFT,0,0));
     }
 }
