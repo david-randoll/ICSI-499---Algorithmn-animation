@@ -35,8 +35,9 @@ public class BinarySearchModel implements Model {
         while (l <= r) {
 
             int m = l + (r - l) / 2;
+            Integer [] indices = {m};
 
-            Panel newPanel = new Panel("Binary Search", arr, m);
+            Panel newPanel = new Panel("Binary Search", arr, indices);
             output.add(newPanel);
 
             // Check if x is present at mid

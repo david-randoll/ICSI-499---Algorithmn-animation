@@ -11,7 +11,7 @@ public class Panel extends JPanel {
     static int MIDPOINT_VERTICAL = (screenSize.height / 2);
     int[] USER_INPUT;
     Rectangle[] RECTANGLES;
-    Integer HIGHLIGHT_INDEX;
+    Integer[] HIGHLIGHT_INDICES;
     String TITLE;
 
     @Override
@@ -22,14 +22,16 @@ public class Panel extends JPanel {
 
         drawTitle(g, TITLE);
         drawElements(g);
-        if (HIGHLIGHT_INDEX != null) {
-            outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDEX]);
+        if (HIGHLIGHT_INDICES != null) {
+            for(int i = 0; i < HIGHLIGHT_INDICES.length; i++){
+                outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
+            }
         }
     }
 
-    public Panel(String title, int[] data, Integer highlightIndex) {
+    public Panel(String title, int[] data, Integer[] highlightIndices) {
         USER_INPUT = data;
-        HIGHLIGHT_INDEX = highlightIndex;
+        HIGHLIGHT_INDICES = highlightIndices;
         RECTANGLES = buildRectangles(USER_INPUT);
         TITLE = title;
 
