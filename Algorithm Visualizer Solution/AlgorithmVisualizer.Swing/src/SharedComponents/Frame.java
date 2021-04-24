@@ -10,6 +10,5 @@ public class Frame extends JFrame {
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
     }
 }

@@ -41,16 +41,4 @@ public class BubbleSortController implements Controller {
     public void InitController() {
         InitView();
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-

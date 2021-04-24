@@ -91,7 +91,7 @@ public class Panel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
 
         //Case for when swapping to highlight indices
-        if (TITLE.equals("Swapping!")) {
+        if (TITLE.equals("Yes so we swap!")) {
             g2.setColor(Color.red);
         } else {
             g2.setColor(Color.GREEN);
@@ -117,5 +117,7 @@ public class Panel extends JPanel {
         return output;
     }
 
-
+    public void setTitle(String title){
+        TITLE = title;
+    }
 }

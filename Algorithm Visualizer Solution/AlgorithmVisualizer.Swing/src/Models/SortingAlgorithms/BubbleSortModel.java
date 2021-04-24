@@ -15,7 +15,6 @@ public class BubbleSortModel {
     public BubbleSortModel() {
         DataAccess dataAccess = new DataAccess();
         int[] data = dataAccess.GetData();
-        int searchValue = dataAccess.GetSearchValue();
         ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
@@ -38,20 +37,21 @@ public class BubbleSortModel {
                 SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices);
                 output.add(newPanel);
 
+                newPanel.setTitle("Is " + arr[j] +" grater than "+ arr[j + 1] + "?");
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j+1] and arr[j]
                     Integer[] swapIndices = {j+1, j};
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    SharedComponents.Panel swapPanel = new Panel("Swapping!", arr, swapIndices);
+                    SharedComponents.Panel swapPanel = new Panel("Yes so we swap!", arr, swapIndices);
                     output.add(swapPanel);
+                }else{
+                    newPanel.setTitle("Nope, so we compare next");
                 }
-
             }
         }
 
         return output;
     }
-    
 }
