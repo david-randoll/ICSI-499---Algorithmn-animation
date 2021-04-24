@@ -10,6 +10,6 @@ import SharedComponents.TitleLablel;
 
 public class BubbleSortView extends CustomJPanel {
     public BubbleSortView() {
-        super("Bubble Sort", new FlowLayout(FlowLayout.LEFT,0,0));
+        super("Bubble Sort");
     }
 }

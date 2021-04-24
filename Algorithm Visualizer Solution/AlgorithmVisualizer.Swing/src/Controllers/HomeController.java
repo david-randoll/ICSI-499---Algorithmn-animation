@@ -4,6 +4,7 @@ import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
 import Models.SettingsModel;
 import Models.SortingAlgorithms.BubbleSortModel;
+import SharedComponents.Frame;
 import SharedComponents.SubmitButton;
 import Views.HomeView;
 import Views.SettingsView;
@@ -16,8 +17,8 @@ import java.awt.event.ActionListener;
 
 public class HomeController implements ActionListener {
     private HomeModel homeModel;
-    private HomeView homeView;
-    private JFrame frame;
+    public HomeView homeView;
+    private Frame frame;
 
     //Controlled from the home screen
     BubbleSortModel bubbleSortModel = new BubbleSortModel();
@@ -26,20 +27,15 @@ public class HomeController implements ActionListener {
 
 
 
-    public HomeController(HomeModel homeModel, HomeView homeView) {
-        this.homeModel = homeModel;
-        this.homeView = homeView;
-        InitController();
+    public HomeController() {
         InitView();
-
+        InitController();
     }
     private void InitView() {
-        this.frame = new JFrame();
-        frame.setPreferredSize(new Dimension(600, 550));
-        frame.setLayout(null);
+        homeView = new HomeView();
+        homeModel = new HomeModel();
+        this.frame = new Frame();
         frame.add(this.homeView);
-        frame.setResizable(false);
-        frame.pack();
         frame.setVisible(true);
         //homeView.add(frame);
 
@@ -51,12 +47,10 @@ public class HomeController implements ActionListener {
     public void actionPerformed(ActionEvent e){
 
         //Settings Button
-        SettingsModel settingsModel = new SettingsModel();
-        SettingsView settingsView = new SettingsView();
-        SettingsController settingsController = new SettingsController(settingsView, settingsModel);
+        SettingsController settingsController = new SettingsController(this.frame);
         frame.getContentPane().removeAll();
-        frame.getContentPane().add(settingsController.settingsView);
-        frame.repaint();
+        frame.getContentPane().add(settingsController.view);
+        frame.setVisible(true);
 
     }
 }
