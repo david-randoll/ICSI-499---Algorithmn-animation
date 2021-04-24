@@ -18,8 +18,6 @@ public class Panel extends JPanel {
     public void paint(Graphics g) {
 
         super.paintComponents(g);
-
-
         drawTitle(g, TITLE);
         drawElements(g);
         if (HIGHLIGHT_INDICES != null) {
@@ -30,11 +28,10 @@ public class Panel extends JPanel {
     }
 
     public Panel(String title, int[] data, Integer[] highlightIndices) {
-        USER_INPUT = data;
+        USER_INPUT = data.clone();
         HIGHLIGHT_INDICES = highlightIndices;
         RECTANGLES = buildRectangles(USER_INPUT);
         TITLE = title;
-
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
@@ -93,7 +90,12 @@ public class Panel extends JPanel {
         int rectangleHeight = rectangle.height + (BORDER_SIZE * 2);
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setColor(Color.GREEN);
+        //Case for when swapping to highlight indices
+        if (TITLE.equals("Swapping!")) {
+            g2.setColor(Color.red);
+        } else {
+            g2.setColor(Color.GREEN);
+        }
         g2.setStroke(new BasicStroke(BORDER_SIZE));
         g2.drawRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
     }

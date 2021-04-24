@@ -34,8 +34,9 @@ public class Startup {
 
         AppFrame appFrame = new AppFrame(); //Initialize application's frame
 
-        BinarySearchController controller = new BinarySearchController();
-        controller.InitController();
+        BinarySearchController binarySearchControllerontroller = new BinarySearchController();
+        BubbleSortController bubbleSortControllercontroller = new BubbleSortController();
+        bubbleSortControllercontroller.InitController();
 
     }
 }
