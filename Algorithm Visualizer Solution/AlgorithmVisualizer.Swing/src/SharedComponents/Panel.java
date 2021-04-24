@@ -13,6 +13,7 @@ public class Panel extends JPanel {
     Rectangle[] RECTANGLES;
     Integer[] HIGHLIGHT_INDICES;
     String TITLE;
+    String CONDITION;
 
     @Override
     public void paint(Graphics g) {
@@ -27,11 +28,12 @@ public class Panel extends JPanel {
         }
     }
 
-    public Panel(String title, int[] data, Integer[] highlightIndices) {
+    public Panel(String title, int[] data, Integer[] highlightIndices, String condition) {
         USER_INPUT = data.clone();
         HIGHLIGHT_INDICES = highlightIndices;
         RECTANGLES = buildRectangles(USER_INPUT);
         TITLE = title;
+        CONDITION = condition;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
@@ -91,7 +93,7 @@ public class Panel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
 
         //Case for when swapping to highlight indices
-        if (TITLE.equals("Swapping!")) {
+        if (CONDITION.equals("swap") || CONDITION.equals("found")) {
             g2.setColor(Color.red);
         } else {
             g2.setColor(Color.GREEN);

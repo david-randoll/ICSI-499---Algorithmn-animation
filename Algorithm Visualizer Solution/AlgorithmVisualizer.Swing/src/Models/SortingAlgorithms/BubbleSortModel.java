@@ -29,13 +29,13 @@ public class BubbleSortModel {
 
         int l = 0, r = arr.length - 1;
 
-        SharedComponents.Panel firstPanel = new SharedComponents.Panel("Bubble Sort", arr, null);
+        SharedComponents.Panel firstPanel = new SharedComponents.Panel("Bubble Sort", arr, null, "");
         output.add(firstPanel);
 
         for (int i = 0; i < arr.length-1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 Integer[] indices = {j, j+1};
-                SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices);
+                SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices, "none");
                 output.add(newPanel);
 
                 if (arr[j] > arr[j + 1]) {
@@ -44,7 +44,7 @@ public class BubbleSortModel {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    SharedComponents.Panel swapPanel = new Panel("Swapping!", arr, swapIndices);
+                    SharedComponents.Panel swapPanel = new Panel("Bubble Sort", arr, swapIndices, "swap");
                     output.add(swapPanel);
                 }
 
