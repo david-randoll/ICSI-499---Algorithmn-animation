@@ -7,11 +7,13 @@ import SharedComponents.Panel;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BinarySearchModel implements Model {
 
     public static JPanel Panels = new JPanel(new CardLayout());
-    private int SEARCH_VALUE = 25;
+    private Random rand = new Random();
+    private int SEARCH_VALUE = rand.nextInt(100);
 
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();

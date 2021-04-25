@@ -57,6 +57,10 @@ public class BinarySearchView extends CustomJPanel {
         InitializeToolBar();
         PaintFirstPanelOnUI();
 
+        speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        speedSlider.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+        speedSlider.setInverted(true);
+
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
