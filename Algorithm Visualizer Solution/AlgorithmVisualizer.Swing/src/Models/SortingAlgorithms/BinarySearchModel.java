@@ -11,15 +11,24 @@ import java.util.ArrayList;
 public class BinarySearchModel implements Model {
 
     public static JPanel Panels = new JPanel(new CardLayout());
+    private int SEARCH_VALUE = 25;
 
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();
-        int searchValue = DataAccess.GetSearchValue();
+        int searchValue = getSearchValue();
         ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
+    }
+
+    public int getSearchValue() {
+        return SEARCH_VALUE;
+    }
+
+    public void setSearchValue(int value) {
+        this.SEARCH_VALUE = value;
     }
 
     public ArrayList<Panel> run(int arr[], int x) {

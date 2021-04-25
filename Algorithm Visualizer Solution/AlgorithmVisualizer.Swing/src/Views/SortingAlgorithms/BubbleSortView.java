@@ -115,7 +115,9 @@ public class BubbleSortView extends CustomJPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                AppFrame.appFrame.getContentPane().removeAll();
                 AppFrame.appFrame.dispose();
+                Stop();
                 HomeController homeController = new HomeController();
             }
         };

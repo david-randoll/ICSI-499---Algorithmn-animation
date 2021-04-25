@@ -11,6 +11,8 @@ public class BubbleSortModel {
 
     public static JPanel Panels = new JPanel(new CardLayout());
 
+    String TITLE = "Bubble Sort";
+
     public BubbleSortModel() {
         int[] data = DataAccess.GetData();
         ArrayList<Panel> panels = run(data);
@@ -26,13 +28,13 @@ public class BubbleSortModel {
 
         int l = 0, r = arr.length - 1;
 
-        SharedComponents.Panel firstPanel = new SharedComponents.Panel("Bubble Sort", arr, null, "");
+        SharedComponents.Panel firstPanel = new SharedComponents.Panel(TITLE, arr, null, "");
         output.add(firstPanel);
 
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 Integer[] indices = {j, j + 1};
-                SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices, "none");
+                SharedComponents.Panel newPanel = new Panel(TITLE, arr, indices, "none");
                 output.add(newPanel);
 
                 newPanel.setTitle("Is " + arr[j] + " greater than " + arr[j + 1] + "?");
@@ -42,14 +44,14 @@ public class BubbleSortModel {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    SharedComponents.Panel swapPanel = new Panel("Bubble Sort", arr, swapIndices, "swap");
+                    SharedComponents.Panel swapPanel = new Panel(TITLE, arr, swapIndices, "swap");
                     output.add(swapPanel);
                 } else {
                     newPanel.setTitle("Nope");
                 }
             }
         }
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel("Bubble Sort", arr, null, "");
+        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, null, "");
         output.add(lastPanel);
 
         return output;

@@ -74,7 +74,7 @@ public class Panel extends JPanel {
             if (TITLE.equalsIgnoreCase("Binary Search")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
-                        g.setColor(Color.white);
+                        g.setColor(Styles.ELEMENT_COLOR);
                     } else {
                         g.setColor(Styles.APP_BACKGROUNDCOLOR);
                     }
@@ -83,7 +83,7 @@ public class Panel extends JPanel {
 
                 } catch (NullPointerException e) {
                     if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Color.white);
+                        g.setColor(Styles.ELEMENT_COLOR);
                     } else {
                         g.setColor(Styles.APP_BACKGROUNDCOLOR);
                     }
@@ -91,7 +91,7 @@ public class Panel extends JPanel {
                     drawElementData(g, currentValue, currentRectangle, metrics);
                 }
             } else {
-                g.setColor(Color.white);
+                g.setColor(Styles.ELEMENT_COLOR);
                 drawRectangle(g, currentRectangle);
                 drawElementData(g, currentValue, currentRectangle, metrics);
             }
@@ -125,10 +125,12 @@ public class Panel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
 
         //Case for when swapping to highlight indices
-        if (CONDITION.equals("swap") || CONDITION.equals("found")) {
-            g2.setColor(Color.red);
+        if (CONDITION.equals("swap")) {
+            g2.setColor(Styles.SWAP_COLOR);
+        } else if (CONDITION.equals("found")) {
+            g2.setColor(Styles.FOUND_COLOR);
         } else {
-            g2.setColor(Color.GREEN);
+            g2.setColor(Styles.SEARCHING_COLOR);
         }
         g2.setStroke(new BasicStroke(BORDER_SIZE));
         g2.drawRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
@@ -154,7 +156,7 @@ public class Panel extends JPanel {
     void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics) {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
         int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
-        g.setColor(Color.RED);
+        g.setColor(Styles.DATA_COLOR);
         g.drawString(currentValue, stringX, stringY);
     }
 

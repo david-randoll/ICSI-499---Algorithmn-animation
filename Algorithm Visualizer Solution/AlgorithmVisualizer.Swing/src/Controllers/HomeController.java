@@ -69,11 +69,13 @@ public class HomeController implements ActionListener {
             frame.getContentPane().add(settingsController.view);
             frame.setVisible(true);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
+            frame.getContentPane().removeAll();
             frame.dispose();
             AppFrame appFrame = new AppFrame();
             BinarySearchController binarySearch = new BinarySearchController();
             binarySearch.InitController();
         } else if (e.getSource() == this.homeView.BubbleSort) {  //Bubble Sort
+            frame.getContentPane().removeAll();
             frame.dispose();
             AppFrame appFrame = new AppFrame();
             BubbleSortController bubbleSortController = new BubbleSortController();

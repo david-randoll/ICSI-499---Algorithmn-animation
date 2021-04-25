@@ -10,7 +10,7 @@ public class DataAccess {
 
     //this is for testing purposes until home can give us data
     public static void Run() {
-        SetData(new int[]{5, 2, 7, 3, 5});
+        SetData(new int[]{5, 2, 7});
         SetData(RandomData(15, 100));
         SEARCH_VALUE = 30;
     }
