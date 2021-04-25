@@ -1,13 +1,13 @@
 
 package SharedComponents;
 
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class InputBox extends JTextField{
 
     public InputBox(String placeHolder){
         this.setText(placeHolder);
-        this.setLayout(null);
+        this.setBorder(null);
         this.setVisible(true);
     }
 

@@ -35,12 +35,10 @@ public class Startup {
         //// frame.add(homeView);
         //frame.setVisible(true);
 
-         //AppFrame appFrame = new AppFrame(); //Initialize application's frame
-
         // BinarySearchController controller = new BinarySearchController();
          //controller.InitController();
 
-
+        AppFrame appFrame = new AppFrame(); //Initialize application's frame
         HomeController controller = new HomeController();
 
     }

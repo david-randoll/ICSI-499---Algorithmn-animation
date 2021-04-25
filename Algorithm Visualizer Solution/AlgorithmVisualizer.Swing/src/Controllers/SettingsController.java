@@ -14,11 +14,11 @@ import javax.swing.*;
 
 public class SettingsController implements ActionListener{
     public SettingsView view;
-    public Frame frame;
+    public JFrame frame;
     private SettingsModel model = new SettingsModel();
 
 
-    public SettingsController(Frame frame) {
+    public SettingsController(JFrame frame) {
         this.frame = frame;
         InitView();
         InitController();

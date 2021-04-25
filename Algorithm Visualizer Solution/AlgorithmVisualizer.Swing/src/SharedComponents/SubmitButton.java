@@ -8,12 +8,9 @@ public class SubmitButton extends JButton {
     JButton button;
     public SubmitButton(String buttonText){
         button = new JButton();
-        button.setLayout(null);
+        button.setAlignmentX(CENTER);
+        button.setAlignmentY(CENTER);
         this.setText(buttonText);
         this.setVisible(true);
-       // this.setLocation(100,100);
-       // this.add(this.button);
-       // this.setLayout(null);
-        //this.setVisible(true);
     }
 }

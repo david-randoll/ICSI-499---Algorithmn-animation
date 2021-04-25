@@ -5,22 +5,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/DefaultFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/DefaultFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BubbleSortView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BubbleSortView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/BinarySearch$Frame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/BinarySearch$Panel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/BinarySearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SortingAlgorithms/BubbleSortController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SortingAlgorithms/BubbleSortController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Shared/DataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Shared/DataAccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/CustomJPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/CustomJPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/TitleLablel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/TitleLablel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/DefaultFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/DefaultFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/SubmitButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/SubmitButton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Startup.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Startup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/HomeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/HomeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/SortingAlgorithms/BubbleSortView.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/SortingAlgorithms/BubbleSortView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/res/Styles.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/res/Styles.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +31,21 @@
         <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="71" column="85" lean-forward="true" selection-start-line="71" selection-start-column="85" selection-end-line="71" selection-end-column="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1366#1719#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,52 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/DefaultFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/Frame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="102">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#454#455#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,10 +63,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="306">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -107,8 +74,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -117,16 +102,28 @@
         <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Tests.java">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TextBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/HomeSettingsLabel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,20 +151,26 @@
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/res/Styles.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/SettingsModel.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/ColorToggle.java" />
-        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BubbleSortView.java" />
-        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" />
-        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" />
-        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/DefaultFrame.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/HomeSettingsLabel.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" />
+        <option value="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1550" />
     <option name="height" value="840" />
   </component>
@@ -177,6 +180,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,12 +286,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619236799254" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619369363399" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../School/412/Assignment4" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -305,7 +308,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Startup" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Startup" />
       <module name="ICSI-499---Algorithmn-animation" />
       <method v="2">
@@ -330,7 +333,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.4181208" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.42416108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -358,7 +361,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42416108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -367,15 +370,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32719547" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -434,24 +437,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TextBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -473,20 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/SortingAlgorithms/BinarySearchModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/HomeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -501,27 +476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -539,10 +497,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java">
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/HomeModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/ApacheHttpClientPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/Panel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="45" column="78" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="45" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Tests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -553,9 +561,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Models/SortingAlgorithms/BinarySearchModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="425">
           <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding>
             <element signature="e#286#287#0" expanded="true" />
@@ -564,83 +579,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/HomeSettingsLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/InputBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/DefaultFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Tests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java">
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TextBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/SubmitButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="153">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java">
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/TitleLablel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/Frame.java">
+    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="325">
+          <caret line="71" column="85" lean-forward="true" selection-start-line="71" selection-start-column="85" selection-end-line="71" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#1366#1719#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
           </folding>
         </state>
       </provider>
