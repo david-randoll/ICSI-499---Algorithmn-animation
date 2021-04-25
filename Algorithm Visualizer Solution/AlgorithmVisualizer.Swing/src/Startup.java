@@ -36,7 +36,7 @@ public class Startup {
 
         BinarySearchController binarySearchController = new BinarySearchController();
         BubbleSortController bubbleSortController = new BubbleSortController();
-        binarySearchController.InitController();
-
+//        binarySearchController.InitController();
+        bubbleSortController.InitController();
     }
 }

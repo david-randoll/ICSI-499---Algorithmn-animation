@@ -47,7 +47,7 @@ public class BubbleSortModel {
                     SharedComponents.Panel swapPanel = new Panel("Bubble Sort", arr, swapIndices, "swap");
                     output.add(swapPanel);
                 }else{
-                    newPanel.setTitle("Nope, so we compare next");
+                    newPanel.setTitle("Nope");
                 }
             }
         }
