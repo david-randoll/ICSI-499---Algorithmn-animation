@@ -70,6 +70,7 @@ public class Panel extends JPanel {
             String currentValue = Integer.toString(USER_INPUT[i]);
             Rectangle currentRectangle = RECTANGLES[i];
 
+
             if (TITLE.equalsIgnoreCase("Binary Search")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
@@ -81,10 +82,14 @@ public class Panel extends JPanel {
                     drawElementData(g, currentValue, currentRectangle, metrics);
 
                 } catch (NullPointerException e) {
-                    g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                    if (CONDITION.equalsIgnoreCase("start")) {
+                        g.setColor(Color.white);
+                    } else {
+                        g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                    }
+                    drawRectangle(g, currentRectangle);
                     drawElementData(g, currentValue, currentRectangle, metrics);
                 }
-                // g.setColor(Color.white);
             } else {
                 g.setColor(Color.white);
                 drawRectangle(g, currentRectangle);

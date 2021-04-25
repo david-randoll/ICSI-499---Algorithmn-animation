@@ -22,7 +22,7 @@ public class BubbleSortController implements Controller {
     }
 
     public void InitController() {
-         model = new BubbleSortModel();
+        model = new BubbleSortModel();
         InitView();
     }
 }

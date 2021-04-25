@@ -2,8 +2,11 @@ package Controllers.SortingAlgorithms;
 
 import Controllers.Controller;
 import Models.SortingAlgorithms.BinarySearchModel;
+import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.DataAccess;
 import Views.SortingAlgorithms.BinarySearchView;
+
+import javax.swing.*;
 
 public class BinarySearchController implements Controller {
 
@@ -11,10 +14,16 @@ public class BinarySearchController implements Controller {
     private BinarySearchModel model = new BinarySearchModel();
 
     public void InitView() {
-        view.animatePanels(model);
+        Runnable runnable = new Runnable() {
+            public void run() {
+                view.animateBinarySearch(model);
+            }
+        };
+        SwingUtilities.invokeLater(runnable);
     }
 
     public void InitController() {
+        model = new BinarySearchModel();
         InitView();
     }
 

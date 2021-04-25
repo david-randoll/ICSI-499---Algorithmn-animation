@@ -59,11 +59,11 @@ public class BubbleSortView extends CustomJPanel {
         this.Panels = model.Panels;
         this.model = model;
         AppFrame.appFrame.add(Panels,BorderLayout.NORTH);
+        AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
         PaintFirstPanelOnUI();
 
-//        AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
 
@@ -177,28 +177,6 @@ public class BubbleSortView extends CustomJPanel {
         isTimerRunning = true;
     }
 
-
-    public void animatePanels(BubbleSortModel model) {
-        initToolBar(model);
-
-        AppFrame.appFrame.add(model.Panels);
-        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
-        while (currentIndex < model.Panels.getComponentCount()){
-            cardLayout.show(model.Panels, Integer.toString(currentIndex));
-
-            AppFrame.appFrame.repaint();
-            if(IsPause){
-                break;
-            }
-
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-            currentIndex++;
-        }
-    }
     private void initToolBar(BubbleSortModel model){
         for (int i = currentIndex; i < model.Panels.getComponentCount(); i++) {
             Panel panel = (Panel) model.Panels.getComponent(i);
@@ -227,4 +205,27 @@ public class BubbleSortView extends CustomJPanel {
             });
         }
     }
+
+    public void animatePanels(BubbleSortModel model) {
+        initToolBar(model);
+
+        AppFrame.appFrame.add(model.Panels);
+        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
+        while (currentIndex < model.Panels.getComponentCount()){
+            cardLayout.show(model.Panels, Integer.toString(currentIndex));
+
+            AppFrame.appFrame.repaint();
+            if(IsPause){
+                break;
+            }
+
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            currentIndex++;
+        }
+    }
+
 }

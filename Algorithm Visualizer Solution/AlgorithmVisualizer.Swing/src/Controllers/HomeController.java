@@ -42,7 +42,6 @@ public class HomeController implements ActionListener {
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
 
-
         homeView.data.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -76,7 +75,6 @@ public class HomeController implements ActionListener {
             frame.dispose();
             BinarySearchController binarySearch = new BinarySearchController();
             binarySearch.InitController();
-
         }
         else if (e.getSource() == this.homeView.BubbleSort) {  //Bubble Sort
             frame.dispose();

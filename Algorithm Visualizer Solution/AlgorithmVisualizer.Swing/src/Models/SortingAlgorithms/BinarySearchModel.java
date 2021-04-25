@@ -28,9 +28,9 @@ public class BinarySearchModel implements Model {
 
         int l = 0, r = arr.length - 1;
 
-        Panel firstPanel = new Panel("Binary Search", arr, null, "");
+        Panel firstPanel = new Panel("Binary Search", arr, null, "start");
         output.add(firstPanel);
-        //output.add(new Panel("Binary Search", arr, null, ""));
+
         int index = 0;
         while (l <= r) {
 
