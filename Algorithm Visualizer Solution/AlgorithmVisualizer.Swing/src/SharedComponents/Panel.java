@@ -4,6 +4,7 @@ import res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class Panel extends JPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -11,28 +12,44 @@ public class Panel extends JPanel {
     static int MIDPOINT_VERTICAL = (screenSize.height / 2);
     int[] USER_INPUT;
     Rectangle[] RECTANGLES;
-    Integer HIGHLIGHT_INDEX;
+    Integer[] HIGHLIGHT_INDICES;
+    Integer[] ENABLED_INDICES;
     String TITLE;
+    String CONDITION;
+    public SortingToolBar toolBar;
 
     @Override
     public void paint(Graphics g) {
 
         super.paintComponents(g);
-
-
         drawTitle(g, TITLE);
         drawElements(g);
-        if (HIGHLIGHT_INDEX != null) {
-            outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDEX]);
+
+        if (HIGHLIGHT_INDICES != null) {
+            for(int i = 0; i < HIGHLIGHT_INDICES.length; i++){
+                outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
+            }
         }
     }
 
-    public Panel(String title, int[] data, Integer highlightIndex) {
-        USER_INPUT = data;
-        HIGHLIGHT_INDEX = highlightIndex;
+    public Panel(String title, int[] data, Integer[] highlightIndices, String condition) {
+        USER_INPUT = data.clone();
+        HIGHLIGHT_INDICES = highlightIndices;
         RECTANGLES = buildRectangles(USER_INPUT);
         TITLE = title;
+        CONDITION = condition;
+        this.setLayout(null);//using no layout managers
+        this.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.85)));
+    }
 
+    public Panel(String title, int[] data, Integer[] enabledIndices, Integer[] highlightIndices, String condition) {
+        USER_INPUT = data.clone();
+        HIGHLIGHT_INDICES = highlightIndices;
+        ENABLED_INDICES = enabledIndices;
+        RECTANGLES = buildRectangles(USER_INPUT);
+        TITLE = title;
+        CONDITION = condition;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
@@ -54,18 +71,31 @@ public class Panel extends JPanel {
             String currentValue = Integer.toString(USER_INPUT[i]);
             Rectangle currentRectangle = RECTANGLES[i];
 
-            drawRectangle(g, currentRectangle);
+            if(TITLE.equalsIgnoreCase("Binary Search")){
+                try{
+                    if(Arrays.asList(ENABLED_INDICES).contains(i)){
+                        g.setColor(Color.white);
+                    }
+                    else{
+                        g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                    }
+                    drawRectangle(g, currentRectangle);
+                    drawElementData( g, currentValue,  currentRectangle, metrics);
 
-            int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
-            int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
+                }catch(NullPointerException e){
+                    g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                    drawElementData( g, currentValue,  currentRectangle, metrics);
 
-            g.setColor(Color.RED);
-            g.drawString(currentValue, stringX, stringY);
+                }
+            }else{
+                g.setColor(Color.white);
+                drawRectangle(g, currentRectangle);
+                drawElementData( g, currentValue,  currentRectangle, metrics);
+            }
         }
     }
 
     void drawRectangle(Graphics g, Rectangle rectangle) {
-        g.setColor(Color.white);
         g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     }
@@ -91,7 +121,12 @@ public class Panel extends JPanel {
         int rectangleHeight = rectangle.height + (BORDER_SIZE * 2);
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setColor(Color.GREEN);
+        //Case for when swapping to highlight indices
+        if (CONDITION.equals("swap") || CONDITION.equals("found")) {
+            g2.setColor(Color.red);
+        } else {
+            g2.setColor(Color.GREEN);
+        }
         g2.setStroke(new BasicStroke(BORDER_SIZE));
         g2.drawRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
     }
@@ -113,5 +148,14 @@ public class Panel extends JPanel {
         return output;
     }
 
+    void drawElementData(Graphics g, String currentValue,  Rectangle currentRectangle, FontMetrics metrics){
+        int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
+        int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
+        g.setColor(Color.RED);
+        g.drawString(currentValue, stringX, stringY);
+    }
 
+    public void setTitle(String title){
+        TITLE = title;
+    }
 }

@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/AppFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/HomeController.class" afterDir="false" />
-    </list>
+    <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,11 +279,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619371770457" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../School/412/Assignment4" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Algorithm Visualizer Solution" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

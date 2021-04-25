@@ -12,6 +12,7 @@ import Models.HomeModel;
 import Models.SortingAlgorithms.BinarySearchModel;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
+import Shared.DataAccess;
 import SharedComponents.Frame;
 import Views.HomeView;
 import Views.SortingAlgorithms.BinarySearchView;
@@ -35,11 +36,12 @@ public class Startup {
         //// frame.add(homeView);
         //frame.setVisible(true);
 
-        // BinarySearchController controller = new BinarySearchController();
-         //controller.InitController();
-
         AppFrame appFrame = new AppFrame(); //Initialize application's frame
-        HomeController controller = new HomeController();
+        DataAccess dataAccess = new DataAccess();
 
+        BinarySearchController binarySearchController = new BinarySearchController();
+        BubbleSortController bubbleSortController = new BubbleSortController();
+//        binarySearchController.InitController();
+        bubbleSortController.InitController(dataAccess);
     }
 }
