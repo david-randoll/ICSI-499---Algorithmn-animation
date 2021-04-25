@@ -5,14 +5,12 @@ import java.util.Random;
 
 public class DataAccess {
     private static int[] data;
-    private static int SEARCH_VALUE;
     private static String dataString;
 
     //this is for testing purposes until home can give us data
     public static void Run() {
-        SetData(new int[]{5, 2, 7});
         SetData(RandomData(15, 100));
-        SEARCH_VALUE = 30;
+        SetData(new int[]{5,50,52,3,70, 2, 7,46,4,8,436,8});
     }
 
     public static void SetData(int[] dataset) {
@@ -40,10 +38,6 @@ public class DataAccess {
 
     public static String GetCommaSeparatedData() {
         return dataString;
-    }
-
-    public static int GetSearchValue() {
-        return SEARCH_VALUE;
     }
 
     public static int[] GetSortedData() {

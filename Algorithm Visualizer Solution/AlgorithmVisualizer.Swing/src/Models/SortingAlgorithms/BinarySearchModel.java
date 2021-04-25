@@ -13,7 +13,8 @@ public class BinarySearchModel implements Model {
 
     public static JPanel Panels = new JPanel(new CardLayout());
     private Random rand = new Random();
-    private int SEARCH_VALUE = rand.nextInt(100);
+//    private int SEARCH_VALUE = rand.nextInt(100);
+    private int SEARCH_VALUE = 200;
 
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();

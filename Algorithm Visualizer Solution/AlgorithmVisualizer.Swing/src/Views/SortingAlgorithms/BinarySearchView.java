@@ -24,6 +24,7 @@ public class BinarySearchView extends CustomJPanel {
     JButton resetButton;
     JSlider speedSlider;
     JTextField dataSetTextBox;
+    JTextField searchTextBox;
     private boolean isTimerRunning = false;
     private Timer timer;
     private int speedValue;
@@ -82,9 +83,9 @@ public class BinarySearchView extends CustomJPanel {
     }
 
     private void InitializeToolBar() {
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        buttonPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
+        JPanel toolBarPanel = new JPanel();
+        toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
         backToHome = new JButton("Home");
         playPauseButton = new JButton("Play");
@@ -102,13 +103,17 @@ public class BinarySearchView extends CustomJPanel {
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
         dataSetTextBox.setPreferredSize(new Dimension(500, 25));
 
-        buttonPanel.add(playPauseButton);
-        buttonPanel.add(resetButton);
-        buttonPanel.add(speedSlider);
-        buttonPanel.add(dataSetTextBox);
-        buttonPanel.add(backToHome);
+        searchTextBox = new JTextField();
+        searchTextBox.setText(Integer.toString(model.getSearchValue()));
 
-        AppFrame.appFrame.add(buttonPanel, BorderLayout.SOUTH);
+        toolBarPanel.add(playPauseButton);
+        toolBarPanel.add(resetButton);
+        toolBarPanel.add(speedSlider);
+        toolBarPanel.add(dataSetTextBox);
+        toolBarPanel.add(searchTextBox);
+        toolBarPanel.add(backToHome);
+
+        AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
         playPauseButton.addActionListener(pausePlayEventListener());
         resetButton.addActionListener(resetEventListener());
