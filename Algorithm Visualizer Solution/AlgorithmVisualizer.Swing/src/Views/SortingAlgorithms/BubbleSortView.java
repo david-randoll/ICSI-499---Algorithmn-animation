@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import Controllers.HomeController;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
@@ -22,6 +23,7 @@ public class BubbleSortView extends CustomJPanel {
     int currentIndex = 0;
     boolean IsPause = false;
 
+    JButton backToHome;
     JButton playPauseButton;
     JButton resetButton;
     JSlider speedSlider;
@@ -83,6 +85,7 @@ public class BubbleSortView extends CustomJPanel {
         buttonPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         buttonPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
+        backToHome = new JButton("Home");
         playPauseButton = new JButton("Play");
         resetButton = new JButton("Reset");
 
@@ -104,12 +107,24 @@ public class BubbleSortView extends CustomJPanel {
         buttonPanel.add(resetButton);
         buttonPanel.add(speedSlider);
         buttonPanel.add(dataSetTextBox);
+        buttonPanel.add(backToHome);
 
         AppFrame.appFrame.add(buttonPanel,BorderLayout.SOUTH);
 
         playPauseButton.addActionListener(pausePlayEventListener());
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
+        backToHome.addActionListener(homePage());
+    }
+
+    private ActionListener homePage() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                AppFrame.appFrame.dispose();
+                HomeController homeController = new HomeController();
+            }
+        };
     }
 
     private ActionListener resetEventListener() {

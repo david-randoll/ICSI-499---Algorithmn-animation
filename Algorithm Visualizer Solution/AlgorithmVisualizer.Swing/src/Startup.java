@@ -1,9 +1,11 @@
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import Controllers.HomeController;
+import Controllers.SettingsController;
 import Controllers.SortingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
@@ -15,6 +17,7 @@ import SharedComponents.Frame;
 import Views.HomeView;
 import Views.SortingAlgorithms.BinarySearchView;
 import Views.SortingAlgorithms.BubbleSortView;
+import SharedComponents.*;
 
 public class Startup {
     public static void main(String[] args) {
@@ -33,14 +36,7 @@ public class Startup {
         //// frame.add(homeView);
         //frame.setVisible(true);
 
-        AppFrame appFrame = new AppFrame(); //Initialize application's frame
-        DataAccess.Run();
-
-        BinarySearchController binarySearchController = new BinarySearchController();
-
-
-        BubbleSortController bubbleSortController = new BubbleSortController();
-//        binarySearchController.InitController();
-        bubbleSortController.InitController();
+        //Initialize application's frame
+        HomeController homeController = new HomeController();
     }
 }
