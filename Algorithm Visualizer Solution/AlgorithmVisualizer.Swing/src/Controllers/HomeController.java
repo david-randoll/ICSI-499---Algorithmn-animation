@@ -4,6 +4,7 @@ import Controllers.SortingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
+import Shared.DataAccess;
 import SharedComponents.DefaultFrame;
 import Views.HomeView;
 
@@ -46,6 +47,15 @@ public class HomeController implements ActionListener {
             }
         });
 
+        homeView.setData.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String dataSet = homeView.data.getText();
+                homeModel.setInputtedElementsList(dataSet);
+                DataAccess.SetData(homeModel.getInputtedElementsList());
+            }
+        });
+
         //Brings the user to the github
         this.homeView.gitHub.addMouseListener(new MouseAdapter() {
             @Override
@@ -58,6 +68,8 @@ public class HomeController implements ActionListener {
                 }
             }
         });
+
+
     }
 
     public void actionPerformed(ActionEvent e) {

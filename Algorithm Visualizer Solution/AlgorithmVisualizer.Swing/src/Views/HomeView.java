@@ -13,6 +13,7 @@ public class HomeView extends JPanel {
     public SubmitButton settings = new SubmitButton("Settings");
     public SubmitButton BinarySearch = new SubmitButton("Binary Search");
     public SubmitButton BubbleSort = new SubmitButton("Bubble Sort");
+    public SubmitButton setData = new SubmitButton("Set DataSet");
 
     public JLabel gitHub = new JLabel("github");
 
@@ -48,6 +49,9 @@ public class HomeView extends JPanel {
         data.setBounds(100, 200, 575, 25);
         super.add(data);
 
+        setData.setBounds(100, 240, 150, 25);
+        super.add(setData);
+
         //Algorithm button headers
         Searching.setText("Searching");
         Searching.setFont(new Font(this.getFont().getFamily(), Font.BOLD, 30));
@@ -72,6 +76,8 @@ public class HomeView extends JPanel {
 
         PathFinding.setBounds(525, 375, 250, 35);
         super.add(PathFinding);
+
+
 
 
     }
