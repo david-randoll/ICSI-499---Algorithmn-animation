@@ -9,6 +9,5 @@ public class AppFrame {
     public static Frame appFrame = new Frame();
 
     public AppFrame(){
-        appFrame.setVisible(false);
     }
 }

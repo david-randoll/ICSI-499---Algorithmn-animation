@@ -17,6 +17,7 @@ public class BinarySearchView extends CustomJPanel {
     public void animatePanels(BinarySearchModel model) {
 
         AppFrame.appFrame.add(model.Panels);
+        AppFrame.appFrame.setVisible(true);
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
         for (int i = 0; i < model.Panels.getComponentCount(); i++) {
             cardLayout.show(model.Panels, Integer.toString(i));
@@ -26,6 +27,7 @@ public class BinarySearchView extends CustomJPanel {
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
+
         }
     }
 

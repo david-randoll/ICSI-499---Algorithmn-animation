@@ -5,6 +5,7 @@ import Controllers.SortingAlgorithms.BubbleSortController;
 import Models.HomeModel;
 import Models.SettingsModel;
 import Models.SortingAlgorithms.BubbleSortModel;
+import Shared.AppFrame;
 import SharedComponents.DefaultFrame;
 import SharedComponents.Frame;
 import SharedComponents.SubmitButton;
@@ -65,6 +66,7 @@ public class HomeController implements ActionListener {
             frame.getContentPane().add(settingsController.view);
             frame.setVisible(true);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
+            AppFrame appFrame = new AppFrame();
             BinarySearchController binarySearchController = new BinarySearchController();
             this.frame.dispose();
             binarySearchController.InitController();

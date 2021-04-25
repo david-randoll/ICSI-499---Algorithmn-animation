@@ -11,7 +11,6 @@ public class BinarySearchController implements Controller {
     private BinarySearchModel model = new BinarySearchModel();
 
     public void InitView() {
-        AppFrame.appFrame.setVisible(true);
         view.animatePanels(model);
     }
 
