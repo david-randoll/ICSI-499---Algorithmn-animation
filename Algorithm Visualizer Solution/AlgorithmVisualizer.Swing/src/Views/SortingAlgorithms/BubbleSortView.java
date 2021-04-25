@@ -97,7 +97,7 @@ public class BubbleSortView extends CustomJPanel {
         speedSlider.setMinorTickSpacing(5);
 
         dataSetTextBox = new JTextField();
-        dataSetTextBox.setText(model.dataAccess.GetCommaSeparatedData());
+        dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
         dataSetTextBox.setPreferredSize(new Dimension(500,25));
 
         buttonPanel.add(playPauseButton);

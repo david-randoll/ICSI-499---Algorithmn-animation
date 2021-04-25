@@ -23,8 +23,8 @@ public class BubbleSortController implements Controller {
         SwingUtilities.invokeLater(runnable);
     }
 
-    public void InitController(DataAccess dataAccess) {
-         model = new BubbleSortModel(dataAccess);
+    public void InitController() {
+         model = new BubbleSortModel();
         InitView();
     }
 }

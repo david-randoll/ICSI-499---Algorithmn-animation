@@ -14,7 +14,7 @@ public class BinarySearchController implements Controller {
         view.animatePanels(model);
     }
 
-    public void InitController(DataAccess dataAccess) {
+    public void InitController() {
         InitView();
     }
 

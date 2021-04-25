@@ -4,7 +4,7 @@ import Shared.DataAccess;
 
 public interface Controller {
 
-    public void InitController(DataAccess dataAccess);
+    public void InitController();
     public void InitView();
 
 }

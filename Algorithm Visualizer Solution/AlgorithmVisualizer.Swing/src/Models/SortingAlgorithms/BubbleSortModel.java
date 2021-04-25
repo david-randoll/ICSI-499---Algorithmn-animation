@@ -8,13 +8,11 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class BubbleSortModel {
-    public DataAccess dataAccess;
 
     public static JPanel Panels = new JPanel(new CardLayout());
 
-    public BubbleSortModel(DataAccess dataAccess) {
-        this.dataAccess = dataAccess;
-        int[] data = dataAccess.GetData();
+    public BubbleSortModel() {
+        int[] data = DataAccess.GetData();
         ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {

@@ -34,11 +34,13 @@ public class Startup {
         //frame.setVisible(true);
 
         AppFrame appFrame = new AppFrame(); //Initialize application's frame
-        DataAccess dataAccess = new DataAccess();
+        DataAccess.Run();
 
         BinarySearchController binarySearchController = new BinarySearchController();
+
+
         BubbleSortController bubbleSortController = new BubbleSortController();
 //        binarySearchController.InitController();
-        bubbleSortController.InitController(dataAccess);
+        bubbleSortController.InitController();
     }
 }

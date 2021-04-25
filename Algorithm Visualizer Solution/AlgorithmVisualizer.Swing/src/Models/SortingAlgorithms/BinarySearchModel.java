@@ -13,9 +13,8 @@ public class BinarySearchModel implements Model {
     public static JPanel Panels = new JPanel(new CardLayout());
 
     public BinarySearchModel() {
-        DataAccess dataAccess = new DataAccess();
-        int[] data = dataAccess.GetSortedData();
-        int searchValue = dataAccess.GetSearchValue();
+        int[] data = DataAccess.GetSortedData();
+        int searchValue = DataAccess.GetSearchValue();
         ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
