@@ -31,14 +31,12 @@ public class BinarySearchModel implements Model {
 
         Panel firstPanel = new Panel("Binary Search", arr, null, "");
         output.add(firstPanel);
+        //output.add(new Panel("Binary Search", arr, null, ""));
 
         while (l <= r) {
 
             int m = l + (r - l) / 2;
             Integer [] indices = {m};
-
-            Panel newPanel = new Panel("Binary Search", arr, indices, "");
-            output.add(newPanel);
 
             // Check if x is present at mid
             if (arr[m] == x) {
@@ -49,12 +47,37 @@ public class BinarySearchModel implements Model {
             // If x greater, ignore left half
             if (arr[m] < x) {
                 l = m + 1;
+                ArrayList<Integer> list = new ArrayList<>();
+
+                for(int i = m; i < r+1; i++){
+                    list.add(i);
+                }
+                Integer[] enabledIndices = new Integer[list.size()];
+                enabledIndices = list.toArray(enabledIndices);
+
+                System.out.println(enabledIndices.length);
+
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                output.add(newPanel);
             }
 
-
             // If x is smaller, ignore right half
-            else
+            else {
                 r = m - 1;
+                ArrayList<Integer> list = new ArrayList<>();
+
+                for(int i = l; i < m+1; i++){
+                    list.add(i);
+                } //Arrays.copyOfRange(arr, l , m)
+
+                Integer[] enabledIndices = new Integer[list.size()];
+                enabledIndices = list.toArray(enabledIndices);
+
+                System.out.println(enabledIndices.length);
+
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                output.add(newPanel);
+            }
 
         }
 
