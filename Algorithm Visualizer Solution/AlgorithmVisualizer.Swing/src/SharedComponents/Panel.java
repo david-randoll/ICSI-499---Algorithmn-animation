@@ -16,6 +16,7 @@ public class Panel extends JPanel {
     Integer[] ENABLED_INDICES;
     String TITLE;
     String CONDITION;
+    public SortingToolBar toolBar;
 
     @Override
     public void paint(Graphics g) {
@@ -39,6 +40,7 @@ public class Panel extends JPanel {
         CONDITION = condition;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.85)));
     }
 
     public Panel(String title, int[] data, Integer[] enabledIndices, Integer[] highlightIndices, String condition) {

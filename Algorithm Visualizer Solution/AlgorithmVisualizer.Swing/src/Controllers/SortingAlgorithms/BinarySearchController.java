@@ -2,6 +2,7 @@ package Controllers.SortingAlgorithms;
 
 import Controllers.Controller;
 import Models.SortingAlgorithms.BinarySearchModel;
+import Shared.DataAccess;
 import Views.SortingAlgorithms.BinarySearchView;
 
 public class BinarySearchController implements Controller {
@@ -13,7 +14,7 @@ public class BinarySearchController implements Controller {
         view.animatePanels(model);
     }
 
-    public void InitController() {
+    public void InitController(DataAccess dataAccess) {
         InitView();
     }
 
