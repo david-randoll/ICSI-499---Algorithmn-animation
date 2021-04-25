@@ -10,14 +10,16 @@ public class DataAccess {
 
     //this is for testing purposes until home can give us data
     public DataAccess() {
-        SetData(new int[] {5,2,7,3,5});
+        SetData(new int[] {5,31,7,3,5});
         SetData(RandomData(15,100));
         this.SEARCH_VALUE = 30;
     }
+
     public void SetData(int[] data){
         this.data = data;
         this.dataString = commaSeparateArray(data);
     }
+
     private String commaSeparateArray(int [] data){
         StringBuilder result = new StringBuilder();
 

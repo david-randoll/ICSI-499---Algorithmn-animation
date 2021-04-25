@@ -13,10 +13,8 @@ public class BubbleSortController implements Controller {
     private BubbleSortModel model;
 
     public void InitView() {
-        Runnable runnable = new Runnable()
-        {
-            public void run()
-            {
+        Runnable runnable = new Runnable() {
+            public void run() {
                 view.animateBubbleSort(model);
             }
         };
@@ -24,7 +22,7 @@ public class BubbleSortController implements Controller {
     }
 
     public void InitController(DataAccess dataAccess) {
-         model = new BubbleSortModel(dataAccess);
+        model = new BubbleSortModel(dataAccess);
         InitView();
     }
 }

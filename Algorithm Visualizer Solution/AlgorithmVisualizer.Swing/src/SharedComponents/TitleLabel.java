@@ -8,8 +8,8 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
-public class TitleLablel extends JLabel {
-    public TitleLablel(String title) {
+public class TitleLabel extends JLabel {
+    public TitleLabel(String title) {
         this.setText(title);
         this.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         this.setFont(new Font(this.getFont().getFamily(),Font.BOLD,Styles.PAGE_TITLE_FONTSIZE));

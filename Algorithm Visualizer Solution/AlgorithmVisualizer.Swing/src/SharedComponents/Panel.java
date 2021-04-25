@@ -24,9 +24,8 @@ public class Panel extends JPanel {
         super.paintComponents(g);
         drawTitle(g, TITLE);
         drawElements(g);
-
         if (HIGHLIGHT_INDICES != null) {
-            for(int i = 0; i < HIGHLIGHT_INDICES.length; i++){
+            for (int i = 0; i < HIGHLIGHT_INDICES.length; i++) {
                 outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
             }
         }
@@ -71,26 +70,25 @@ public class Panel extends JPanel {
             String currentValue = Integer.toString(USER_INPUT[i]);
             Rectangle currentRectangle = RECTANGLES[i];
 
-            if(TITLE.equalsIgnoreCase("Binary Search")){
-                try{
-                    if(Arrays.asList(ENABLED_INDICES).contains(i)){
+            if (TITLE.equalsIgnoreCase("Binary Search")) {
+                try {
+                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Color.white);
-                    }
-                    else{
+                    } else {
                         g.setColor(Styles.APP_BACKGROUNDCOLOR);
                     }
                     drawRectangle(g, currentRectangle);
-                    drawElementData( g, currentValue,  currentRectangle, metrics);
+                    drawElementData(g, currentValue, currentRectangle, metrics);
 
-                }catch(NullPointerException e){
+                } catch (NullPointerException e) {
                     g.setColor(Styles.APP_BACKGROUNDCOLOR);
-                    drawElementData( g, currentValue,  currentRectangle, metrics);
-
+                    drawElementData(g, currentValue, currentRectangle, metrics);
                 }
-            }else{
+                // g.setColor(Color.white);
+            } else {
                 g.setColor(Color.white);
                 drawRectangle(g, currentRectangle);
-                drawElementData( g, currentValue,  currentRectangle, metrics);
+                drawElementData(g, currentValue, currentRectangle, metrics);
             }
         }
     }
@@ -148,14 +146,14 @@ public class Panel extends JPanel {
         return output;
     }
 
-    void drawElementData(Graphics g, String currentValue,  Rectangle currentRectangle, FontMetrics metrics){
+    void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics) {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
         int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
         g.setColor(Color.RED);
         g.drawString(currentValue, stringX, stringY);
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         TITLE = title;
     }
 }

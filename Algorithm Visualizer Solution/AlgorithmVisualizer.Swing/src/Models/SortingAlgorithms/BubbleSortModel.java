@@ -31,22 +31,22 @@ public class BubbleSortModel {
         SharedComponents.Panel firstPanel = new SharedComponents.Panel("Bubble Sort", arr, null, "");
         output.add(firstPanel);
 
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
-                Integer[] indices = {j, j+1};
+                Integer[] indices = {j, j + 1};
                 SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices, "none");
                 output.add(newPanel);
 
-                newPanel.setTitle("Is " + arr[j] +" grater than "+ arr[j + 1] + "?");
+                newPanel.setTitle("Is " + arr[j] + " grater than " + arr[j + 1] + "?");
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j+1] and arr[j]
-                    Integer[] swapIndices = {j+1, j};
+                    Integer[] swapIndices = {j + 1, j};
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                     SharedComponents.Panel swapPanel = new Panel("Bubble Sort", arr, swapIndices, "swap");
                     output.add(swapPanel);
-                }else{
+                } else {
                     newPanel.setTitle("Nope");
                 }
             }

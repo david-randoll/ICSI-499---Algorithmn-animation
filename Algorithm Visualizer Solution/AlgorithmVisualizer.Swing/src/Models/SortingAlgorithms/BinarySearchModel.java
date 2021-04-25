@@ -32,15 +32,17 @@ public class BinarySearchModel implements Model {
         Panel firstPanel = new Panel("Binary Search", arr, null, "");
         output.add(firstPanel);
         //output.add(new Panel("Binary Search", arr, null, ""));
-
+        int index = 0;
         while (l <= r) {
 
             int m = l + (r - l) / 2;
-            Integer [] indices = {m};
+            index = m;
+            Integer[] indices = {m};
 
             // Check if x is present at mid
             if (arr[m] == x) {
-                output.add(new Panel("Binary Search", arr, indices, "found"));
+                Integer[] found = {m};
+                output.add(new Panel("Binary Search", arr, found, indices, "found"));
                 return output;
             }
 
@@ -49,13 +51,11 @@ public class BinarySearchModel implements Model {
                 l = m + 1;
                 ArrayList<Integer> list = new ArrayList<>();
 
-                for(int i = m; i < r+1; i++){
+                for (int i = m; i < r + 1; i++) {
                     list.add(i);
                 }
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
-
-                System.out.println(enabledIndices.length);
 
                 Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
                 output.add(newPanel);
@@ -66,23 +66,20 @@ public class BinarySearchModel implements Model {
                 r = m - 1;
                 ArrayList<Integer> list = new ArrayList<>();
 
-                for(int i = l; i < m+1; i++){
+                for (int i = l; i < m + 1; i++) {
                     list.add(i);
                 } //Arrays.copyOfRange(arr, l , m)
 
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                System.out.println(enabledIndices.length);
-
                 Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
                 output.add(newPanel);
             }
-
         }
-
         // if we reach here, then element was
         // not present
+        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{index}, ""));
         return output;
     }
 
