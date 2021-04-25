@@ -37,6 +37,8 @@ public class Startup {
         //frame.setVisible(true);
 
         //Initialize application's frame
+        AppFrame appFrame = new AppFrame();
         HomeController homeController = new HomeController();
+        DataAccess.Run();
     }
 }

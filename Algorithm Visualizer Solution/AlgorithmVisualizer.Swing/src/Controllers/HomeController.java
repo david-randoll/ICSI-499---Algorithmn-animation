@@ -40,6 +40,8 @@ public class HomeController implements ActionListener {
     public void InitController() {
         this.homeView.settings.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
+        this.homeView.BubbleSort.addActionListener(this);
+
 
         homeView.data.addMouseListener(new MouseAdapter() {
             @Override
@@ -72,12 +74,14 @@ public class HomeController implements ActionListener {
             frame.setVisible(true);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
             frame.dispose();
-            DataAccess dataAccess = new DataAccess();
+            BinarySearchController binarySearch = new BinarySearchController();
+            binarySearch.InitController();
+
+        }
+        else if (e.getSource() == this.homeView.BubbleSort) {  //Bubble Sort
+            frame.dispose();
             BubbleSortController bubbleSortController = new BubbleSortController();
-            bubbleSortController.InitController(dataAccess);
-        } else if (e.getSource() == this.homeView.BubbleSort) {  //Bubble Sort
-
-
+            bubbleSortController.InitController();
         }
     }
 }
