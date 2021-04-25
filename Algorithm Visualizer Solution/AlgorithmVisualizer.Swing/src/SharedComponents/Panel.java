@@ -133,7 +133,7 @@ public class Panel extends JPanel {
             g2.setColor(Styles.SEARCHING_COLOR);
         }
         g2.setStroke(new BasicStroke(BORDER_SIZE));
-        g2.drawRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
+        g2.drawRoundRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight, 5, 5);
     }
 
     Rectangle[] buildRectangles(int[] inputs) {
