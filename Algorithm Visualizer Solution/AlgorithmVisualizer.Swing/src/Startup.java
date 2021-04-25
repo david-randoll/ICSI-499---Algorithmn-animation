@@ -1,23 +1,5 @@
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.*;
-
 import Controllers.HomeController;
-import Controllers.SettingsController;
-import Controllers.SortingAlgorithms.BinarySearchController;
-import Controllers.SortingAlgorithms.BubbleSortController;
-import Models.HomeModel;
-import Models.SortingAlgorithms.BinarySearchModel;
-import Models.SortingAlgorithms.BubbleSortModel;
-import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.Frame;
-import Views.HomeView;
-import Views.SortingAlgorithms.BinarySearchView;
-import Views.SortingAlgorithms.BubbleSortView;
-import SharedComponents.*;
 
 public class Startup {
     public static void main(String[] args) {

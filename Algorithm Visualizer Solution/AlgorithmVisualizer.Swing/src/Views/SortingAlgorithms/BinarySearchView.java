@@ -2,18 +2,15 @@ package Views.SortingAlgorithms;
 
 import Controllers.HomeController;
 import Models.SortingAlgorithms.BinarySearchModel;
-import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.*;
-import SharedComponents.Panel;
+import SharedComponents.CustomJPanel;
 import res.Styles;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

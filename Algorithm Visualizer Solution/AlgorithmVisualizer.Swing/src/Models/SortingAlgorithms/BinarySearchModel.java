@@ -6,7 +6,7 @@ import SharedComponents.Panel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
 
 public class BinarySearchModel implements Model {
 

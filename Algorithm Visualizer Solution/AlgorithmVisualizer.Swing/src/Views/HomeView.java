@@ -1,6 +1,8 @@
 package Views;
 
-import SharedComponents.*;
+import SharedComponents.HomeSettingsLabel;
+import SharedComponents.InputBox;
+import SharedComponents.SubmitButton;
 import res.Styles;
 
 import javax.swing.*;
@@ -20,13 +22,14 @@ public class HomeView extends JPanel {
     private JLabel Sorting = new JLabel();
     private JLabel PathFinding = new JLabel();
     public InputBox data = new InputBox("Enter your data here. EX(1,2,3,4)");
+
     public HomeView() {
         super.setLayout(null);
         super.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        super.setSize(800,700);
+        super.setSize(800, 700);
 
         gitHub.setBounds(750, 0, 100, 30);
-        gitHub.setFont(new Font(this.getFont().getFamily(),Font.PLAIN, 10));
+        gitHub.setFont(new Font(this.getFont().getFamily(), Font.PLAIN, 10));
         gitHub.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         super.add(gitHub);
 
@@ -39,7 +42,7 @@ public class HomeView extends JPanel {
         BinarySearch.setBounds(125, 425, 150, 25);
         super.add(BinarySearch);
 
-        BubbleSort.setBounds(325, 425, 150, 25 );
+        BubbleSort.setBounds(325, 425, 150, 25);
         super.add(BubbleSort);
 
         data.setBounds(100, 200, 575, 25);
@@ -47,7 +50,7 @@ public class HomeView extends JPanel {
 
         //Algorithm button headers
         Searching.setText("Searching");
-        Searching.setFont(new Font(this.getFont().getFamily(),Font.BOLD,30));
+        Searching.setFont(new Font(this.getFont().getFamily(), Font.BOLD, 30));
 
         Searching.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
 
@@ -55,7 +58,7 @@ public class HomeView extends JPanel {
         super.add(Searching);
 
         Sorting.setText("Sorting");
-        Sorting.setFont(new Font(this.getFont().getFamily(),Font.BOLD,30));
+        Sorting.setFont(new Font(this.getFont().getFamily(), Font.BOLD, 30));
 
         Sorting.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
 
@@ -63,7 +66,7 @@ public class HomeView extends JPanel {
         super.add(Sorting);
 
         PathFinding.setText("Misc.");
-        PathFinding.setFont(new Font(this.getFont().getFamily(),Font.BOLD,30));
+        PathFinding.setFont(new Font(this.getFont().getFamily(), Font.BOLD, 30));
 
         PathFinding.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
 
@@ -72,8 +75,6 @@ public class HomeView extends JPanel {
 
 
     }
-
-
 
 
 }

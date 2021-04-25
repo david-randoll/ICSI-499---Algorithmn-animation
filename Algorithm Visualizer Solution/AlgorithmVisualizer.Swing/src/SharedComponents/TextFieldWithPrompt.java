@@ -1,5 +1,6 @@
 package SharedComponents;
 
+import javax.swing.FocusManager;
 import javax.swing.*;
 import java.awt.*;
 

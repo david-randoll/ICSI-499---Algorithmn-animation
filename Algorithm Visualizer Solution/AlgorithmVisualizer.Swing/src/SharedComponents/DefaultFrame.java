@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class DefaultFrame extends JFrame {
 
-    public DefaultFrame(){
+    public DefaultFrame() {
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(800, 700);

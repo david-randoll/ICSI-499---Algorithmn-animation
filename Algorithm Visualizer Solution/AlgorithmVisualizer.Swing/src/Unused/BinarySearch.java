@@ -4,23 +4,24 @@ import Shared.DataAccess;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class BinarySearch {
-    static Color BACKGROUND_COLOR = new Color(52,52,52);
+    static Color BACKGROUND_COLOR = new Color(52, 52, 52);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         DataAccess dataAccess = new DataAccess();
-        int [] data = dataAccess.GetData();
+        int[] data = dataAccess.GetData();
         Arrays.sort(data);
         int searchFor = 5; //0-100
 
         Frame main = new Frame();
         JPanel cards = new JPanel(new CardLayout()); //create panel with card layout
-        ArrayList<Panel> panels  = binarySearch(data, searchFor);
+        ArrayList<Panel> panels = binarySearch(data, searchFor);
 
-        for(int i = 0; i < panels.size(); i++){
+        for (int i = 0; i < panels.size(); i++) {
             cards.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
         main.add(cards);
@@ -29,18 +30,15 @@ public class BinarySearch {
         animatePanels(main, cards);
     }
 
-    static void animatePanels(Frame main, JPanel cards){
+    static void animatePanels(Frame main, JPanel cards) {
         CardLayout cardLayout = (CardLayout) cards.getLayout();
-        for(int i = 0; i < cards.getComponentCount(); i++){
+        for (int i = 0; i < cards.getComponentCount(); i++) {
             main.setBackground(BACKGROUND_COLOR);
             cardLayout.show(cards, Integer.toString(i));
             main.repaint();
-            try
-            {
+            try {
                 Thread.sleep(1000);
-            }
-            catch(InterruptedException ex)
-            {
+            } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
         }
@@ -67,12 +65,12 @@ public class BinarySearch {
                 return output;
 
             // If x greater, ignore left half
-            if (arr[m] < x){
+            if (arr[m] < x) {
                 l = m + 1;
             }
 
 
-                // If x is smaller, ignore right half
+            // If x is smaller, ignore right half
             else
                 r = m - 1;
 
@@ -83,7 +81,7 @@ public class BinarySearch {
         return output;
     }
 
-    static class Panel extends JPanel{
+    static class Panel extends JPanel {
         static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         static int MIDPOINT_HORIZONTAL = (screenSize.width / 2);
         static int MIDPOINT_VERTICAL = (screenSize.height / 2);
@@ -92,13 +90,13 @@ public class BinarySearch {
         Integer HIGHLIGHT_INDEX;
 
         @Override
-        public void paint(Graphics g){
+        public void paint(Graphics g) {
 
             super.paintComponents(g);
 
             drawElements(g);
             drawTitle(g, "Binary Search");
-            if(HIGHLIGHT_INDEX != null) {
+            if (HIGHLIGHT_INDEX != null) {
                 outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDEX]);
             }
 
@@ -114,23 +112,24 @@ public class BinarySearch {
             this.repaint();
         }
 
-        public int[] getFrameInput(){
+        public int[] getFrameInput() {
             return USER_INPUT;
         }
-        public Rectangle[] getFrameRectangles(){
+
+        public Rectangle[] getFrameRectangles() {
             return RECTANGLES;
         }
 
-        void drawElements(Graphics g){
-            Font stringFont = new Font("Arial",Font.PLAIN, RECTANGLES[0].height - 10);
+        void drawElements(Graphics g) {
+            Font stringFont = new Font("Arial", Font.PLAIN, RECTANGLES[0].height - 10);
             FontMetrics metrics = g.getFontMetrics(stringFont);
             g.setFont(stringFont);
 
-            for(int i = 0; i < RECTANGLES.length; i++){
+            for (int i = 0; i < RECTANGLES.length; i++) {
                 String currentValue = Integer.toString(USER_INPUT[i]);
                 Rectangle currentRectangle = RECTANGLES[i];
 
-                drawRectangle(g,currentRectangle);
+                drawRectangle(g, currentRectangle);
 
                 int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
                 int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
@@ -140,14 +139,14 @@ public class BinarySearch {
             }
         }
 
-        void drawRectangle(Graphics g, Rectangle rectangle){
+        void drawRectangle(Graphics g, Rectangle rectangle) {
             g.setColor(Color.white);
             g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
             g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
         }
 
-        void drawTitle(Graphics g, String title){
-            Font titleFont = new Font("Arial",Font.PLAIN,36);
+        void drawTitle(Graphics g, String title) {
+            Font titleFont = new Font("Arial", Font.PLAIN, 36);
             FontMetrics metrics = g.getFontMetrics(titleFont);
             g.setFont(titleFont);
 
@@ -159,36 +158,35 @@ public class BinarySearch {
             drawElements(g);
         }
 
-        void outlineRectangle(Graphics g, Rectangle rectangle){
+        void outlineRectangle(Graphics g, Rectangle rectangle) {
             int BORDER_SIZE = 10;
             int rectangleX = rectangle.x - BORDER_SIZE;
             int rectangleY = rectangle.y - BORDER_SIZE;
-            int rectangleWidth = rectangle.width + (BORDER_SIZE*2);
-            int rectangleHeight = rectangle.height + (BORDER_SIZE*2);
+            int rectangleWidth = rectangle.width + (BORDER_SIZE * 2);
+            int rectangleHeight = rectangle.height + (BORDER_SIZE * 2);
             Graphics2D g2 = (Graphics2D) g;
 
             g2.setColor(Color.GREEN);
             g2.setStroke(new BasicStroke(BORDER_SIZE));
-            g2.drawRect(rectangleX, rectangleY , rectangleWidth, rectangleHeight);
+            g2.drawRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight);
         }
 
-        Rectangle[] buildRectangles(int[] inputs){
-            int ALGORITHM_ELEMENT_HEIGHT = screenSize.height / (inputs.length*2);
-            int ALGORITHM_ELEMENT_WIDTH = screenSize.width / (inputs.length*2);
+        Rectangle[] buildRectangles(int[] inputs) {
+            int ALGORITHM_ELEMENT_HEIGHT = screenSize.height / (inputs.length * 2);
+            int ALGORITHM_ELEMENT_WIDTH = screenSize.width / (inputs.length * 2);
             int TOTAL_GAP_SIZE = (screenSize.width - (ALGORITHM_ELEMENT_WIDTH * inputs.length));
             int GAP_SIZE = TOTAL_GAP_SIZE / (inputs.length + 1); //There will be n + 1 gaps for n elements
             int X_POSITION = GAP_SIZE;
 
             Rectangle[] output = new Rectangle[inputs.length];
 
-            for(int i = 0; i < inputs.length; i++){
-                Rectangle POSITIONING_RECTANGLE  = new Rectangle(X_POSITION , MIDPOINT_VERTICAL, ALGORITHM_ELEMENT_WIDTH, ALGORITHM_ELEMENT_HEIGHT);
+            for (int i = 0; i < inputs.length; i++) {
+                Rectangle POSITIONING_RECTANGLE = new Rectangle(X_POSITION, MIDPOINT_VERTICAL, ALGORITHM_ELEMENT_WIDTH, ALGORITHM_ELEMENT_HEIGHT);
                 X_POSITION += ALGORITHM_ELEMENT_WIDTH + GAP_SIZE;
                 output[i] = POSITIONING_RECTANGLE;
             }
             return output;
         }
-
 
 
     }

@@ -2,7 +2,6 @@ package Controllers.SortingAlgorithms;
 
 import Controllers.Controller;
 import Models.SortingAlgorithms.BubbleSortModel;
-import Shared.DataAccess;
 import Views.SortingAlgorithms.BubbleSortView;
 
 import javax.swing.*;

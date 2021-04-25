@@ -4,5 +4,5 @@ public class ColorToggle {
         this.setLayout(null);
         this.setVisible(true);
     }*/
-    
+
 }

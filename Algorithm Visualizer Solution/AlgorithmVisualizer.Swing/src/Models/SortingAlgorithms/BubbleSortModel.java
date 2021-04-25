@@ -35,7 +35,7 @@ public class BubbleSortModel {
                 SharedComponents.Panel newPanel = new Panel("Bubble Sort", arr, indices, "none");
                 output.add(newPanel);
 
-                newPanel.setTitle("Is " + arr[j] + " grater than " + arr[j + 1] + "?");
+                newPanel.setTitle("Is " + arr[j] + " greater than " + arr[j + 1] + "?");
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j+1] and arr[j]
                     Integer[] swapIndices = {j + 1, j};

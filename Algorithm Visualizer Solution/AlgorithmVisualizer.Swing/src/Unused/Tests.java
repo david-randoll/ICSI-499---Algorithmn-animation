@@ -1,14 +1,9 @@
-package test;
-
-import java.awt.BorderLayout;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package Unused;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tests implements ActionListener {
     private int count = 0;

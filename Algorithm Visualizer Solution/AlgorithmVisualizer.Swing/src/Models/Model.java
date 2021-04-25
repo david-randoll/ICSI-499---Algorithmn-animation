@@ -1,6 +1,7 @@
 package Models;
 
 import SharedComponents.Panel;
+
 import java.util.ArrayList;
 
 public interface Model {

@@ -2,8 +2,6 @@ package Controllers.SortingAlgorithms;
 
 import Controllers.Controller;
 import Models.SortingAlgorithms.BinarySearchModel;
-import Models.SortingAlgorithms.BubbleSortModel;
-import Shared.DataAccess;
 import Views.SortingAlgorithms.BinarySearchView;
 
 import javax.swing.*;
