@@ -10,6 +10,7 @@ import Models.HomeModel;
 import Models.SortingAlgorithms.BinarySearchModel;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
+import Shared.DataAccess;
 import SharedComponents.Frame;
 import Views.HomeView;
 import Views.SortingAlgorithms.BinarySearchView;
@@ -33,10 +34,11 @@ public class Startup {
         //frame.setVisible(true);
 
         AppFrame appFrame = new AppFrame(); //Initialize application's frame
+        DataAccess dataAccess = new DataAccess();
 
         BinarySearchController binarySearchController = new BinarySearchController();
         BubbleSortController bubbleSortController = new BubbleSortController();
 //        binarySearchController.InitController();
-        bubbleSortController.InitController();
+        bubbleSortController.InitController(dataAccess);
     }
 }

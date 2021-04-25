@@ -6,14 +6,14 @@ import SharedComponents.Panel;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BubbleSortModel {
+    public DataAccess dataAccess;
 
     public static JPanel Panels = new JPanel(new CardLayout());
 
-    public BubbleSortModel() {
-        DataAccess dataAccess = new DataAccess();
+    public BubbleSortModel(DataAccess dataAccess) {
+        this.dataAccess = dataAccess;
         int[] data = dataAccess.GetData();
         ArrayList<Panel> panels = run(data);
 
@@ -51,6 +51,8 @@ public class BubbleSortModel {
                 }
             }
         }
+        SharedComponents.Panel lastPanel = new SharedComponents.Panel("Bubble Sort", arr, null, "");
+        output.add(lastPanel);
 
         return output;
     }

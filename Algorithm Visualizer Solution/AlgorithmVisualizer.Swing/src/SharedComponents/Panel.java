@@ -35,8 +35,9 @@ public class Panel extends JPanel {
         RECTANGLES = buildRectangles(USER_INPUT);
         TITLE = title;
         CONDITION = condition;
-//        this.setLayout(null);//using no layout managers
+        this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.85)));
     }
 
     public int[] getFrameInput() {
