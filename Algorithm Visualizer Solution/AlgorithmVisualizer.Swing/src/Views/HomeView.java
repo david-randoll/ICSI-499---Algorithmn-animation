@@ -19,7 +19,7 @@ public class HomeView extends JPanel {
     private JLabel Searching = new JLabel();
     private JLabel Sorting = new JLabel();
     private JLabel PathFinding = new JLabel();
-    public InputBox data = new InputBox("Enter a Comma Separated Data Set Here (EX 1,2,3,4)");
+    public InputBox data = new InputBox("Enter your data here. EX(1,2,3,4)");
     public HomeView() {
         super.setLayout(null);
         super.setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -72,6 +72,8 @@ public class HomeView extends JPanel {
 
 
     }
+
+
 
 
 }

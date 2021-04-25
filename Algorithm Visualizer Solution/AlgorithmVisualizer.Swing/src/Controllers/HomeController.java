@@ -6,6 +6,7 @@ import Models.HomeModel;
 import Models.SettingsModel;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
+import Shared.DataAccess;
 import SharedComponents.DefaultFrame;
 import SharedComponents.Frame;
 import SharedComponents.SubmitButton;
@@ -15,10 +16,7 @@ import Views.SortingAlgorithms.BubbleSortView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,6 +41,13 @@ public class HomeController implements ActionListener {
         this.homeView.settings.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
 
+        homeView.data.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                homeView.data.setText("");
+            }
+        });
+
         //Brings the user to the github
         this.homeView.gitHub.addMouseListener(new MouseAdapter(){
             @Override
@@ -66,14 +71,13 @@ public class HomeController implements ActionListener {
             frame.getContentPane().add(settingsController.view);
             frame.setVisible(true);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
-            AppFrame appFrame = new AppFrame();
-            BinarySearchController binarySearchController = new BinarySearchController();
-            this.frame.dispose();
-            binarySearchController.InitController();
+            frame.dispose();
+            DataAccess dataAccess = new DataAccess();
+            BubbleSortController bubbleSortController = new BubbleSortController();
+            bubbleSortController.InitController(dataAccess);
         } else if (e.getSource() == this.homeView.BubbleSort) {  //Bubble Sort
-           // BubbleSortController bubbleSortController = new BubbleSortController();
-           // this.frame.dispose();
-            //bubbleSortController.InitController();
+
+
         }
     }
 }

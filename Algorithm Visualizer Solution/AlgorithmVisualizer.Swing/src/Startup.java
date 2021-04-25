@@ -36,12 +36,7 @@ public class Startup {
         //// frame.add(homeView);
         //frame.setVisible(true);
 
-        AppFrame appFrame = new AppFrame(); //Initialize application's frame
-        DataAccess dataAccess = new DataAccess();
-
-        BinarySearchController binarySearchController = new BinarySearchController();
-        BubbleSortController bubbleSortController = new BubbleSortController();
-//        binarySearchController.InitController();
-        bubbleSortController.InitController(dataAccess);
+        //Initialize application's frame
+        HomeController homeController = new HomeController();
     }
 }
