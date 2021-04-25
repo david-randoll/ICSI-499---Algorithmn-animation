@@ -44,6 +44,10 @@ public class BinarySearchView extends CustomJPanel {
 
                 AppFrame.appFrame.repaint();
                 currentIndex++;
+            }else {
+                Stop();
+                currentIndex = 0;
+                playPauseButton.setText("Play");
             }
         }
     };
@@ -116,9 +120,9 @@ public class BinarySearchView extends CustomJPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                Stop();
                 AppFrame.appFrame.getContentPane().removeAll();
                 AppFrame.appFrame.dispose();
-                Stop();
                 HomeController homeController = new HomeController();
             }
         };

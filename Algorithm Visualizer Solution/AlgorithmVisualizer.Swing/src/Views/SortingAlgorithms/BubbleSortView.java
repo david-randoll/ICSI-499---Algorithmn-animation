@@ -45,6 +45,10 @@ public class BubbleSortView extends CustomJPanel {
                 AppFrame.appFrame.repaint();
 
                 currentIndex++;
+            }else {
+                Stop();
+                currentIndex = 0;
+                playPauseButton.setText("Play");
             }
         }
     };
@@ -57,10 +61,6 @@ public class BubbleSortView extends CustomJPanel {
 
         InitializeToolBar();
         PaintFirstPanelOnUI();
-
-        speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        speedSlider.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
-        speedSlider.setInverted(true);
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
@@ -80,7 +80,6 @@ public class BubbleSortView extends CustomJPanel {
 
     private void InitializeToolBar() {
         JPanel buttonPanel = new JPanel();
-//        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         buttonPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
@@ -97,6 +96,9 @@ public class BubbleSortView extends CustomJPanel {
         // set spacing
         speedSlider.setMajorTickSpacing(500);
         speedSlider.setMinorTickSpacing(5);
+        speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        speedSlider.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+        speedSlider.setInverted(true);
 
         dataSetTextBox = new JTextField();
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
@@ -120,9 +122,9 @@ public class BubbleSortView extends CustomJPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                Stop();
                 AppFrame.appFrame.getContentPane().removeAll();
                 AppFrame.appFrame.dispose();
-                Stop();
                 HomeController homeController = new HomeController();
             }
         };
