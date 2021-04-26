@@ -106,11 +106,11 @@ public class BinarySearchView extends CustomJPanel {
         label.setForeground(Color.red);
         table.put (0, label);
 
-        label.setText("0");
+        label = new JLabel("0");
         label.setForeground(Color.red);
         table.put (1000, label);
 
-        label.setText("Slower");
+        label = new JLabel("Slower");
         label.setForeground(Color.red);
         table.put (2000, label);
 
