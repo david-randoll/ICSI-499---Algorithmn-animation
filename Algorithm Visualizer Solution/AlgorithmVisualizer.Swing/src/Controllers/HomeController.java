@@ -8,6 +8,7 @@ import Shared.DataAccess;
 import SharedComponents.DefaultFrame;
 import Views.HomeView;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,11 +17,14 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HomeController implements ActionListener {
     private HomeModel homeModel;
     public HomeView homeView;
     private DefaultFrame frame;
+    private int flag = 0;
 
     public HomeController() {
         InitView();
@@ -48,11 +52,32 @@ public class HomeController implements ActionListener {
         });
 
         homeView.setData.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                String dataSet = homeView.data.getText();
-                homeModel.setInputtedElementsList(dataSet);
-                DataAccess.SetData(homeModel.getInputtedElementsList());
+                flag = 0;
+                if(homeView.data.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "Please enter a valid data set");
+                    flag = 1;
+                }
+                if(flag != 1) {
+                    flag = 0;
+                    String dataSet = homeView.data.getText();
+
+                    //Checking to make sure it is a comma separated list
+                    String pattern = "^(\\d+(,\\d+)*)?$";
+                    Pattern r = Pattern.compile(pattern);
+                    Matcher m = r.matcher(dataSet);
+                    if(m.find()) {
+                        homeModel.setInputtedElementsList(dataSet);
+                        DataAccess.SetData(homeModel.getInputtedElementsList());
+                        flag = 0;
+                    }
+                    else{
+                        flag = 1;
+                        JOptionPane.showMessageDialog(null, "Please enter a valid data set");
+                    }
+                }
             }
         });
 
