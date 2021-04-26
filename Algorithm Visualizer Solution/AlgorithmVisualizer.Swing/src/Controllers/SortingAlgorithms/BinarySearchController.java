@@ -22,7 +22,7 @@ public class BinarySearchController implements Controller {
 
 
     public void InitController() {
-        model = new BinarySearchModel(model.getSearchValue());
+        model = new BinarySearchModel();
         InitView();
     }
 

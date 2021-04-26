@@ -16,16 +16,6 @@ public class BinarySearchModel implements Model {
     private Random rand = new Random();
     private int SEARCH_VALUE = 4;
 
-
-    public BinarySearchModel(int searchVal) {
-        int[] data = DataAccess.GetSortedData();
-        int searchValue = searchVal;
-        ArrayList<Panel> panels = run(data, searchValue);
-
-        for (int i = 0; i < panels.size(); i++) {
-            this.Panels.add(panels.get(i), Integer.toString(i));
-        }//Add all cards to the card panel so we can transition panels easily
-    }
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();
         int searchValue = getSearchValue();
