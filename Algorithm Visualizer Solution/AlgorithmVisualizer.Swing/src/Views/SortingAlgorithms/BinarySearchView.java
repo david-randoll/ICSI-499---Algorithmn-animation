@@ -17,6 +17,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class BinarySearchView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -97,6 +98,21 @@ public class BinarySearchView extends CustomJPanel {
         resetButton.setFont(unicodeFont);
 
         searchValueSubmit = new JButton("Submit");
+
+        Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
+        Font sliderFont = new Font("Arial", Font.PLAIN, 15);
+
+        JLabel label = new JLabel("Faster");
+        label.setForeground(Color.red);
+        table.put (0, label);
+
+        label.setText("0");
+        label.setForeground(Color.red);
+        table.put (1000, label);
+
+        label.setText("Slower");
+        label.setForeground(Color.red);
+        table.put (2000, label);
 
         speedSlider = new JSlider(0, 2000);
         speedSlider.setPaintTrack(true);
