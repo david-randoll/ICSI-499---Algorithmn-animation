@@ -135,6 +135,7 @@ public class BinarySearchView extends CustomJPanel {
 
         searchTextBox = new JTextField();
         searchTextBox.setText(Integer.toString(model.getSearchValue()));
+        searchTextBox.setPreferredSize(new Dimension(30, 20));
         changeDatasetButton = new JButton("Change DataSet");
 
         toolBarPanel.add(playPauseButton);
