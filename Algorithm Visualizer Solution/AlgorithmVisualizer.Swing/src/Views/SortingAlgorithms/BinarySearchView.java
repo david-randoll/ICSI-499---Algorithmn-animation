@@ -1,6 +1,7 @@
 package Views.SortingAlgorithms;
 
 import Controllers.HomeController;
+import Controllers.SortingAlgorithms.BinarySearchController;
 import Models.SortingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
@@ -10,9 +11,12 @@ import res.Styles;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class BinarySearchView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -22,13 +26,14 @@ public class BinarySearchView extends CustomJPanel {
     JButton backToHome;
     JButton playPauseButton;
     JButton resetButton;
+    JButton searchValueSubmit;
     JSlider speedSlider;
     JTextField dataSetTextBox;
     JTextField searchTextBox;
     private boolean isTimerRunning = false;
     private Timer timer;
     private int speedValue;
-    private JPanel Panels;
+    //private JPanel Panels;
 
     BinarySearchModel model;
 
@@ -39,9 +44,9 @@ public class BinarySearchView extends CustomJPanel {
 
     private ActionListener timerAction = new ActionListener() {
         public void actionPerformed(ActionEvent ae) {
-            CardLayout cardLayout = (CardLayout) Panels.getLayout();
-            if (currentIndex < Panels.getComponentCount()) {
-                cardLayout.show(Panels, Integer.toString(currentIndex));
+            CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
+            if (currentIndex < model.Panels.getComponentCount()) {
+                cardLayout.show(model.Panels, Integer.toString(currentIndex));
 
                 AppFrame.appFrame.repaint();
                 currentIndex++;
@@ -54,9 +59,8 @@ public class BinarySearchView extends CustomJPanel {
     };
 
     public void animateBinarySearch(BinarySearchModel model) {
-        this.Panels = model.Panels;
         this.model = model;
-        AppFrame.appFrame.add(Panels, BorderLayout.NORTH);
+        AppFrame.appFrame.add(model.Panels, BorderLayout.NORTH);
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
@@ -74,9 +78,9 @@ public class BinarySearchView extends CustomJPanel {
     }
 
     private void PaintFirstPanelOnUI() {
-        CardLayout cardLayout = (CardLayout) Panels.getLayout();
-        if (currentIndex < Panels.getComponentCount()) {
-            cardLayout.show(Panels, Integer.toString(currentIndex));
+        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
+        if (currentIndex < model.Panels.getComponentCount()) {
+            cardLayout.show(model.Panels, Integer.toString(currentIndex));
 
             currentIndex++;
         }
@@ -90,6 +94,7 @@ public class BinarySearchView extends CustomJPanel {
         backToHome = new JButton("Home");
         playPauseButton = new JButton("Play");
         resetButton = new JButton("Reset");
+        searchValueSubmit = new JButton("Submit");
 
         speedSlider = new JSlider(0, 2000);
         speedSlider.setPaintTrack(true);
@@ -111,12 +116,14 @@ public class BinarySearchView extends CustomJPanel {
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
         toolBarPanel.add(searchTextBox);
+        toolBarPanel.add(searchValueSubmit);
         toolBarPanel.add(backToHome);
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
         playPauseButton.addActionListener(pausePlayEventListener());
         resetButton.addActionListener(resetEventListener());
+        searchValueSubmit.addActionListener(newSearchValueListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         backToHome.addActionListener(homePage());
     }
@@ -154,6 +161,25 @@ public class BinarySearchView extends CustomJPanel {
                     Start();
                     playPauseButton.setText("Pause");
                 }
+            }
+        };
+    }
+
+    private ActionListener newSearchValueListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int newSearchValue = Integer.parseInt(searchTextBox.getText());
+                model.Panels.removeAll();
+                DataAccess access = new DataAccess();
+                ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), newSearchValue);
+                model.setSearchValue(newSearchValue);
+
+                for (int i = 0; i < panels.size(); i++) {
+                    model.Panels.add(panels.get(i), Integer.toString(i));
+                }//Add all cards to the card panel so we can transition panels easily
+
+                Reset();
             }
         };
     }

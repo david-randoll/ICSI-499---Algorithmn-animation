@@ -8,8 +8,8 @@ import javax.swing.*;
 
 public class BinarySearchController implements Controller {
 
-    private BinarySearchView view = new BinarySearchView();
-    private BinarySearchModel model = new BinarySearchModel();
+    public BinarySearchView view = new BinarySearchView();
+    public BinarySearchModel model = new BinarySearchModel();
 
     public void InitView() {
         Runnable runnable = new Runnable() {
@@ -22,7 +22,7 @@ public class BinarySearchController implements Controller {
 
 
     public void InitController() {
-        model = new BinarySearchModel();
+        model = new BinarySearchModel(model.getSearchValue());
         InitView();
     }
 

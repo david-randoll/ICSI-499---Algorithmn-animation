@@ -129,6 +129,8 @@ public class Panel extends JPanel {
             g2.setColor(Styles.SWAP_COLOR);
         } else if (CONDITION.equals("found")) {
             g2.setColor(Styles.FOUND_COLOR);
+        } else if (CONDITION.equals("not found")) {
+            g2.setColor(Styles.APP_BACKGROUNDCOLOR);
         } else {
             g2.setColor(Styles.SEARCHING_COLOR);
         }

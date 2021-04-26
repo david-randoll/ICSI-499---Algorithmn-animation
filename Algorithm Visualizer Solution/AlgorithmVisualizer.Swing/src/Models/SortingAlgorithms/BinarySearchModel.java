@@ -3,6 +3,7 @@ package Models.SortingAlgorithms;
 import Models.Model;
 import Shared.DataAccess;
 import SharedComponents.Panel;
+import res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +14,18 @@ public class BinarySearchModel implements Model {
 
     public static JPanel Panels = new JPanel(new CardLayout());
     private Random rand = new Random();
-//    private int SEARCH_VALUE = rand.nextInt(100);
-    private int SEARCH_VALUE = 200;
+    private int SEARCH_VALUE = 4;
 
+
+    public BinarySearchModel(int searchVal) {
+        int[] data = DataAccess.GetSortedData();
+        int searchValue = searchVal;
+        ArrayList<Panel> panels = run(data, searchValue);
+
+        for (int i = 0; i < panels.size(); i++) {
+            this.Panels.add(panels.get(i), Integer.toString(i));
+        }//Add all cards to the card panel so we can transition panels easily
+    }
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();
         int searchValue = getSearchValue();
@@ -27,6 +37,9 @@ public class BinarySearchModel implements Model {
     }
 
     public int getSearchValue() {
+        return SEARCH_VALUE;
+    }
+    public int getData() {
         return SEARCH_VALUE;
     }
 
@@ -90,7 +103,7 @@ public class BinarySearchModel implements Model {
         }
         // if we reach here, then element was
         // not present
-        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{index}, ""));
+        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{index}, "not found"));
         return output;
     }
 
