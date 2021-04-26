@@ -6,6 +6,8 @@ import Models.SortingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
+import SharedComponents.Panel;
+import SharedComponents.toast;
 import res.Styles;
 
 import javax.swing.*;
@@ -31,6 +33,7 @@ public class BinarySearchView extends CustomJPanel {
     JSlider speedSlider;
     JTextField dataSetTextBox;
     JTextField searchTextBox;
+    private JButton changeDatasetButton;
     private boolean isTimerRunning = false;
     private Timer timer;
     private int speedValue;
@@ -132,11 +135,13 @@ public class BinarySearchView extends CustomJPanel {
 
         searchTextBox = new JTextField();
         searchTextBox.setText(Integer.toString(model.getSearchValue()));
+        changeDatasetButton = new JButton("Change DataSet");
 
         toolBarPanel.add(playPauseButton);
         toolBarPanel.add(resetButton);
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
+        toolBarPanel.add(changeDatasetButton);
         toolBarPanel.add(searchTextBox);
         toolBarPanel.add(searchValueSubmit);
         toolBarPanel.add(backToHome);
@@ -148,6 +153,32 @@ public class BinarySearchView extends CustomJPanel {
         searchValueSubmit.addActionListener(newSearchValueListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         backToHome.addActionListener(homePage());
+        changeDatasetButton.addActionListener(updateDatasetActionListener());
+    }
+
+    private ActionListener updateDatasetActionListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Stop();
+                if(DataAccess.SetData(dataSetTextBox.getText()) == false){
+//                    JOptionPane.showMessageDialog(AppFrame.appFrame,"Input is not valid");
+                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (screenSize.width * 0.5), (int) (screenSize.height * 0.8));
+                    t.showtoast();
+                }
+                model.Panels.removeAll();
+                ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), model.getSearchValue());
+
+                for (int i = 0; i < panels.size(); i++) {
+                    model.Panels.add(panels.get(i), Integer.toString(i));
+                }//Add all cards to the card panel so we can transition panels easily
+
+                currentIndex = 0;
+                playPauseButton.setText("\u23F5");//play
+                AppFrame.appFrame.revalidate();
+                AppFrame.appFrame.repaint();
+            }
+        };
     }
 
     private ActionListener homePage() {
@@ -191,9 +222,9 @@ public class BinarySearchView extends CustomJPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                Stop();
                 int newSearchValue = Integer.parseInt(searchTextBox.getText());
                 model.Panels.removeAll();
-                DataAccess access = new DataAccess();
                 ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), newSearchValue);
                 model.setSearchValue(newSearchValue);
 
@@ -201,7 +232,10 @@ public class BinarySearchView extends CustomJPanel {
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 
-                Reset();
+                currentIndex = 0;
+                playPauseButton.setText("\u23F5");//play
+                AppFrame.appFrame.revalidate();
+                AppFrame.appFrame.repaint();
             }
         };
     }

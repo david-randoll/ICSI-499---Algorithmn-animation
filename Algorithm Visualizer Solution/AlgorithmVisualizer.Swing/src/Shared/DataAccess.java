@@ -20,17 +20,22 @@ public class DataAccess {
         dataString = commaSeparateArray(data);
     }
     public static boolean SetData(String elements){
-        final Pattern pattern = Pattern.compile("^([0-9]+,?\\s*)+$");
+        final Pattern pattern = Pattern.compile("^([0-9]+\\s*,?\\s*)+$");
         Matcher matcher = pattern.matcher(elements);
         boolean isValid = matcher.matches();
         if(isValid == false || elements == ""){
             return false;
         }
 
-        String[] arr = elements.split("[,][\\s]*");
+        String[] arr = elements.split("[\\s]*[,][\\s]*");
         int[] dataSet = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            dataSet[i] = Integer.parseInt(arr[i]);
+            try{
+                dataSet[i] = Integer.parseInt(arr[i]);
+            }catch (Exception ex){
+                return false;
+            }
+
         }
         SetData(dataSet);
         return true;

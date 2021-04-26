@@ -82,9 +82,9 @@ public class BubbleSortView extends CustomJPanel {
     }
 
     private void InitializeToolBar() {
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        buttonPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
+        JPanel toolBarPanel = new JPanel();
+        toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
         backToHome = new JButton("Home");
 
@@ -128,20 +128,24 @@ public class BubbleSortView extends CustomJPanel {
 
         changeDatasetButton = new JButton("Change DataSet");
 
-        buttonPanel.add(playPauseButton);
-        buttonPanel.add(resetButton);
-        buttonPanel.add(speedSlider);
-        buttonPanel.add(dataSetTextBox);
-        buttonPanel.add(changeDatasetButton);
-        buttonPanel.add(backToHome);
+        toolBarPanel.add(playPauseButton);
+        toolBarPanel.add(resetButton);
+        toolBarPanel.add(speedSlider);
+        toolBarPanel.add(dataSetTextBox);
+        toolBarPanel.add(changeDatasetButton);
+        toolBarPanel.add(backToHome);
 
-        AppFrame.appFrame.add(buttonPanel, BorderLayout.SOUTH);
+        AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
         playPauseButton.addActionListener(pausePlayEventListener());
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         backToHome.addActionListener(homePage());
-        changeDatasetButton.addActionListener(new ActionListener() {
+        changeDatasetButton.addActionListener(updateDatasetActionListener());
+    }
+
+    private ActionListener updateDatasetActionListener() {
+        return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Stop();
@@ -158,11 +162,11 @@ public class BubbleSortView extends CustomJPanel {
                 }//Add all cards to the card panel so we can transition panels easily
 
                 currentIndex = 0;
-                playPauseButton.setText("Play");
+                playPauseButton.setText("\u23F5");//play
                 AppFrame.appFrame.revalidate();
                 AppFrame.appFrame.repaint();
             }
-        });
+        };
     }
 
     private ActionListener homePage() {
@@ -193,10 +197,10 @@ public class BubbleSortView extends CustomJPanel {
 
                 if (isTimerRunning) {
                     Stop();
-                    playPauseButton.setText("\u23F5");
+                    playPauseButton.setText("\u23F5");//play
                 } else {
                     Start();
-                    playPauseButton.setText("\u23F8");
+                    playPauseButton.setText("\u23F8");//pause
                 }
             }
         };
