@@ -103,15 +103,15 @@ public class BinarySearchView extends CustomJPanel {
         Font sliderFont = new Font("Arial", Font.PLAIN, 15);
 
         JLabel label = new JLabel("Faster");
-        label.setForeground(Color.red);
+        label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         table.put (0, label);
 
         label = new JLabel("0");
-        label.setForeground(Color.red);
+        label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         table.put (1000, label);
 
         label = new JLabel("Slower");
-        label.setForeground(Color.red);
+        label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         table.put (2000, label);
 
         speedSlider = new JSlider(0, 2000);
