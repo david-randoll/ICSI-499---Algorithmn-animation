@@ -44,13 +44,6 @@ public class HomeController implements ActionListener {
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
 
-        homeView.data.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                homeView.data.setText("");
-            }
-        });
-
         homeView.setData.addActionListener(new ActionListener() {
 
             @Override

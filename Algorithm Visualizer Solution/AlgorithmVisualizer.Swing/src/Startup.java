@@ -20,8 +20,8 @@ public class Startup {
 
         //Initialize application's frame
 //        AppFrame appFrame = new AppFrame();
-        HomeController homeController = new HomeController();
         DataAccess.Run();
+        HomeController homeController = new HomeController();
 
     }
 }

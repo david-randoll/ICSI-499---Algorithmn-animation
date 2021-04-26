@@ -1,5 +1,6 @@
 package Views;
 
+import Shared.DataAccess;
 import SharedComponents.HomeSettingsLabel;
 import SharedComponents.InputBox;
 import SharedComponents.SubmitButton;
@@ -22,7 +23,7 @@ public class HomeView extends JPanel {
     private JLabel Searching = new JLabel();
     private JLabel Sorting = new JLabel();
     private JLabel PathFinding = new JLabel();
-    public InputBox data = new InputBox("Enter your data here. EX(1,2,3,4)");
+    public InputBox data = new InputBox(DataAccess.GetCommaSeparatedData());
 
     public HomeView() {
         super.setLayout(null);
