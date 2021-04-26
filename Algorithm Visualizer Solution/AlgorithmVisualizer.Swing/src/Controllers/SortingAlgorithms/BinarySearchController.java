@@ -20,7 +20,6 @@ public class BinarySearchController implements Controller {
         SwingUtilities.invokeLater(runnable);
     }
 
-
     public void InitController() {
         model = new BinarySearchModel();
         InitView();

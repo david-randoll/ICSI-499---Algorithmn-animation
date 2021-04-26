@@ -22,5 +22,6 @@ public class Startup {
 //        AppFrame appFrame = new AppFrame();
         HomeController homeController = new HomeController();
         DataAccess.Run();
+
     }
 }

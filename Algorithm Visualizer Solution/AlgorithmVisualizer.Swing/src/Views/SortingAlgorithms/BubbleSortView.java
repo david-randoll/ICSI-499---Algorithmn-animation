@@ -48,7 +48,7 @@ public class BubbleSortView extends CustomJPanel {
             }else {
                 Stop();
                 currentIndex = 0;
-                playPauseButton.setText("Play");
+                playPauseButton.setText("\u23F5");
             }
         }
     };
@@ -84,16 +84,19 @@ public class BubbleSortView extends CustomJPanel {
         buttonPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
         backToHome = new JButton("Home");
-        playPauseButton = new JButton("Play");
-        resetButton = new JButton("Reset");
+
+        playPauseButton = new JButton("\u23F5");
+        Font unicodeFont = new Font("Code2000", Font.PLAIN, 16);
+        playPauseButton.setFont(unicodeFont);
+
+        resetButton = new JButton("\uD83D\uDD03");
+        resetButton.setFont(unicodeFont);
 
         speedSlider = new JSlider(0, 2000);
-        // paint the ticks and tracks
         speedSlider.setPaintTrack(true);
         speedSlider.setPaintTicks(true);
         speedSlider.setPaintLabels(true);
         speedSlider.setValue(speedValue);
-        // set spacing
         speedSlider.setMajorTickSpacing(500);
         speedSlider.setMinorTickSpacing(5);
         speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -146,10 +149,10 @@ public class BubbleSortView extends CustomJPanel {
 
                 if (isTimerRunning) {
                     Stop();
-                    playPauseButton.setText("Play");
+                    playPauseButton.setText("\u23F5");
                 } else {
                     Start();
-                    playPauseButton.setText("Pause");
+                    playPauseButton.setText("\u23F8");
                 }
             }
         };
