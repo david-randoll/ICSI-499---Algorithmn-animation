@@ -115,6 +115,7 @@ public class BinarySearchView extends CustomJPanel {
         table.put (2000, label);
 
         speedSlider = new JSlider(0, 2000);
+        speedSlider.setLabelTable(table);
         speedSlider.setPaintTrack(true);
         speedSlider.setPaintTicks(true);
         speedSlider.setPaintLabels(true);
