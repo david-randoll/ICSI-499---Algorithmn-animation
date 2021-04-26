@@ -5,6 +5,7 @@ import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
+import SharedComponents.toast;
 import res.Styles;
 
 import javax.swing.*;
@@ -17,13 +18,14 @@ import java.awt.event.ActionListener;
 public class BubbleSortView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int currentIndex = 0;
-    boolean IsPause = false;
 
     JButton backToHome;
     JButton playPauseButton;
     JButton resetButton;
     JSlider speedSlider;
     JTextField dataSetTextBox;
+    private JButton changeDatasetButton;
+
     private boolean isTimerRunning = false;
     private Timer timer;
     private int speedValue;
@@ -104,10 +106,13 @@ public class BubbleSortView extends CustomJPanel {
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
         dataSetTextBox.setPreferredSize(new Dimension(500, 25));
 
+        changeDatasetButton = new JButton("Change DataSet");
+
         buttonPanel.add(playPauseButton);
         buttonPanel.add(resetButton);
         buttonPanel.add(speedSlider);
         buttonPanel.add(dataSetTextBox);
+        buttonPanel.add(changeDatasetButton);
         buttonPanel.add(backToHome);
 
         AppFrame.appFrame.add(buttonPanel, BorderLayout.SOUTH);
@@ -116,6 +121,16 @@ public class BubbleSortView extends CustomJPanel {
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         backToHome.addActionListener(homePage());
+        changeDatasetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(DataAccess.SetData(dataSetTextBox.getText()) == false){
+//                    JOptionPane.showMessageDialog(AppFrame.appFrame,"Input is not valid");
+                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (screenSize.width * 0.5), (int) (screenSize.height * 0.8));
+                    t.showtoast();
+                }
+            }
+        });
     }
 
     private ActionListener homePage() {
