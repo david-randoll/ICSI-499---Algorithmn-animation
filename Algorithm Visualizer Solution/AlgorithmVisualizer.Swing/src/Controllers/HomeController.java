@@ -38,10 +38,9 @@ public class HomeController implements ActionListener {
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int ADJUSTED_MIDPOINT_HORIZONTAL = (screenSize.width / 2) - (frame.getWidth() / 2);
-        int ADJUSTED_MIDPOINT_VERTICAL = (screenSize.height / 2) - (frame.getHeight() / 2);
         
         frame.add(this.homeView);
-        frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, ADJUSTED_MIDPOINT_VERTICAL, frame.getWidth(), frame.getHeight());
+        frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
         frame.setVisible(true);
     }
 
