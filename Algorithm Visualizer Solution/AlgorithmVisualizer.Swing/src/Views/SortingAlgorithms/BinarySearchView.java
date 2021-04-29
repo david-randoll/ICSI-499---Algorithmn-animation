@@ -1,20 +1,16 @@
 package Views.SortingAlgorithms;
 
 import Controllers.HomeController;
-import Controllers.SortingAlgorithms.BinarySearchController;
 import Models.SortingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
-import SharedComponents.Panel;
 import SharedComponents.toast;
 import res.Styles;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,7 +57,7 @@ public class BinarySearchView extends CustomJPanel {
             AppFrame.appFrame.repaint();
 
             currentIndex++;
-        }else {
+        } else {
             Stop();
             currentIndex = 0;
             playPauseButton.setText("\u23F5");
@@ -117,15 +113,15 @@ public class BinarySearchView extends CustomJPanel {
 
         JLabel label = new JLabel("Faster");
         label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
-        table.put (0, label);
+        table.put(0, label);
 
         label = new JLabel("0");
         label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
-        table.put (1000, label);
+        table.put(1000, label);
 
         label = new JLabel("Slower");
         label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
-        table.put (2000, label);
+        table.put(2000, label);
 
         speedSlider = new JSlider(0, 2000);
         speedSlider.setLabelTable(table);
@@ -182,13 +178,21 @@ public class BinarySearchView extends CustomJPanel {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println(currentIndex);
                 //we going back by two because current index is always one ahead
                 //if we go back by 1, that will put us back to the same slide so nothing change
-                currentIndex-=2;
+                currentIndex -= 2;
                 PaintNewPanelOnScreen();
             }
         };
+    }
+
+    void drawBackButton(JPanel panel) {
+        JButton backToHome = new JButton("\uD83E\uDC44");
+        backToHome.setFont(Styles.UNICODE_FONT);
+        int buttonFontSize = Styles.UNICODE_FONT.getSize();
+        panel.add(backToHome);
+        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
+        backToHome.addActionListener(BinarySearchView.homePage());
     }
 
     private ActionListener updateDatasetActionListener() {
@@ -196,15 +200,17 @@ public class BinarySearchView extends CustomJPanel {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Stop();
-                if(DataAccess.SetData(dataSetTextBox.getText()) == false){
+                if (DataAccess.SetData(dataSetTextBox.getText()) == false) {
 //                    JOptionPane.showMessageDialog(AppFrame.appFrame,"Input is not valid");
                     toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (screenSize.width * 0.5), (int) (screenSize.height * 0.8));
                     t.showtoast();
                 }
+
                 model.Panels.removeAll();
                 ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), model.getSearchValue());
 
                 for (int i = 0; i < panels.size(); i++) {
+                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 
@@ -264,6 +270,7 @@ public class BinarySearchView extends CustomJPanel {
                 model.setSearchValue(newSearchValue);
 
                 for (int i = 0; i < panels.size(); i++) {
+                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 

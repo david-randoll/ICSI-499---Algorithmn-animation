@@ -83,7 +83,7 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
 
@@ -99,7 +99,7 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
         }
