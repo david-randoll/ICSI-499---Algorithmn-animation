@@ -22,17 +22,17 @@ public class BubbleSortView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int currentIndex = 0;
 
-    JButton backToHome;
-    JButton playPauseButton;
+    static JButton playPauseButton;
     JButton resetButton;
+    JButton searchValueSubmit;
     JSlider speedSlider;
     JTextField dataSetTextBox;
+
     private JButton changeDatasetButton;
+    private static boolean isTimerRunning = false;
+    private static Timer timer;
     private JButton previousButton;
     private JButton nextButton;
-
-    private boolean isTimerRunning = false;
-    private Timer timer;
     private int speedValue;
 
     BubbleSortModel model;
@@ -83,20 +83,17 @@ public class BubbleSortView extends CustomJPanel {
         toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
-        backToHome = new JButton("Home");
-
         playPauseButton = new JButton("\u23F5");
-        Font unicodeFont = new Font("Code2000", Font.PLAIN, 16);
-        playPauseButton.setFont(unicodeFont);
+        playPauseButton.setFont(Styles.UNICODE_FONT);
 
         resetButton = new JButton("\uD83D\uDD03");
-        resetButton.setFont(unicodeFont);
+        resetButton.setFont(Styles.UNICODE_FONT);
 
         previousButton = new JButton("\u23EA");
-        previousButton.setFont(unicodeFont);
+        previousButton.setFont(Styles.UNICODE_FONT);
 
         nextButton = new JButton("\u23E9");
-        nextButton.setFont(unicodeFont);
+        nextButton.setFont(Styles.UNICODE_FONT);
 
         Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
         Font sliderFont = new Font("Arial", Font.PLAIN, 15);
@@ -138,7 +135,6 @@ public class BubbleSortView extends CustomJPanel {
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
         toolBarPanel.add(changeDatasetButton);
-        toolBarPanel.add(backToHome);
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
@@ -147,7 +143,6 @@ public class BubbleSortView extends CustomJPanel {
         nextButton.addActionListener(nextButtonEventListener());
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
-        backToHome.addActionListener(homePage());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
     }
 
@@ -198,7 +193,7 @@ public class BubbleSortView extends CustomJPanel {
         };
     }
 
-    private ActionListener homePage() {
+    public static ActionListener homePage() {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -249,7 +244,7 @@ public class BubbleSortView extends CustomJPanel {
         timer.start();
     }
 
-    public void Stop() {
+    public static void Stop() {
         isTimerRunning = false;
         playPauseButton.setText("\u23F5");//play
         timer.stop();

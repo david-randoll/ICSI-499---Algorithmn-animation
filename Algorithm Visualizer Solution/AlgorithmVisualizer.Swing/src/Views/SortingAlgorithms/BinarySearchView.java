@@ -105,10 +105,10 @@ public class BinarySearchView extends CustomJPanel {
         resetButton.setFont(Styles.UNICODE_FONT);
 
         previousButton = new JButton("\u23EA");
-        previousButton.setFont(unicodeFont);
+        previousButton.setFont(Styles.UNICODE_FONT);
 
         nextButton = new JButton("\u23E9");
-        nextButton.setFont(unicodeFont);
+        nextButton.setFont(Styles.UNICODE_FONT);
 
         searchValueSubmit = new JButton("Submit");
 
