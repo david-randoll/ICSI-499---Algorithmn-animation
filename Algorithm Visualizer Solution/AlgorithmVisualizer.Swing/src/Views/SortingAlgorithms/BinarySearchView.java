@@ -35,6 +35,8 @@ public class BinarySearchView extends CustomJPanel {
     private JButton changeDatasetButton;
     private static boolean isTimerRunning = false;
     private static Timer timer;
+    private JButton previousButton;
+    private JButton nextButton;
     private int speedValue;
     //private JPanel Panels;
 
@@ -47,19 +49,24 @@ public class BinarySearchView extends CustomJPanel {
 
     private ActionListener timerAction = new ActionListener() {
         public void actionPerformed(ActionEvent ae) {
-            CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
-            if (currentIndex < model.Panels.getComponentCount()) {
-                cardLayout.show(model.Panels, Integer.toString(currentIndex));
-
-                AppFrame.appFrame.repaint();
-                currentIndex++;
-            }else {
-                Stop();
-                currentIndex = 0;
-                playPauseButton.setText("\u23F5");
-            }
+            PaintNewPanelOnScreen();
         }
     };
+
+    private void PaintNewPanelOnScreen() {
+        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
+        if (currentIndex >= 0 && currentIndex < model.Panels.getComponentCount()) {
+            cardLayout.show(model.Panels, Integer.toString(currentIndex));
+
+            AppFrame.appFrame.repaint();
+
+            currentIndex++;
+        }else {
+            Stop();
+            currentIndex = 0;
+            playPauseButton.setText("\u23F5");
+        }
+    }
 
     public void animateBinarySearch(BinarySearchModel model) {
         this.model = model;
@@ -67,7 +74,7 @@ public class BinarySearchView extends CustomJPanel {
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
-        PaintFirstPanelOnUI();
+        PaintNewPanelOnScreen();
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
@@ -75,7 +82,6 @@ public class BinarySearchView extends CustomJPanel {
 
         timer = new Timer(speedValue, timerAction);
     }
-
 
 
     private void PaintFirstPanelOnUI() {
@@ -97,6 +103,12 @@ public class BinarySearchView extends CustomJPanel {
 
         resetButton = new JButton("\uD83D\uDD03");
         resetButton.setFont(Styles.UNICODE_FONT);
+
+        previousButton = new JButton("\u23EA");
+        previousButton.setFont(unicodeFont);
+
+        nextButton = new JButton("\u23E9");
+        nextButton.setFont(unicodeFont);
 
         searchValueSubmit = new JButton("Submit");
 
@@ -136,7 +148,9 @@ public class BinarySearchView extends CustomJPanel {
         searchTextBox.setPreferredSize(new Dimension(30, 20));
         changeDatasetButton = new JButton("Change DataSet");
 
+        toolBarPanel.add(previousButton);
         toolBarPanel.add(playPauseButton);
+        toolBarPanel.add(nextButton);
         toolBarPanel.add(resetButton);
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
@@ -146,11 +160,35 @@ public class BinarySearchView extends CustomJPanel {
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
+        previousButton.addActionListener(previousButtonEventListener());
         playPauseButton.addActionListener(pausePlayEventListener());
+        nextButton.addActionListener(nextButtonEventListener());
         resetButton.addActionListener(resetEventListener());
         searchValueSubmit.addActionListener(newSearchValueListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
+    }
+
+    private ActionListener nextButtonEventListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PaintNewPanelOnScreen();
+            }
+        };
+    }
+
+    private ActionListener previousButtonEventListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println(currentIndex);
+                //we going back by two because current index is always one ahead
+                //if we go back by 1, that will put us back to the same slide so nothing change
+                currentIndex-=2;
+                PaintNewPanelOnScreen();
+            }
+        };
     }
 
     private ActionListener updateDatasetActionListener() {

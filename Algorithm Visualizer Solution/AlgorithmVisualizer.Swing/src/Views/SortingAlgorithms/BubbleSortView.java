@@ -28,6 +28,8 @@ public class BubbleSortView extends CustomJPanel {
     JSlider speedSlider;
     JTextField dataSetTextBox;
     private JButton changeDatasetButton;
+    private JButton previousButton;
+    private JButton nextButton;
 
     private boolean isTimerRunning = false;
     private Timer timer;
@@ -42,20 +44,24 @@ public class BubbleSortView extends CustomJPanel {
 
     private ActionListener timerAction = new ActionListener() {
         public void actionPerformed(ActionEvent ae) {
-            CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
-            if (currentIndex < model.Panels.getComponentCount()) {
-                cardLayout.show(model.Panels, Integer.toString(currentIndex));
-
-                AppFrame.appFrame.repaint();
-
-                currentIndex++;
-            }else {
-                Stop();
-                currentIndex = 0;
-                playPauseButton.setText("\u23F5");
-            }
+            PaintNewPanelOnScreen();
         }
     };
+
+    private void PaintNewPanelOnScreen() {
+        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
+        if (currentIndex >= 0 && currentIndex < model.Panels.getComponentCount()) {
+            cardLayout.show(model.Panels, Integer.toString(currentIndex));
+
+            AppFrame.appFrame.repaint();
+
+            currentIndex++;
+        }else {
+            Stop();
+            currentIndex = 0;
+            playPauseButton.setText("\u23F5");
+        }
+    }
 
     public void animateBubbleSort(BubbleSortModel model) {
         this.model = model;
@@ -63,22 +69,13 @@ public class BubbleSortView extends CustomJPanel {
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
-        PaintFirstPanelOnUI();
+        PaintNewPanelOnScreen();
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
 
         timer = new Timer(speedValue, timerAction);
-    }
-
-    private void PaintFirstPanelOnUI() {
-        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
-        if (currentIndex < model.Panels.getComponentCount()) {
-            cardLayout.show(model.Panels, Integer.toString(currentIndex));
-
-            currentIndex++;
-        }
     }
 
     private void InitializeToolBar() {
@@ -94,6 +91,12 @@ public class BubbleSortView extends CustomJPanel {
 
         resetButton = new JButton("\uD83D\uDD03");
         resetButton.setFont(unicodeFont);
+
+        previousButton = new JButton("\u23EA");
+        previousButton.setFont(unicodeFont);
+
+        nextButton = new JButton("\u23E9");
+        nextButton.setFont(unicodeFont);
 
         Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
         Font sliderFont = new Font("Arial", Font.PLAIN, 15);
@@ -128,7 +131,9 @@ public class BubbleSortView extends CustomJPanel {
 
         changeDatasetButton = new JButton("Change DataSet");
 
+        toolBarPanel.add(previousButton);
         toolBarPanel.add(playPauseButton);
+        toolBarPanel.add(nextButton);
         toolBarPanel.add(resetButton);
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
@@ -137,11 +142,35 @@ public class BubbleSortView extends CustomJPanel {
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
+        previousButton.addActionListener(previousButtonEventListener());
         playPauseButton.addActionListener(pausePlayEventListener());
+        nextButton.addActionListener(nextButtonEventListener());
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         backToHome.addActionListener(homePage());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
+    }
+
+    private ActionListener nextButtonEventListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                PaintNewPanelOnScreen();
+            }
+        };
+    }
+
+    private ActionListener previousButtonEventListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println(currentIndex);
+                //we going back by two because current index is always one ahead
+                //if we go back by 1, that will put us back to the same slide so nothing change
+                currentIndex-=2;
+                PaintNewPanelOnScreen();
+            }
+        };
     }
 
     private ActionListener updateDatasetActionListener() {
@@ -197,10 +226,8 @@ public class BubbleSortView extends CustomJPanel {
 
                 if (isTimerRunning) {
                     Stop();
-                    playPauseButton.setText("\u23F5");//play
                 } else {
                     Start();
-                    playPauseButton.setText("\u23F8");//pause
                 }
             }
         };
@@ -218,11 +245,13 @@ public class BubbleSortView extends CustomJPanel {
 
     public void Start() {
         isTimerRunning = true;
+        playPauseButton.setText("\u23F8");//pause
         timer.start();
     }
 
     public void Stop() {
         isTimerRunning = false;
+        playPauseButton.setText("\u23F5");//play
         timer.stop();
     }
 
@@ -231,5 +260,6 @@ public class BubbleSortView extends CustomJPanel {
         speedSlider.setValue(speedValue);
         timer.restart();
         isTimerRunning = true;
+        playPauseButton.setText("\u23F8");//pause
     }
 }
