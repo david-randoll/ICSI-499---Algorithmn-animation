@@ -30,6 +30,13 @@ public class Panel extends JPanel {
                 outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
             }
         }
+
+        try{
+            Integer.valueOf(CONDITION);
+            drawSearchValue(g, CONDITION);
+        }catch(NumberFormatException e){
+
+        }
     }
 
     public Panel(String title, int[] data, Integer[] highlightIndices, String condition) {
@@ -117,6 +124,14 @@ public class Panel extends JPanel {
         drawElements(g);
     }
 
+    void drawSearchValue(Graphics g, String title) {
+        Font titleFont = new Font("Arial", Font.PLAIN, 30);
+        g.setFont(titleFont);
+
+        g.setColor(Color.GREEN);
+        g.drawString("Searching For: " + title, 15, (int) RECTANGLES[0].getY() - 25);
+    }
+
     void outlineRectangle(Graphics g, Rectangle rectangle) {
         int BORDER_SIZE = 10;
         int rectangleX = rectangle.x - BORDER_SIZE;
@@ -155,7 +170,6 @@ public class Panel extends JPanel {
         }
         return output;
     }
-
 
     void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics) {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
