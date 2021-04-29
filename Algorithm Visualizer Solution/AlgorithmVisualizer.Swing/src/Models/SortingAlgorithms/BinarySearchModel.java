@@ -105,7 +105,7 @@ public class BinarySearchModel implements Model {
         }
         // if we reach here, then element was
         // not present
-        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{index}, "not found"));
+        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{}, String.format("%d not found", x)));
         return output;
     }
 

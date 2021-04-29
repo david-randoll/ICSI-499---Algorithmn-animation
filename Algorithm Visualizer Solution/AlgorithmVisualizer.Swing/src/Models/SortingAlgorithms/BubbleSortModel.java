@@ -9,6 +9,7 @@ import res.Styles;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BubbleSortModel {
 
@@ -47,24 +48,36 @@ public class BubbleSortModel {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 Integer[] indices = {j, j + 1};
-                SharedComponents.Panel newPanel = new Panel(TITLE, arr, indices, "none");
+
+                ArrayList<Integer> list = new ArrayList<>();
+
+                for (int index = arr.length - i ; index < arr.length; index++) {
+                    list.add(index);
+                }
+                Integer[] sortedIndices = new Integer[list.size()];
+                sortedIndices = list.toArray(sortedIndices);
+
+                SharedComponents.Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "none");
                 output.add(newPanel);
 
-//                newPanel.setTitle("Is " + arr[j] + " greater than " + arr[j + 1] + "?");
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j+1] and arr[j]
                     Integer[] swapIndices = {j + 1, j};
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    SharedComponents.Panel swapPanel = new Panel(TITLE, arr, swapIndices, "swap");
+                    SharedComponents.Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "swap");
                     output.add(swapPanel);
-                } else {
-//                    newPanel.setTitle("Nope");
                 }
             }
         }
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, null, "");
+
+        Integer[] sortedIndices = new Integer[arr.length];
+        for(int i =0; i < sortedIndices.length;i++){
+           sortedIndices[i] = i;
+        }
+
+        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices,null, "");
         output.add(lastPanel);
 
         return output;

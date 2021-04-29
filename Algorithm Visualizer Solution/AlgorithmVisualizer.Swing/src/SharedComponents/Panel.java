@@ -30,13 +30,7 @@ public class Panel extends JPanel {
                 outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
             }
         }
-
-        try{
-            Integer.valueOf(CONDITION);
-            drawSearchValue(g, CONDITION);
-        }catch(NumberFormatException e){
-
-        }
+        searchHandling(g);
     }
 
     public Panel(String title, int[] data, Integer[] highlightIndices, String condition) {
@@ -78,7 +72,6 @@ public class Panel extends JPanel {
             String currentValue = Integer.toString(USER_INPUT[i]);
             Rectangle currentRectangle = RECTANGLES[i];
 
-
             if (TITLE.equalsIgnoreCase("Binary Search")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
@@ -87,21 +80,46 @@ public class Panel extends JPanel {
                         g.setColor(Styles.APP_BACKGROUNDCOLOR);
                     }
                     drawRectangle(g, currentRectangle);
-                    drawElementData(g, currentValue, currentRectangle, metrics);
+                    drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+
+                } catch (NullPointerException e) {
+                   if (CONDITION.equalsIgnoreCase("start")) {
+                       g.setColor(Styles.ELEMENT_COLOR);
+                   } else {
+                       g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                   }
+                   drawRectangle(g, currentRectangle);
+                   drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+               }
+            } else if (TITLE.equalsIgnoreCase("Bubble Sort")){
+                try {
+                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
+                        g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                    } else {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                    }
+
 
                 } catch (NullPointerException e) {
                     if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Styles.ELEMENT_COLOR);
+                        g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
                     } else {
-                        g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
                     }
-                    drawRectangle(g, currentRectangle);
-                    drawElementData(g, currentValue, currentRectangle, metrics);
                 }
+
             } else {
                 g.setColor(Styles.ELEMENT_COLOR);
                 drawRectangle(g, currentRectangle);
-                drawElementData(g, currentValue, currentRectangle, metrics);
+                drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
             }
         }
     }
@@ -129,7 +147,7 @@ public class Panel extends JPanel {
         g.setFont(titleFont);
 
         g.setColor(Color.GREEN);
-        g.drawString("Searching For: " + title, 15, (int) RECTANGLES[0].getY() - 25);
+        g.drawString(title, 15, (int) RECTANGLES[0].getY() - 25);
     }
 
     void outlineRectangle(Graphics g, Rectangle rectangle) {
@@ -154,6 +172,17 @@ public class Panel extends JPanel {
         g2.drawRoundRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight, 5, 5);
     }
 
+    void searchHandling(Graphics g){
+        try{
+            Integer.valueOf(CONDITION);
+            drawSearchValue(g, "Searching for: " + CONDITION);
+        }catch(NumberFormatException e){}
+
+        if(CONDITION.contains("not found")){
+            drawSearchValue(g, CONDITION);
+        }
+    }
+
     Rectangle[] buildRectangles(int[] inputs) {
         int ALGORITHM_ELEMENT_HEIGHT = screenSize.height / (inputs.length * 2);
         int ALGORITHM_ELEMENT_WIDTH = screenSize.width / (inputs.length * 2);
@@ -171,10 +200,10 @@ public class Panel extends JPanel {
         return output;
     }
 
-    void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics) {
+    void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics, Color color) {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
         int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
-        g.setColor(Styles.DATA_COLOR);
+        g.setColor(color);
         g.drawString(currentValue, stringX, stringY);
     }
 

@@ -36,7 +36,7 @@ public class BinarySearchView extends CustomJPanel {
     private int speedValue;
     //private JPanel Panels;
 
-    BinarySearchModel model;
+    static BinarySearchModel model;
 
     public BinarySearchView() {
         super("Binary Search");
@@ -78,7 +78,6 @@ public class BinarySearchView extends CustomJPanel {
 
         timer = new Timer(speedValue, timerAction);
     }
-
 
     private void PaintFirstPanelOnUI() {
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
@@ -227,6 +226,7 @@ public class BinarySearchView extends CustomJPanel {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Stop();
+                model.Panels.removeAll();
                 AppFrame.appFrame.getContentPane().removeAll();
                 AppFrame.appFrame.dispose();
                 HomeController homeController = new HomeController();
