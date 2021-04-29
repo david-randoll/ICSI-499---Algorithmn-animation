@@ -1,5 +1,6 @@
 package SharedComponents;
 
+import Views.SortingAlgorithms.BinarySearchView;
 import res.Styles;
 
 import javax.swing.*;
@@ -154,6 +155,7 @@ public class Panel extends JPanel {
         }
         return output;
     }
+
 
     void drawElementData(Graphics g, String currentValue, Rectangle currentRectangle, FontMetrics metrics) {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);

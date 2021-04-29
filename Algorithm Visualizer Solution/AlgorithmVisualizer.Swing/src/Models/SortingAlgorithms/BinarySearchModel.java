@@ -3,6 +3,7 @@ package Models.SortingAlgorithms;
 import Models.Model;
 import Shared.DataAccess;
 import SharedComponents.Panel;
+import Views.SortingAlgorithms.BinarySearchView;
 import res.Styles;
 
 import javax.swing.*;
@@ -22,13 +23,24 @@ public class BinarySearchModel implements Model {
         ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
+            drawBackButton(panels.get(i));
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
+    }
+
+    void drawBackButton(JPanel panel) {
+        JButton backToHome = new JButton("\uD83E\uDC44");
+        backToHome.setFont(Styles.UNICODE_FONT);
+        int buttonFontSize = Styles.UNICODE_FONT.getSize();
+        panel.add(backToHome);
+        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
+        backToHome.addActionListener(BinarySearchView.homePage());
     }
 
     public int getSearchValue() {
         return SEARCH_VALUE;
     }
+
     public int getData() {
         return SEARCH_VALUE;
     }

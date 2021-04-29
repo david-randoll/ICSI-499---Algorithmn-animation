@@ -26,7 +26,6 @@ public class BinarySearchView extends CustomJPanel {
     int currentIndex = 0;
     boolean IsPause = false;
 
-    JButton backToHome;
     JButton playPauseButton;
     JButton resetButton;
     JButton searchValueSubmit;
@@ -34,8 +33,8 @@ public class BinarySearchView extends CustomJPanel {
     JTextField dataSetTextBox;
     JTextField searchTextBox;
     private JButton changeDatasetButton;
-    private boolean isTimerRunning = false;
-    private Timer timer;
+    private static boolean isTimerRunning = false;
+    private static Timer timer;
     private int speedValue;
     //private JPanel Panels;
 
@@ -77,6 +76,8 @@ public class BinarySearchView extends CustomJPanel {
         timer = new Timer(speedValue, timerAction);
     }
 
+
+
     private void PaintFirstPanelOnUI() {
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
         if (currentIndex < model.Panels.getComponentCount()) {
@@ -91,14 +92,11 @@ public class BinarySearchView extends CustomJPanel {
         toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
-        backToHome = new JButton("Home");
-
         playPauseButton = new JButton("\u23F5");
-        Font unicodeFont = new Font("Code2000", Font.PLAIN, 16);
-        playPauseButton.setFont(unicodeFont);
+        playPauseButton.setFont(Styles.UNICODE_FONT);
 
         resetButton = new JButton("\uD83D\uDD03");
-        resetButton.setFont(unicodeFont);
+        resetButton.setFont(Styles.UNICODE_FONT);
 
         searchValueSubmit = new JButton("Submit");
 
@@ -145,7 +143,6 @@ public class BinarySearchView extends CustomJPanel {
         toolBarPanel.add(changeDatasetButton);
         toolBarPanel.add(searchTextBox);
         toolBarPanel.add(searchValueSubmit);
-        toolBarPanel.add(backToHome);
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
@@ -153,7 +150,6 @@ public class BinarySearchView extends CustomJPanel {
         resetButton.addActionListener(resetEventListener());
         searchValueSubmit.addActionListener(newSearchValueListener());
         speedSlider.addChangeListener(speedSliderStateChange());
-        backToHome.addActionListener(homePage());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
     }
 
@@ -182,7 +178,7 @@ public class BinarySearchView extends CustomJPanel {
         };
     }
 
-    private ActionListener homePage() {
+    public static ActionListener homePage() {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -256,7 +252,7 @@ public class BinarySearchView extends CustomJPanel {
         timer.start();
     }
 
-    public void Stop() {
+    public static void Stop() {
         isTimerRunning = false;
         timer.stop();
     }
