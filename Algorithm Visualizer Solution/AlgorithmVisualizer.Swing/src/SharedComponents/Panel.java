@@ -27,7 +27,9 @@ public class Panel extends JPanel {
         drawElements(g);
         if (HIGHLIGHT_INDICES != null) {
             for (int i = 0; i < HIGHLIGHT_INDICES.length; i++) {
-                outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
+                try {
+                    outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
+                }catch(Exception e){}
             }
         }
         searchHandling(g);
@@ -109,6 +111,32 @@ public class Panel extends JPanel {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
                         drawRectangle(g, currentRectangle);
                         drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                    } else {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                    }
+                }
+
+            } else if (TITLE.equalsIgnoreCase("Insertion Sort")){
+                try {
+                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
+                        g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                    } else {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                    }
+
+
+                } catch (NullPointerException e) {
+                    if (CONDITION.equalsIgnoreCase("start")) {
+                        g.setColor(Color.white);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        outlineRectangle(g, currentRectangle);
                     } else {
                         g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
