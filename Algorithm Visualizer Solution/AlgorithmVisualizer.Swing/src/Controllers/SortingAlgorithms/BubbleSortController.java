@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class BubbleSortController implements Controller {
 
-    private BubbleSortView view = new BubbleSortView();
+    private BubbleSortView view;
     private BubbleSortModel model;
 
     public void InitView() {
@@ -21,6 +21,7 @@ public class BubbleSortController implements Controller {
     }
 
     public void InitController() {
+        view = new BubbleSortView();
         model = new BubbleSortModel();
         InitView();
     }

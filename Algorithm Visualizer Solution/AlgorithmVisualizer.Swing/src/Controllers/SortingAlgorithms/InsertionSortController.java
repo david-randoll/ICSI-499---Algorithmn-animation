@@ -10,7 +10,7 @@ import javax.swing.*;
 
 public class InsertionSortController implements Controller {
 
-    private InsertionSortView view = new InsertionSortView();
+    private InsertionSortView view;
     private InsertionSortModel model;
 
     public void InitView() {
@@ -23,6 +23,7 @@ public class InsertionSortController implements Controller {
     }
 
     public void InitController() {
+        view = new InsertionSortView();
         model = new InsertionSortModel();
         InitView();
     }

@@ -1,5 +1,6 @@
 package Shared;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -16,7 +17,7 @@ public class DataAccess {
     }
 
     public static void SetData(int[] dataset) {
-        data = dataset;
+        data = dataset.clone();
         dataString = commaSeparateArray(data);
     }
     public static boolean SetData(String elements){
@@ -56,7 +57,7 @@ public class DataAccess {
     }
 
     public static int[] GetData() {
-        return data;
+        return data.clone();
     }
 
     public static String GetCommaSeparatedData() {
@@ -64,9 +65,9 @@ public class DataAccess {
     }
 
     public static int[] GetSortedData() {
-        int[] temp = data.clone();
-        Arrays.sort(temp);
-        return temp;
+        int[] tempData = data.clone();
+        Arrays.sort(tempData);
+        return tempData;
     }
 
     private static int[] RandomData(int inputSize, int upperBound) {
