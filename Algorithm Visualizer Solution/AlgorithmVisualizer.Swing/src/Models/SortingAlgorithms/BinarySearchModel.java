@@ -3,6 +3,7 @@ package Models.SortingAlgorithms;
 import Models.Model;
 import Shared.DataAccess;
 import SharedComponents.Panel;
+import Views.SortingAlgorithms.BinarySearchView;
 import res.Styles;
 
 import javax.swing.*;
@@ -22,13 +23,24 @@ public class BinarySearchModel implements Model {
         ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
+            drawBackButton(panels.get(i));
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
+    }
+
+    void drawBackButton(JPanel panel) {
+        JButton backToHome = new JButton("\uD83E\uDC44");
+        backToHome.setFont(Styles.UNICODE_FONT);
+        int buttonFontSize = Styles.UNICODE_FONT.getSize();
+        panel.add(backToHome);
+        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
+        backToHome.addActionListener(BinarySearchView.homePage());
     }
 
     public int getSearchValue() {
         return SEARCH_VALUE;
     }
+
     public int getData() {
         return SEARCH_VALUE;
     }
@@ -71,7 +83,7 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
 
@@ -87,13 +99,13 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, "");
+                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
         }
         // if we reach here, then element was
         // not present
-        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{index}, "not found"));
+        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{}, String.format("%d not found", x)));
         return output;
     }
 

@@ -8,8 +8,8 @@ import javax.swing.*;
 
 public class BinarySearchController implements Controller {
 
-    public BinarySearchView view = new BinarySearchView();
-    public BinarySearchModel model = new BinarySearchModel();
+    public BinarySearchView view;
+    public BinarySearchModel model;
 
     public void InitView() {
         Runnable runnable = new Runnable() {
@@ -20,8 +20,8 @@ public class BinarySearchController implements Controller {
         SwingUtilities.invokeLater(runnable);
     }
 
-
     public void InitController() {
+        view = new BinarySearchView();
         model = new BinarySearchModel();
         InitView();
     }

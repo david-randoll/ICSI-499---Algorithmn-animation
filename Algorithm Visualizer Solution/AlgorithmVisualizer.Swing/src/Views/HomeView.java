@@ -1,5 +1,6 @@
 package Views;
 
+import Shared.DataAccess;
 import SharedComponents.HomeSettingsLabel;
 import SharedComponents.InputBox;
 import SharedComponents.SubmitButton;
@@ -13,6 +14,7 @@ public class HomeView extends JPanel {
     public SubmitButton settings = new SubmitButton("Settings");
     public SubmitButton BinarySearch = new SubmitButton("Binary Search");
     public SubmitButton BubbleSort = new SubmitButton("Bubble Sort");
+    public SubmitButton InsertionSort = new SubmitButton("Insertion Sort");
     public SubmitButton setData = new SubmitButton("Set DataSet");
 
     public JLabel gitHub = new JLabel("github");
@@ -22,7 +24,7 @@ public class HomeView extends JPanel {
     private JLabel Searching = new JLabel();
     private JLabel Sorting = new JLabel();
     private JLabel PathFinding = new JLabel();
-    public InputBox data = new InputBox("Enter your data here. EX(1,2,3,4)");
+    public InputBox data = new InputBox(DataAccess.GetCommaSeparatedData());
 
     public HomeView() {
         super.setLayout(null);
@@ -45,6 +47,9 @@ public class HomeView extends JPanel {
 
         BubbleSort.setBounds(325, 425, 150, 25);
         super.add(BubbleSort);
+
+        InsertionSort.setBounds(325, 475, 150, 25);
+        super.add(InsertionSort);
 
         data.setBounds(100, 200, 575, 25);
         super.add(data);

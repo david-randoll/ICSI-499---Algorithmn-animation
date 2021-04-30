@@ -1,7 +1,10 @@
 package Shared;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DataAccess {
     private static int[] data;
@@ -14,8 +17,29 @@ public class DataAccess {
     }
 
     public static void SetData(int[] dataset) {
-        data = dataset;
+        data = dataset.clone();
         dataString = commaSeparateArray(data);
+    }
+    public static boolean SetData(String elements){
+        final Pattern pattern = Pattern.compile("^([0-9]+\\s*,?\\s*)+$");
+        Matcher matcher = pattern.matcher(elements);
+        boolean isValid = matcher.matches();
+        if(isValid == false || elements == ""){
+            return false;
+        }
+
+        String[] arr = elements.split("[\\s]*[,][\\s]*");
+        int[] dataSet = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            try{
+                dataSet[i] = Integer.parseInt(arr[i]);
+            }catch (Exception ex){
+                return false;
+            }
+
+        }
+        SetData(dataSet);
+        return true;
     }
 
     private static String commaSeparateArray(int[] data) {
@@ -33,7 +57,7 @@ public class DataAccess {
     }
 
     public static int[] GetData() {
-        return data;
+        return data.clone();
     }
 
     public static String GetCommaSeparatedData() {
@@ -41,9 +65,9 @@ public class DataAccess {
     }
 
     public static int[] GetSortedData() {
-        int[] temp = data.clone();
-        Arrays.sort(temp);
-        return temp;
+        int[] tempData = data.clone();
+        Arrays.sort(tempData);
+        return tempData;
     }
 
     private static int[] RandomData(int inputSize, int upperBound) {

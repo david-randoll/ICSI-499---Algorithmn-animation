@@ -1,7 +1,7 @@
 package Views.SortingAlgorithms;
 
 import Controllers.HomeController;
-import Models.SortingAlgorithms.BubbleSortModel;
+import Models.SortingAlgorithms.InsertionSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class BubbleSortView extends CustomJPanel {
+public class InsertionSortView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int currentIndex = 0;
 
@@ -35,10 +35,10 @@ public class BubbleSortView extends CustomJPanel {
     private JButton nextButton;
     private int speedValue;
 
-    BubbleSortModel model;
+    InsertionSortModel model;
 
-    public BubbleSortView() {
-        super("Bubble Sort");
+    public InsertionSortView() {
+        super("Insertion Sort");
         speedValue = 1000;
     }
 
@@ -63,7 +63,7 @@ public class BubbleSortView extends CustomJPanel {
         }
     }
 
-    public void animateBubbleSort(BubbleSortModel model) {
+    public void animateInsertionSort(InsertionSortModel model) {
         this.model = model;
         AppFrame.appFrame.add(model.Panels, BorderLayout.NORTH);
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -84,7 +84,7 @@ public class BubbleSortView extends CustomJPanel {
         int buttonFontSize = Styles.UNICODE_FONT.getSize();
         panel.add(backToHome);
         backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
-        backToHome.addActionListener(BinarySearchView.homePage());
+        backToHome.addActionListener(InsertionSortView.homePage());
     }
 
     private void InitializeToolBar() {

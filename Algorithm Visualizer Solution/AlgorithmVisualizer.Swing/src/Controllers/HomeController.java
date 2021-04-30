@@ -2,6 +2,7 @@ package Controllers;
 
 import Controllers.SortingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
+import Controllers.SortingAlgorithms.InsertionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
@@ -35,7 +36,12 @@ public class HomeController implements ActionListener {
         homeView = new HomeView();
         homeModel = new HomeModel();
         this.frame = new DefaultFrame();
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int ADJUSTED_MIDPOINT_HORIZONTAL = (screenSize.width / 2) - (frame.getWidth() / 2);
+        
         frame.add(this.homeView);
+        frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
         frame.setVisible(true);
     }
 
@@ -43,13 +49,7 @@ public class HomeController implements ActionListener {
         this.homeView.settings.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
-
-        homeView.data.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                homeView.data.setText("");
-            }
-        });
+        this.homeView.InsertionSort.addActionListener(this);
 
         homeView.setData.addActionListener(new ActionListener() {
 
@@ -115,6 +115,12 @@ public class HomeController implements ActionListener {
             AppFrame appFrame = new AppFrame();
             BubbleSortController bubbleSortController = new BubbleSortController();
             bubbleSortController.InitController();
+        } else if (e.getSource() == this.homeView.InsertionSort) {  //Bubble Sort
+            frame.getContentPane().removeAll();
+            frame.dispose();
+            AppFrame appFrame = new AppFrame();
+            InsertionSortController insertionSortController = new InsertionSortController();
+            insertionSortController.InitController();
         }
     }
 }
