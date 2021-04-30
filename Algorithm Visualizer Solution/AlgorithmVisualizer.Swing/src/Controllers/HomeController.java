@@ -101,10 +101,8 @@ public class HomeController implements ActionListener {
 
         //Settings button
         if (e.getSource() == this.homeView.settings) {
-            SettingsController settingsController = new SettingsController(this.frame);
             frame.getContentPane().removeAll();
-            frame.getContentPane().add(settingsController.view);
-            frame.setVisible(true);
+            SettingsController settingsController = new SettingsController(this.frame);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
             frame.getContentPane().removeAll();
             frame.dispose();
