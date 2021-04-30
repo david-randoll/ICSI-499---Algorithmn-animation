@@ -7,10 +7,14 @@ import SharedComponents.TextBox;
 import res.Styles;
 
 import javax.swing.*;
+import java.awt.*;
 
 
 public class SettingsView extends JPanel {
     private HomeSettingsLabel title = new HomeSettingsLabel("Settings");
+    public JButton titleColorsButton = new JButton("Save");
+    public InputBox titleColors = new InputBox("");
+    public JLabel titleColorsLabel = new JLabel("Headings Color");
     public JButton submit = new JButton("Submit");
     public JButton fontSizeSubmit = new JButton("Submit");
     public JButton fontColorSubmit = new JButton("Submit");
@@ -27,6 +31,12 @@ public class SettingsView extends JPanel {
         super.setBackground(Styles.APP_BACKGROUNDCOLOR);
         super.setSize(800, 700);
 
+        titleColorsLabel.setBounds(100, 200, 100, 25);
+        titleColorsLabel.setFont(new Font(this.getFont().getFamily(), Font.PLAIN, 15));
+        titleColorsLabel.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+        titleColors.setBounds(225, 200, 100, 25);
+        titleColorsButton.setBounds(350, 200, 75, 25);
+
         submit.setBounds(100, 565, 100, 25);
         Home.setBounds(675, 625, 100, 30);
         feedback.setText("Enter feedback");
@@ -35,6 +45,9 @@ public class SettingsView extends JPanel {
         super.add(submit);
         super.add(feedback);
         super.add(Home);
+        super.add(titleColorsLabel);
+        super.add(titleColors);
+        super.add(titleColorsButton);
         super.setVisible(true);
     }
 
