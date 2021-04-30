@@ -2,15 +2,12 @@ package Models.SortingAlgorithms;
 
 import Shared.DataAccess;
 import SharedComponents.Panel;
-import Views.SortingAlgorithms.BinarySearchView;
-import Views.SortingAlgorithms.BubbleSortView;
 import Views.SortingAlgorithms.InsertionSortView;
 import res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class InsertionSortModel {
 
@@ -37,8 +34,7 @@ public class InsertionSortModel {
         backToHome.addActionListener(InsertionSortView.homePage());
     }
 
-    public ArrayList<Panel> run(int arr[])
-    {
+    public ArrayList<Panel> run(int arr[]) {
         ArrayList<SharedComponents.Panel> output = new ArrayList<>();
         int n = arr.length;
 
@@ -52,62 +48,61 @@ public class InsertionSortModel {
             /* Move elements of arr[0..i-1], that are
                greater than key, to one position ahead
                of their current position */
-            int counter =0;
+            int counter = 0;
             while (j >= 0 && arr[j] > key) {
                 Panel swapPanel;
 
-               if(arr[j+1]>key){
-                   if (counter == 0){
-                       swapPanel = new Panel(TITLE, arr, new Integer[]{},new Integer[]{j, j+1}, "");
-                   }else{
-                       swapPanel = new Panel(TITLE, arr, new Integer[]{i},new Integer[]{j, j+1}, "");
-                   }
-               }
-               else{
-                   if(counter==0){
-                       swapPanel = new Panel(TITLE, arr, new Integer[]{},new Integer[]{j, j+1}, "");
-                       output.add(swapPanel);
-                   }
-                   swapPanel = new Panel(TITLE, arr, new Integer[]{i},new Integer[]{j, j+1}, "swap");
-               }
-               output.add(swapPanel);
+                Panel preSwapPanel;
+                if (arr[j + 1] > key) {
+                    if (counter == 0) {
+                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{}, new Integer[]{j, j + 1}, "");
+                    } else {
+                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "");
+                    }
+                    output.add(preSwapPanel);
+                } else {
+                    if (counter == 0) {
+                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{}, new Integer[]{j, j + 1}, "");
+                        output.add(preSwapPanel);
+                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "swap");
+                        output.add(preSwapPanel);
+                    }
+                }
 
-               counter++; //used for the first case of highlighting
+                counter++; //used for the first case of highlighting
 
                 arr[j + 1] = arr[j];
                 arr[j] = key;
                 j = j - 1;
 
-                if(j >-1){
-                    if(arr[j]>key){
-                        swapPanel = new Panel(TITLE, arr, new Integer[]{i},new Integer[]{j, j+1}, "swap");
-                    }
-                    else{
-                        swapPanel = new Panel(TITLE, arr, new Integer[]{i},new Integer[]{j, j+1}, "");
+                if (j > -1) {
+                    if (arr[j] > key) {
+                        swapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "swap");
+                    } else {
+                        swapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "");
                     }
                     output.add(swapPanel);
                 }
             }
             arr[j + 1] = key;
 
-            switch(i - j){
-            case 1:
-            case -1:
-            case 0:
-                Panel comparePanel = new Panel(TITLE, arr, new Integer[]{i, j}, "");
-                output.add(comparePanel);
-                break;
+            switch (i - j) {
+                case 1:
+                case -1:
+                case 0:
+                    Panel comparePanel = new Panel(TITLE, arr, new Integer[]{i, j}, "");
+                    output.add(comparePanel);
+                    break;
             }
-
 
         }
 
         Integer[] sortedIndices = new Integer[arr.length];
-        for(int i = 0; i < sortedIndices.length;i++){
+        for (int i = 0; i < sortedIndices.length; i++) {
             sortedIndices[i] = i;
         }
 
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices,null, "");
+        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices, null, "");
         output.add(lastPanel);
 
         return output;
