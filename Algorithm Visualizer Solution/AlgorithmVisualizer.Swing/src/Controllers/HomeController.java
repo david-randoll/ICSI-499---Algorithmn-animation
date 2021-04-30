@@ -2,6 +2,7 @@ package Controllers;
 
 import Controllers.SortingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
+import Controllers.SortingAlgorithms.InsertionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
@@ -48,6 +49,7 @@ public class HomeController implements ActionListener {
         this.homeView.settings.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
+        this.homeView.InsertionSort.addActionListener(this);
 
         homeView.setData.addActionListener(new ActionListener() {
 
@@ -115,6 +117,12 @@ public class HomeController implements ActionListener {
             AppFrame appFrame = new AppFrame();
             BubbleSortController bubbleSortController = new BubbleSortController();
             bubbleSortController.InitController();
+        } else if (e.getSource() == this.homeView.InsertionSort) {  //Bubble Sort
+            frame.getContentPane().removeAll();
+            frame.dispose();
+            AppFrame appFrame = new AppFrame();
+            InsertionSortController insertionSortController = new InsertionSortController();
+            insertionSortController.InitController();
         }
     }
 }
