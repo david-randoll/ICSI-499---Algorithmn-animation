@@ -5,6 +5,8 @@
    
    
    [Why use our app](#Whyuseourapp)
+   
+   
     * Why use our app
     * Sorting Algorithm detail
     * Installation
@@ -18,6 +20,7 @@
 
 <a name="Whyuseourapp"/> 
 # Why Use Our Application
+
   Our application have some unique options such as
   
     * Color blind mode
