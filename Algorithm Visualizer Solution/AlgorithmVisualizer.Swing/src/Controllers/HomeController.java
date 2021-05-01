@@ -28,6 +28,14 @@ public class HomeController implements ActionListener {
     private int flag = 0;
 
     public HomeController() {
+        this.frame = new DefaultFrame();
+        InitView();
+        InitController();
+    }
+
+    //For settings page
+    public HomeController(DefaultFrame frame){
+        this.frame = frame;
         InitView();
         InitController();
     }
@@ -35,14 +43,13 @@ public class HomeController implements ActionListener {
     private void InitView() {
         homeView = new HomeView();
         homeModel = new HomeModel();
-        this.frame = new DefaultFrame();
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int ADJUSTED_MIDPOINT_HORIZONTAL = (screenSize.width / 2) - (frame.getWidth() / 2);
         
-        frame.add(this.homeView);
-        frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
-        frame.setVisible(true);
+        this.frame.add(this.homeView);
+        this.frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
+        this.frame.setVisible(true);
     }
 
     public void InitController() {
@@ -101,10 +108,9 @@ public class HomeController implements ActionListener {
 
         //Settings button
         if (e.getSource() == this.homeView.settings) {
+            this.frame.getContentPane().removeAll();
+            this.frame.repaint();
             SettingsController settingsController = new SettingsController(this.frame);
-            frame.getContentPane().removeAll();
-            frame.getContentPane().add(settingsController.view);
-            frame.setVisible(true);
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
             frame.getContentPane().removeAll();
             frame.dispose();
