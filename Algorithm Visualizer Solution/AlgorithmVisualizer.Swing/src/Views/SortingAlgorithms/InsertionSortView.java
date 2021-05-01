@@ -84,7 +84,7 @@ public class InsertionSortView extends CustomJPanel {
         int buttonFontSize = Styles.UNICODE_FONT.getSize();
         panel.add(backToHome);
         backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
-        backToHome.addActionListener(InsertionSortView.homePage());
+        backToHome.addActionListener(homePage());
     }
 
     private void InitializeToolBar() {
