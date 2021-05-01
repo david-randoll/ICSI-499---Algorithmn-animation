@@ -37,6 +37,14 @@ public class SettingsView extends JPanel {
         titleColors.setBounds(225, 200, 100, 25);
         titleColorsButton.setBounds(350, 200, 75, 25);
 
+        titleColorsLabel.setBounds(100, 200, 100, 25);
+        titleColorsLabel.setFont(new Font(this.getFont().getFamily(), Font.PLAIN, 15));
+        titleColorsLabel.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+        titleColors.setBounds(225, 200, 100, 25);
+        titleColorsButton.setBounds(350, 200, 75, 25);
+
+
+
         submit.setBounds(100, 565, 100, 25);
         Home.setBounds(675, 625, 100, 30);
         feedback.setText("Enter feedback");

@@ -79,30 +79,30 @@ public class Panel extends JPanel {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.ELEMENT_COLOR);
                     } else {
-                        g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
                     }
                     drawRectangle(g, currentRectangle);
-                    drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
 
                 } catch (NullPointerException e) {
                    if (CONDITION.equalsIgnoreCase("start")) {
                        g.setColor(Styles.ELEMENT_COLOR);
                    } else {
-                       g.setColor(Styles.APP_BACKGROUNDCOLOR);
+                       g.setColor(Styles.DISABLED_ELEMENT_COLOR);
                    }
                    drawRectangle(g, currentRectangle);
-                   drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                   drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                }
             } else if (TITLE.equalsIgnoreCase("Bubble Sort")){
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
                     } else {
                         g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                     }
 
 
@@ -110,11 +110,11 @@ public class Panel extends JPanel {
                     if (CONDITION.equalsIgnoreCase("start")) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
                     } else {
                         g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                     }
                 }
 
@@ -123,31 +123,31 @@ public class Panel extends JPanel {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.black);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
                     } else {
                         g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                     }
 
 
                 } catch (NullPointerException e) {
                     if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Color.white);
+                        g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                         outlineRectangle(g, currentRectangle);
                     } else {
                         g.setColor(Styles.ELEMENT_COLOR);
                         drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                     }
                 }
 
             } else {
                 g.setColor(Styles.ELEMENT_COLOR);
                 drawRectangle(g, currentRectangle);
-                drawElementData(g, currentValue, currentRectangle, metrics, Color.red);
+                drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
             }
         }
     }
@@ -174,7 +174,7 @@ public class Panel extends JPanel {
         Font titleFont = new Font("Arial", Font.PLAIN, 30);
         g.setFont(titleFont);
 
-        g.setColor(Color.GREEN);
+        g.setColor(Styles.SWAP_COLOR);
         g.drawString(title, 15, (int) RECTANGLES[0].getY() - 25);
     }
 
