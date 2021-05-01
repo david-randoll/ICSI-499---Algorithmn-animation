@@ -42,5 +42,7 @@
 huge thanks to the creaters of this amazing app 
 
 # Citations
+
 https://en.wikipedia.org/wiki/Bubble_sort
+
 https://en.wikipedia.org/wiki/Insertion_sort
