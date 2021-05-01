@@ -18,8 +18,7 @@
 <a name="description"/> 
   A Java desktop GUI program that shows an animation of a sorting algorithm in action. Through our application, you will get to learn how to sort algorithms such as, Bubble Sorting, and Insertion Sorting. The array size and execution speed can be customized by the user.
 
-# Why Use Our Application
-<a name="Whyuseourapp"/> 
+# <a name="Whyuseourapp"/>Why Use Our Application
   Our application have some unique options such as
   
     * Color blind mode
