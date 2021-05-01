@@ -1,10 +1,9 @@
 # Animation of Algorithms
 
 # Table Of Content
-   [Description](#description)
+   - [Description](#description)
    
-   
-   [Why use our app](#Whyuseourapp)
+   - [Why use our app](#Whyuseourapp)
    
    
     * Why use our app
