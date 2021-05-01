@@ -9,8 +9,6 @@
     * How to use
     * Contribution
     * Citation
-  
-  ##### Table of Contents  
 [Description](#description)  
 <a name="description"/> 
 # Description
