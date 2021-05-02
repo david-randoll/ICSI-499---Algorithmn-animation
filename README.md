@@ -41,7 +41,14 @@
 
 # <a name="Howtouse"/>How To Use
 ## front page
-   here you will find 
+   here you will find a textbar with a pre-sellected data set OR type a data set, then Click on the Algorithm that you would like to learn.
+   
+## Setting
+   on the front page you will also find a button for Setting. in there you will be able to customize how the app should look that. you will be able to customize the color of the font. Turn On/Off Color Blind Mode, and size of the font.
+## Inside Sorting Algorithms
+   here the User will be able to visually learn the selected algorithm. the user will also be able to speed up/ slow down the process to get a better understanding of the algorithm. their is a pause/play button 
+   
+   
 
 # <a name="Contribution"/>Contribution
 
