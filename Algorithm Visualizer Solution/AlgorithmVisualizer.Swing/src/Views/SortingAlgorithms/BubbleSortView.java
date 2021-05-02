@@ -19,6 +19,7 @@ import java.util.Hashtable;
 
 public class BubbleSortView {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
     int currentIndex = 0;
 
     static JButton playPauseButton;
@@ -35,8 +36,16 @@ public class BubbleSortView {
 
     BubbleSortModel model;
 
-    public BubbleSortView() {
+    public BubbleSortView(BubbleSortModel model) {
         speedValue = 1000;
+
+        this.model = model;
+        AppFrame.appFrame.add(model.Panels, BorderLayout.CENTER);
+        AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
+
+        InitializeToolBar();
+        InitializeBackButton();
+        PaintNewPanelOnScreen();
     }
 
     private ActionListener timerAction = new ActionListener() {
@@ -45,7 +54,7 @@ public class BubbleSortView {
         }
     };
 
-    private void PaintNewPanelOnScreen() {
+    public void PaintNewPanelOnScreen() {
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
         if (currentIndex >= 0 && currentIndex < model.Panels.getComponentCount()) {
             cardLayout.show(model.Panels, Integer.toString(currentIndex));
@@ -60,15 +69,7 @@ public class BubbleSortView {
         }
     }
 
-    public void animateBubbleSort(BubbleSortModel model) {
-        this.model = model;
-        AppFrame.appFrame.add(model.Panels, BorderLayout.CENTER);
-        AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
-
-        InitializeToolBar();
-        InitializeBackButton();
-        PaintNewPanelOnScreen();
-
+    public void animateBubbleSort() {
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
@@ -152,33 +153,18 @@ public class BubbleSortView {
 
         AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
 
-        previousButton.addActionListener(previousButtonEventListener());
         playPauseButton.addActionListener(pausePlayEventListener());
-        nextButton.addActionListener(nextButtonEventListener());
+
         resetButton.addActionListener(resetEventListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
     }
 
-    private ActionListener nextButtonEventListener() {
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                PaintNewPanelOnScreen();
-            }
-        };
+    public void addNextButtonListener(ActionListener listener){
+        nextButton.addActionListener(listener);
     }
-
-    private ActionListener previousButtonEventListener() {
-        return new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                //we going back by two because current index is always one ahead
-                //if we go back by 1, that will put us back to the same slide so nothing change
-                currentIndex -= 2;
-                PaintNewPanelOnScreen();
-            }
-        };
+    public void addPreviousButtonListener(ActionListener listener){
+        previousButton.addActionListener(listener);
     }
 
     private ActionListener updateDatasetActionListener() {
@@ -269,5 +255,13 @@ public class BubbleSortView {
         timer.restart();
         isTimerRunning = true;
         playPauseButton.setText("\u23F8");//pause
+    }
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(int currentIndex) {
+        this.currentIndex = currentIndex;
     }
 }
