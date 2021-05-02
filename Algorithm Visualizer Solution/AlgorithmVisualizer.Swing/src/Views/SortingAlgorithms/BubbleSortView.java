@@ -4,7 +4,6 @@ import Controllers.HomeController;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.CustomJPanel;
 import SharedComponents.Panel;
 import SharedComponents.toast;
 import res.Styles;
@@ -18,13 +17,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class BubbleSortView extends CustomJPanel {
+public class BubbleSortView {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int currentIndex = 0;
 
     static JButton playPauseButton;
     JButton resetButton;
-    JButton searchValueSubmit;
     JSlider speedSlider;
     JTextField dataSetTextBox;
 
@@ -38,7 +36,6 @@ public class BubbleSortView extends CustomJPanel {
     BubbleSortModel model;
 
     public BubbleSortView() {
-        super("Bubble Sort");
         speedValue = 1000;
     }
 
@@ -65,10 +62,11 @@ public class BubbleSortView extends CustomJPanel {
 
     public void animateBubbleSort(BubbleSortModel model) {
         this.model = model;
-        AppFrame.appFrame.add(model.Panels, BorderLayout.NORTH);
+        AppFrame.appFrame.add(model.Panels, BorderLayout.CENTER);
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
+        InitializeBackButton();
         PaintNewPanelOnScreen();
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -78,13 +76,20 @@ public class BubbleSortView extends CustomJPanel {
         timer = new Timer(speedValue, timerAction);
     }
 
-    void drawBackButton(JPanel panel) {
+    private void InitializeBackButton(){
+        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        topPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        topPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.10)));
+
         JButton backToHome = new JButton("\uD83E\uDC44");
         backToHome.setFont(Styles.UNICODE_FONT);
         int buttonFontSize = Styles.UNICODE_FONT.getSize();
-        panel.add(backToHome);
-        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
+        topPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 0, 0));
+        backToHome.setPreferredSize(new Dimension(buttonFontSize * 3, buttonFontSize + 10));
         backToHome.addActionListener(homePage());
+        topPanel.add(backToHome);
+
+        AppFrame.appFrame.add(topPanel, BorderLayout.NORTH);
     }
 
     private void InitializeToolBar() {
@@ -190,7 +195,6 @@ public class BubbleSortView extends CustomJPanel {
                 ArrayList<Panel> panels = model.run(DataAccess.GetData());
 
                 for (int i = 0; i < panels.size(); i++) {
-                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 

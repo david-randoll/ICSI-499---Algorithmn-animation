@@ -66,10 +66,11 @@ public class BinarySearchView extends CustomJPanel {
 
     public void animateBinarySearch(BinarySearchModel model) {
         this.model = model;
-        AppFrame.appFrame.add(model.Panels, BorderLayout.NORTH);
+        AppFrame.appFrame.add(model.Panels, BorderLayout.CENTER);
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
+        InitializeBackButton();
         PaintNewPanelOnScreen();
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -77,15 +78,6 @@ public class BinarySearchView extends CustomJPanel {
         AppFrame.appFrame.setVisible(true);
 
         timer = new Timer(speedValue, timerAction);
-    }
-
-    private void PaintFirstPanelOnUI() {
-        CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
-        if (currentIndex < model.Panels.getComponentCount()) {
-            cardLayout.show(model.Panels, Integer.toString(currentIndex));
-
-            currentIndex++;
-        }
     }
 
     private void InitializeToolBar() {
@@ -162,6 +154,22 @@ public class BinarySearchView extends CustomJPanel {
         searchValueSubmit.addActionListener(newSearchValueListener());
         speedSlider.addChangeListener(speedSliderStateChange());
         changeDatasetButton.addActionListener(updateDatasetActionListener());
+    }
+
+    private void InitializeBackButton(){
+        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        topPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        topPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.10)));
+
+        JButton backToHome = new JButton("\uD83E\uDC44");
+        backToHome.setFont(Styles.UNICODE_FONT);
+        int buttonFontSize = Styles.UNICODE_FONT.getSize();
+        topPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 0, 0));
+        backToHome.setPreferredSize(new Dimension(buttonFontSize * 3, buttonFontSize + 10));
+        backToHome.addActionListener(homePage());
+        topPanel.add(backToHome);
+
+        AppFrame.appFrame.add(topPanel, BorderLayout.NORTH);
     }
 
     private ActionListener nextButtonEventListener() {

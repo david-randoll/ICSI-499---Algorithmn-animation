@@ -10,6 +10,6 @@ public class TitleLabel extends JLabel {
         this.setText(title);
         this.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         this.setFont(new Font(this.getFont().getFamily(), Font.BOLD, Styles.PAGE_TITLE_FONTSIZE));
-        this.setBorder(BorderFactory.createEmptyBorder(75, 0, 0, 0));
+        this.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
     }
 }

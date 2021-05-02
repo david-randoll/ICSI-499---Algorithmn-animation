@@ -65,10 +65,11 @@ public class InsertionSortView extends CustomJPanel {
 
     public void animateInsertionSort(InsertionSortModel model) {
         this.model = model;
-        AppFrame.appFrame.add(model.Panels, BorderLayout.NORTH);
+        AppFrame.appFrame.add(model.Panels, BorderLayout.CENTER);
         AppFrame.appFrame.getContentPane().setBackground(Styles.APP_BACKGROUNDCOLOR);
 
         InitializeToolBar();
+        InitializeBackButton();
         PaintNewPanelOnScreen();
 
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
@@ -78,13 +79,20 @@ public class InsertionSortView extends CustomJPanel {
         timer = new Timer(speedValue, timerAction);
     }
 
-    void drawBackButton(JPanel panel) {
+    private void InitializeBackButton(){
+        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        topPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
+        topPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.10)));
+
         JButton backToHome = new JButton("\uD83E\uDC44");
         backToHome.setFont(Styles.UNICODE_FONT);
         int buttonFontSize = Styles.UNICODE_FONT.getSize();
-        panel.add(backToHome);
-        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
+        topPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 0, 0));
+        backToHome.setPreferredSize(new Dimension(buttonFontSize * 3, buttonFontSize + 10));
         backToHome.addActionListener(homePage());
+        topPanel.add(backToHome);
+
+        AppFrame.appFrame.add(topPanel, BorderLayout.NORTH);
     }
 
     private void InitializeToolBar() {
@@ -190,7 +198,6 @@ public class InsertionSortView extends CustomJPanel {
                 ArrayList<Panel> panels = model.run(DataAccess.GetData());
 
                 for (int i = 0; i < panels.size(); i++) {
-                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 
