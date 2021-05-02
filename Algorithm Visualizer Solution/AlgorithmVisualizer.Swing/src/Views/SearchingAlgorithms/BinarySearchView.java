@@ -194,15 +194,6 @@ public class BinarySearchView extends CustomJPanel {
         };
     }
 
-    void drawBackButton(JPanel panel) {
-        JButton backToHome = new JButton("\uD83E\uDC44");
-        backToHome.setFont(Styles.UNICODE_FONT);
-        int buttonFontSize = Styles.UNICODE_FONT.getSize();
-        panel.add(backToHome);
-        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
-        backToHome.addActionListener(homePage());
-    }
-
     private ActionListener updateDatasetActionListener() {
         return new ActionListener() {
             @Override
@@ -218,7 +209,6 @@ public class BinarySearchView extends CustomJPanel {
                 ArrayList<Panel> panels = model.run(DataAccess.GetSortedData(), model.getSearchValue());
 
                 for (int i = 0; i < panels.size(); i++) {
-                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 
@@ -279,7 +269,6 @@ public class BinarySearchView extends CustomJPanel {
                 model.setSearchValue(newSearchValue);
 
                 for (int i = 0; i < panels.size(); i++) {
-                    drawBackButton(panels.get(i));
                     model.Panels.add(panels.get(i), Integer.toString(i));
                 }//Add all cards to the card panel so we can transition panels easily
 
