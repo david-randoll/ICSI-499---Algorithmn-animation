@@ -6,7 +6,7 @@
    - Algorithms
       * [Bubble Sort](#BubbleSort)
       * [Insertion Sort](#InsertionSort)
-      * [Bubble Sort](#SelectionSort)
+      * [Selection Sort](#SelectionSort)
       * [Binary Search](#BinarySearch)
    - [Installation](#Installation)
    - [How to use](#Howtouse)
