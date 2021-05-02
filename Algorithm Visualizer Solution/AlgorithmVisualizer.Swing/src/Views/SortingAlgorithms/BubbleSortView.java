@@ -3,7 +3,7 @@ package Views.SortingAlgorithms;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import res.Styles;
+import Shared.res.Styles;
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import java.awt.*;

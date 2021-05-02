@@ -1,6 +1,6 @@
 package Shared.Components;
 
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 

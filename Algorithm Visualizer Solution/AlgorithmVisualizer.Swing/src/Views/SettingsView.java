@@ -2,7 +2,7 @@ package Views;
 
 import Shared.Components.HomeSettingsLabel;
 import Shared.Components.InputBox;
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;

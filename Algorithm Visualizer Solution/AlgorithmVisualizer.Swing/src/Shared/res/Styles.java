@@ -1,4 +1,4 @@
-package res;
+package Shared.res;
 
 import java.awt.*;
 

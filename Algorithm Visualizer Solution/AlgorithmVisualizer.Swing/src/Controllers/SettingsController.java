@@ -3,7 +3,7 @@ package Controllers;
 import Models.SettingsModel;
 import Shared.Components.DefaultFrame;
 import Views.SettingsView;
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;

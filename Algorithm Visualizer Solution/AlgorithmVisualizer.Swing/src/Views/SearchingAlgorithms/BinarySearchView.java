@@ -7,7 +7,7 @@ import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.Components.CustomJPanel;
 import Shared.Components.toast;
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

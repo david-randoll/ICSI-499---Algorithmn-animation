@@ -4,7 +4,7 @@ import Shared.DataAccess;
 import Shared.Components.HomeSettingsLabel;
 import Shared.Components.InputBox;
 import Shared.Components.SubmitButton;
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
