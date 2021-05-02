@@ -46,13 +46,21 @@
 ## Setting
    on the front page you will also find a button for Setting. in there you will be able to customize how the app should look that. you will be able to customize the color of the font. Turn On/Off Color Blind Mode, and size of the font.
 ## Inside Sorting Algorithms
-   here the User will be able to visually learn the selected algorithm. the user will also be able to speed up/ slow down the process to get a better understanding of the algorithm. their is a pause/play button which will help the user take their time learning it. the use will also be able to Edit the data set by adding or deleting a number from the set, and all of this can be done right there on the learning page.
+   here the User will be able to visually learn the selected algorithm. the user will also be able to speed up/ slow down the process to get a better understanding of the algorithm. their is a pause/play button which will help the user take their time learning it. the use will also be able to Edit the data set by adding or deleting a number from the set, and all of this can be done right there on the learning page. Our software also lets the user find a specific number in the data set and sort the algorithm according to it.
    
    
 
 # <a name="Contribution"/>Contribution
 
-huge thanks to the creaters of this amazing app 
+This application was created by our HardWorking Team of 4
+
+Ahmad 
+
+David
+
+Kyler
+
+Noah
 
 # <a name="Citation"/>Citations
 
