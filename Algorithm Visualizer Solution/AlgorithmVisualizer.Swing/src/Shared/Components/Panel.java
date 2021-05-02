@@ -28,7 +28,8 @@ public class Panel extends JPanel {
             for (int i = 0; i < HIGHLIGHT_INDICES.length; i++) {
                 try {
                     outlineRectangle(g, RECTANGLES[HIGHLIGHT_INDICES[i]]);
-                }catch(Exception e){}
+                } catch (Exception e) {
+                }
             }
         }
         searchHandling(g);
@@ -84,15 +85,15 @@ public class Panel extends JPanel {
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
 
                 } catch (NullPointerException e) {
-                   if (CONDITION.equalsIgnoreCase("start")) {
-                       g.setColor(Styles.ELEMENT_COLOR);
-                   } else {
-                       g.setColor(Styles.DISABLED_ELEMENT_COLOR);
-                   }
-                   drawRectangle(g, currentRectangle);
-                   drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-               }
-            } else if (TITLE.equalsIgnoreCase("Bubble Sort")){
+                    if (CONDITION.equalsIgnoreCase("start")) {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                    } else {
+                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
+                    }
+                    drawRectangle(g, currentRectangle);
+                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                }
+            } else if (TITLE.equalsIgnoreCase("Bubble Sort")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
@@ -117,7 +118,33 @@ public class Panel extends JPanel {
                     }
                 }
 
-            } else if (TITLE.equalsIgnoreCase("Insertion Sort")){
+            } else if (TITLE.equalsIgnoreCase("Insertion Sort")) {
+                try {
+                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
+                        g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
+                    } else {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                    }
+
+
+                } catch (NullPointerException e) {
+                    if (CONDITION.equalsIgnoreCase("start")) {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                        outlineRectangle(g, currentRectangle);
+                    } else {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                        drawRectangle(g, currentRectangle);
+                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                    }
+                }
+
+            } else if (TITLE.equalsIgnoreCase("Selection Sort")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
@@ -175,7 +202,7 @@ public class Panel extends JPanel {
         g.setColor(Styles.SWAP_COLOR);
 
         FontMetrics metrics = getFontMetrics(searchValueFont);
-        g.drawString(searchValue, MIDPOINT_HORIZONTAL - (metrics.stringWidth(searchValue) / 2), (int) (RECTANGLES[0].getY() -  RECTANGLES[0].getHeight()));
+        g.drawString(searchValue, MIDPOINT_HORIZONTAL - (metrics.stringWidth(searchValue) / 2), (int) (RECTANGLES[0].getY() - RECTANGLES[0].getHeight()));
     }
 
     void outlineRectangle(Graphics g, Rectangle rectangle) {
@@ -200,13 +227,18 @@ public class Panel extends JPanel {
         g2.drawRoundRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight, 5, 5);
     }
 
-    void searchHandling(Graphics g){
-        try{
+    void searchHandling(Graphics g) {
+        try {
             Integer.valueOf(CONDITION);
-            drawSearchValue(g, "Searching for: " + CONDITION);
-        }catch(NumberFormatException e){}
+            if(TITLE.equalsIgnoreCase("Binary Search")) {
+                drawSearchValue(g, "Searching for: " + CONDITION);
+            }else if(TITLE.equalsIgnoreCase("Selection Sort")) {
+                drawSearchValue(g, "Current minimum: " + CONDITION);
+            }
+        } catch (NumberFormatException e) {
+        }
 
-        if(CONDITION.contains("not found")){
+        if (CONDITION.contains("not found")) {
             drawSearchValue(g, CONDITION);
         }
     }

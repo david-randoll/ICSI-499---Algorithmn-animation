@@ -3,6 +3,7 @@ package Controllers;
 import Controllers.SearchingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Controllers.SortingAlgorithms.InsertionSortController;
+import Controllers.SortingAlgorithms.SelectionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
@@ -57,6 +58,7 @@ public class HomeController implements ActionListener {
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
         this.homeView.InsertionSort.addActionListener(this);
+        this.homeView.SelectionSort.addActionListener(this);
 
         homeView.setData.addActionListener(new ActionListener() {
 
@@ -123,12 +125,18 @@ public class HomeController implements ActionListener {
             AppFrame appFrame = new AppFrame();
             BubbleSortController bubbleSortController = new BubbleSortController();
             bubbleSortController.InitController();
-        } else if (e.getSource() == this.homeView.InsertionSort) {  //Bubble Sort
+        } else if (e.getSource() == this.homeView.InsertionSort) {  //Insertion Sort
             frame.getContentPane().removeAll();
             frame.dispose();
             AppFrame appFrame = new AppFrame();
             InsertionSortController insertionSortController = new InsertionSortController();
             insertionSortController.InitController();
+        } else if (e.getSource() == this.homeView.SelectionSort) {  //Selection Sort
+            frame.getContentPane().removeAll();
+            frame.dispose();
+            AppFrame appFrame = new AppFrame();
+            SelectionSortController selectionSortController = new SelectionSortController();
+            selectionSortController.InitController();
         }
     }
 }
