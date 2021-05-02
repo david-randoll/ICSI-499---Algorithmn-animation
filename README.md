@@ -12,7 +12,7 @@
    - [Citation](#Citation)
 
 # <a name="description"/>Description 
-  A Java desktop GUI program that shows an animation of a sorting algorithm in action. Through our application, you will get to learn how to sort algorithms such as, Bubble Sorting, and Insertion Sorting. The array size and execution speed can be customized by the user.
+  A Java desktop GUI program that shows an animation of a sorting algorithm in action. Through our application, you will get to learn how to sort algorithms such as, Bubble Sorting, and Insertion Sorting, Binary Searching.
 
 # <a name="Whyuseourapp"/>Why Use Our Application
   Our application have some unique options such as
@@ -21,7 +21,8 @@
     * Start/Stop
     * Speed Control
     * Edit Data Set
-
+    * Text Color Customization
+    
 
 # Sorting Algorithms
 ## <a name="BubbleSort"/>Bubble Sort  
@@ -39,7 +40,8 @@
    steps to install the app:
 
 # <a name="Howtouse"/>How To Use
-   After Insalling the app .......
+## front page
+   here you will find 
 
 # <a name="Contribution"/>Contribution
 
