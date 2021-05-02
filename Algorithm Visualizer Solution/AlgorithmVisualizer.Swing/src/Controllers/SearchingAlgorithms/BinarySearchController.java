@@ -1,8 +1,8 @@
-package Controllers.SortingAlgorithms;
+package Controllers.SearchingAlgorithms;
 
 import Controllers.Controller;
-import Models.SortingAlgorithms.BinarySearchModel;
-import Views.SortingAlgorithms.BinarySearchView;
+import Models.SearchingAlgorithms.BinarySearchModel;
+import Views.SearchingAlgorithms.BinarySearchView;
 
 import javax.swing.*;
 

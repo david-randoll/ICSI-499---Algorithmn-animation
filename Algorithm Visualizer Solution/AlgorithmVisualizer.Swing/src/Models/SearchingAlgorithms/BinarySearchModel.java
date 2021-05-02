@@ -1,9 +1,9 @@
-package Models.SortingAlgorithms;
+package Models.SearchingAlgorithms;
 
 import Models.Model;
 import Shared.DataAccess;
 import SharedComponents.Panel;
-import Views.SortingAlgorithms.BinarySearchView;
+import Views.SearchingAlgorithms.BinarySearchView;
 import res.Styles;
 
 import javax.swing.*;

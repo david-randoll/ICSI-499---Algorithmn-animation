@@ -2,14 +2,12 @@ package Models.SortingAlgorithms;
 
 import Shared.DataAccess;
 import SharedComponents.Panel;
-import Views.SortingAlgorithms.BinarySearchView;
 import Views.SortingAlgorithms.BubbleSortView;
 import res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BubbleSortModel {
 

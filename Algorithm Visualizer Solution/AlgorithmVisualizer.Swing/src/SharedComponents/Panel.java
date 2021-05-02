@@ -1,6 +1,5 @@
 package SharedComponents;
 
-import Views.SortingAlgorithms.BinarySearchView;
 import res.Styles;
 
 import javax.swing.*;

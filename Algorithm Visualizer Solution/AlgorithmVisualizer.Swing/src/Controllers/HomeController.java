@@ -1,6 +1,6 @@
 package Controllers;
 
-import Controllers.SortingAlgorithms.BinarySearchController;
+import Controllers.SearchingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Controllers.SortingAlgorithms.InsertionSortController;
 import Models.HomeModel;

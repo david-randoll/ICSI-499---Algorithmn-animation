@@ -1,7 +1,7 @@
-package Views.SortingAlgorithms;
+package Views.SearchingAlgorithms;
 
 import Controllers.HomeController;
-import Models.SortingAlgorithms.BinarySearchModel;
+import Models.SearchingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
