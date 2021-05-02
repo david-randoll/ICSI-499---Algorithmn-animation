@@ -1,8 +1,7 @@
 package Controllers;
 
 import Models.SettingsModel;
-import Shared.DataAccess;
-import SharedComponents.DefaultFrame;
+import Shared.Components.DefaultFrame;
 import Views.SettingsView;
 import res.Styles;
 

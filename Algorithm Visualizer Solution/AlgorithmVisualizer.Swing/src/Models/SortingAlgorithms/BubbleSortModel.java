@@ -1,9 +1,7 @@
 package Models.SortingAlgorithms;
 
 import Shared.DataAccess;
-import SharedComponents.Panel;
-import Views.SortingAlgorithms.BubbleSortView;
-import res.Styles;
+import Shared.Components.Panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,11 +24,11 @@ public class BubbleSortModel {
 
     public ArrayList<Panel> run(int arr[]) {
 
-        ArrayList<SharedComponents.Panel> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
 
         int l = 0, r = arr.length - 1;
 
-        SharedComponents.Panel firstPanel = new SharedComponents.Panel(TITLE, arr, null, "");
+        Panel firstPanel = new Panel(TITLE, arr, null, "");
         output.add(firstPanel);
 
         for (int i = 0; i < arr.length - 1; i++) {
@@ -45,7 +43,7 @@ public class BubbleSortModel {
                 Integer[] sortedIndices = new Integer[list.size()];
                 sortedIndices = list.toArray(sortedIndices);
 
-                SharedComponents.Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "none");
+                Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "none");
                 output.add(newPanel);
 
                 if (arr[j] > arr[j + 1]) {
@@ -54,7 +52,7 @@ public class BubbleSortModel {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    SharedComponents.Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "swap");
+                    Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "swap");
                     output.add(swapPanel);
                 }
             }
@@ -65,7 +63,7 @@ public class BubbleSortModel {
            sortedIndices[i] = i;
         }
 
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices,null, "");
+        Panel lastPanel = new Panel(TITLE, arr, sortedIndices,null, "");
         output.add(lastPanel);
 
         return output;

@@ -4,9 +4,9 @@ import Controllers.HomeController;
 import Models.SortingAlgorithms.InsertionSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.CustomJPanel;
-import SharedComponents.Panel;
-import SharedComponents.toast;
+import Shared.Components.CustomJPanel;
+import Shared.Components.Panel;
+import Shared.Components.toast;
 import res.Styles;
 
 import javax.swing.*;

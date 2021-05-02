@@ -5,8 +5,8 @@ import Controllers.HomeController;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.Panel;
-import SharedComponents.toast;
+import Shared.Components.Panel;
+import Shared.Components.toast;
 import Views.SortingAlgorithms.BubbleSortView;
 
 import javax.swing.*;

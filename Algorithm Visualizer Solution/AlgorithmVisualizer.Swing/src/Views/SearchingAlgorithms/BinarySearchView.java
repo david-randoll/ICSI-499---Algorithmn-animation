@@ -3,9 +3,10 @@ package Views.SearchingAlgorithms;
 import Controllers.HomeController;
 import Models.SearchingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
+import Shared.Components.Panel;
 import Shared.DataAccess;
-import SharedComponents.CustomJPanel;
-import SharedComponents.toast;
+import Shared.Components.CustomJPanel;
+import Shared.Components.toast;
 import res.Styles;
 
 import javax.swing.*;
@@ -214,7 +215,7 @@ public class BinarySearchView extends CustomJPanel {
                 }
 
                 model.Panels.removeAll();
-                ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), model.getSearchValue());
+                ArrayList<Panel> panels = model.run(DataAccess.GetSortedData(), model.getSearchValue());
 
                 for (int i = 0; i < panels.size(); i++) {
                     drawBackButton(panels.get(i));
@@ -274,7 +275,7 @@ public class BinarySearchView extends CustomJPanel {
                 Stop();
                 int newSearchValue = Integer.parseInt(searchTextBox.getText());
                 model.Panels.removeAll();
-                ArrayList<SharedComponents.Panel> panels = model.run(DataAccess.GetSortedData(), newSearchValue);
+                ArrayList<Panel> panels = model.run(DataAccess.GetSortedData(), newSearchValue);
                 model.setSearchValue(newSearchValue);
 
                 for (int i = 0; i < panels.size(); i++) {

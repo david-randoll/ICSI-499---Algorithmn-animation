@@ -1,9 +1,7 @@
 package Views;
 
-import SharedComponents.CustomJPanel;
-import SharedComponents.HomeSettingsLabel;
-import SharedComponents.InputBox;
-import SharedComponents.TextBox;
+import Shared.Components.HomeSettingsLabel;
+import Shared.Components.InputBox;
 import res.Styles;
 
 import javax.swing.*;

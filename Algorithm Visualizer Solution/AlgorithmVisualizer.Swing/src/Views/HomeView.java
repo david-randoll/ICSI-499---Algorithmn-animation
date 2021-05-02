@@ -1,9 +1,9 @@
 package Views;
 
 import Shared.DataAccess;
-import SharedComponents.HomeSettingsLabel;
-import SharedComponents.InputBox;
-import SharedComponents.SubmitButton;
+import Shared.Components.HomeSettingsLabel;
+import Shared.Components.InputBox;
+import Shared.Components.SubmitButton;
 import res.Styles;
 
 import javax.swing.*;

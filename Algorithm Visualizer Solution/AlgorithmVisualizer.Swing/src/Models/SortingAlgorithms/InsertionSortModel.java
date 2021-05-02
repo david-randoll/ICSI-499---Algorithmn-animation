@@ -1,9 +1,7 @@
 package Models.SortingAlgorithms;
 
 import Shared.DataAccess;
-import SharedComponents.Panel;
-import Views.SortingAlgorithms.InsertionSortView;
-import res.Styles;
+import Shared.Components.Panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,10 +23,10 @@ public class InsertionSortModel {
     }
 
     public ArrayList<Panel> run(int arr[]) {
-        ArrayList<SharedComponents.Panel> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
         int n = arr.length;
 
-        SharedComponents.Panel firstPanel = new SharedComponents.Panel(TITLE, arr, null, "");
+        Panel firstPanel = new Panel(TITLE, arr, null, "");
         output.add(firstPanel);
 
         for (int i = 1; i < n; ++i) {
@@ -92,7 +90,7 @@ public class InsertionSortModel {
             sortedIndices[i] = i;
         }
 
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices, null, "");
+        Panel lastPanel = new Panel(TITLE, arr, sortedIndices, null, "");
         output.add(lastPanel);
 
         return output;
