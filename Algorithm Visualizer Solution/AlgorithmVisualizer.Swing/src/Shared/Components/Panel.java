@@ -152,8 +152,8 @@ public class Panel extends JPanel {
     }
 
     void drawRectangle(Graphics g, Rectangle rectangle) {
-        g.drawRect(rectangle.x, rectangle.y-75, rectangle.width, rectangle.height);
-        g.fillRect(rectangle.x, rectangle.y-75, rectangle.width, rectangle.height);
+        g.drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     }
 
     void drawTitle(Graphics g, String title) {
@@ -162,23 +162,20 @@ public class Panel extends JPanel {
         g.setFont(titleFont);
 
         int titleX = MIDPOINT_HORIZONTAL - (metrics.stringWidth(title) / 2);
-        int titleY = titleFont.getSize() + metrics.getHeight() + metrics.getAscent();
+        int titleY = titleFont.getSize() - metrics.getHeight() + metrics.getAscent();
 
         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
-        g.drawString(title, titleX, titleY -75);
+        g.drawString(title, titleX, titleY);
         drawElements(g);
     }
 
-    void drawSearchValue(Graphics g, String title) {
-        Font titleFont = new Font("Arial", Font.PLAIN, 30);
-        g.setFont(titleFont);
-
+    void drawSearchValue(Graphics g, String searchValue) {
+        Font searchValueFont = new Font("Arial", Font.PLAIN, 30);
+        g.setFont(searchValueFont);
         g.setColor(Styles.SWAP_COLOR);
 
-        int wid = ((int) (screenSize.width * 0.5)) - (g.getFontMetrics().stringWidth(title)/2);
-        int hei = (int) (screenSize.height * 0.55);
-//        g.drawString(title, 15, (int) RECTANGLES[0].getY() - 25);
-        g.drawString(title, wid, hei);
+        FontMetrics metrics = getFontMetrics(searchValueFont);
+        g.drawString(searchValue, MIDPOINT_HORIZONTAL - (metrics.stringWidth(searchValue) / 2), (int) (RECTANGLES[0].getY() -  RECTANGLES[0].getHeight()));
     }
 
     void outlineRectangle(Graphics g, Rectangle rectangle) {
@@ -200,7 +197,7 @@ public class Panel extends JPanel {
             g2.setColor(Styles.SEARCHING_COLOR);
         }
         g2.setStroke(new BasicStroke(BORDER_SIZE));
-        g2.drawRoundRect(rectangleX, rectangleY-75, rectangleWidth, rectangleHeight, 5, 5);
+        g2.drawRoundRect(rectangleX, rectangleY, rectangleWidth, rectangleHeight, 5, 5);
     }
 
     void searchHandling(Graphics g){
@@ -235,7 +232,7 @@ public class Panel extends JPanel {
         int stringX = currentRectangle.x + ((currentRectangle.width - metrics.stringWidth(currentValue)) / 2);
         int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
         g.setColor(color);
-        g.drawString(currentValue, stringX, stringY-75);
+        g.drawString(currentValue, stringX, stringY);
     }
 
     public void setTitle(String title) {
