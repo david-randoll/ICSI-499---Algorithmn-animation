@@ -64,6 +64,6 @@ Noah
 
 # <a name="Citation"/>Citations
 
-https://en.wikipedia.org/wiki/Bubble_sort
+bubble sorting. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 
-https://en.wikipedia.org/wiki/Insertion_sort
+insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
