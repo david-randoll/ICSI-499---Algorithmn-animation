@@ -1,4 +1,4 @@
-package SharedComponents;
+package Shared.Components;
 
 // Java program that creates the toast message
 //(which is a selectively translucent JWindow)

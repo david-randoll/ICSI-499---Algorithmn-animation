@@ -1,4 +1,4 @@
-package SharedComponents;
+package Shared.Components;
 
 import java.awt.*;
 

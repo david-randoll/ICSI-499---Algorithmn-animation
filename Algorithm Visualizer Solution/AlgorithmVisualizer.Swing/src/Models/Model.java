@@ -1,6 +1,6 @@
 package Models;
 
-import SharedComponents.Panel;
+import Shared.Components.Panel;
 
 import java.util.ArrayList;
 

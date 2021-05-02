@@ -1,9 +1,7 @@
 package Models.SortingAlgorithms;
 
 import Shared.DataAccess;
-import SharedComponents.Panel;
-import Views.SortingAlgorithms.InsertionSortView;
-import res.Styles;
+import Shared.Components.Panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,25 +18,15 @@ public class InsertionSortModel {
         ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
-            drawBackButton(panels.get(i));
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    void drawBackButton(JPanel panel) {
-        JButton backToHome = new JButton("\uD83E\uDC44");
-        backToHome.setFont(Styles.UNICODE_FONT);
-        int buttonFontSize = Styles.UNICODE_FONT.getSize();
-        panel.add(backToHome);
-        backToHome.setBounds(25, 25, buttonFontSize * 3, buttonFontSize + 10);
-        backToHome.addActionListener(InsertionSortView.homePage());
-    }
-
     public ArrayList<Panel> run(int arr[]) {
-        ArrayList<SharedComponents.Panel> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
         int n = arr.length;
 
-        SharedComponents.Panel firstPanel = new SharedComponents.Panel(TITLE, arr, null, "");
+        Panel firstPanel = new Panel(TITLE, arr, null, "");
         output.add(firstPanel);
 
         for (int i = 1; i < n; ++i) {
@@ -102,7 +90,7 @@ public class InsertionSortModel {
             sortedIndices[i] = i;
         }
 
-        SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices, null, "");
+        Panel lastPanel = new Panel(TITLE, arr, sortedIndices, null, "");
         output.add(lastPanel);
 
         return output;

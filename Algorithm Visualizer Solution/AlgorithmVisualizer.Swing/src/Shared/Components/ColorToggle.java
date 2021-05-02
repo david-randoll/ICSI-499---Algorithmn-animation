@@ -1,3 +1,4 @@
+package Shared.Components;
 public class ColorToggle {
 
    /* public ColorToggle(){

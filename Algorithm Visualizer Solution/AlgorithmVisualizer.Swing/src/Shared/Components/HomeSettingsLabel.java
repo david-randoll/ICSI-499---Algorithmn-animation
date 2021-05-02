@@ -1,12 +1,12 @@
-package SharedComponents;
+package Shared.Components;
 
 import res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class TitleLabel extends JLabel {
-    public TitleLabel(String title) {
+public class HomeSettingsLabel extends JLabel {
+    public HomeSettingsLabel(String title) {
         this.setText(title);
         this.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         this.setFont(new Font(this.getFont().getFamily(), Font.BOLD, Styles.PAGE_TITLE_FONTSIZE));

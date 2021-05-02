@@ -1,12 +1,12 @@
 package Controllers;
 
-import Controllers.SortingAlgorithms.BinarySearchController;
+import Controllers.SearchingAlgorithms.BinarySearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Controllers.SortingAlgorithms.InsertionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
-import SharedComponents.DefaultFrame;
+import Shared.Components.DefaultFrame;
 import Views.HomeView;
 
 import javax.swing.*;
