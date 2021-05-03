@@ -37,6 +37,7 @@ public class BubbleSortView extends CustomJPanel {
 
     BubbleSortModel model;
 
+<<<<<<< Updated upstream
     public BubbleSortView() {
         super("Bubble Sort");
         speedValue = 1000;
@@ -52,6 +53,11 @@ public class BubbleSortView extends CustomJPanel {
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
         if (currentIndex >= 0 && currentIndex < model.Panels.getComponentCount()) {
             cardLayout.show(model.Panels, Integer.toString(currentIndex));
+=======
+    public BubbleSortView(BubbleSortModel model) {
+        super(model, 1000);
+        this.model = model;
+>>>>>>> Stashed changes
 
             AppFrame.appFrame.repaint();
 

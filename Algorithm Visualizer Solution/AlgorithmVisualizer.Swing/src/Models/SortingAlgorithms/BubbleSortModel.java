@@ -1,10 +1,15 @@
 package Models.SortingAlgorithms;
 
+<<<<<<< Updated upstream
 import Shared.DataAccess;
 import SharedComponents.Panel;
 import Views.SortingAlgorithms.BinarySearchView;
 import Views.SortingAlgorithms.BubbleSortView;
 import res.Styles;
+=======
+import Shared.Components.Panel;
+import Shared.DataAccess;
+>>>>>>> Stashed changes
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,13 +56,17 @@ public class BubbleSortModel {
 
                 ArrayList<Integer> list = new ArrayList<>();
 
-                for (int index = arr.length - i ; index < arr.length; index++) {
+                for (int index = arr.length - i; index < arr.length; index++) {
                     list.add(index);
                 }
                 Integer[] sortedIndices = new Integer[list.size()];
                 sortedIndices = list.toArray(sortedIndices);
 
+<<<<<<< Updated upstream
                 SharedComponents.Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "none");
+=======
+                Panel newPanel = new Panel(TITLE, arr, sortedIndices, indices, "Is " + arr[j] + " greater than " + arr[j + 1] + "?");
+>>>>>>> Stashed changes
                 output.add(newPanel);
 
                 if (arr[j] > arr[j + 1]) {
@@ -68,16 +77,26 @@ public class BubbleSortModel {
                     arr[j + 1] = temp;
                     SharedComponents.Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "swap");
                     output.add(swapPanel);
+<<<<<<< Updated upstream
+=======
+                } else {
+                    Panel noSwapPanel = new Panel(TITLE, arr, sortedIndices, indices, "Nope");
+                    output.add(noSwapPanel);
+>>>>>>> Stashed changes
                 }
             }
         }
 
         Integer[] sortedIndices = new Integer[arr.length];
-        for(int i =0; i < sortedIndices.length;i++){
-           sortedIndices[i] = i;
+        for (int i = 0; i < sortedIndices.length; i++) {
+            sortedIndices[i] = i;
         }
 
+<<<<<<< Updated upstream
         SharedComponents.Panel lastPanel = new SharedComponents.Panel(TITLE, arr, sortedIndices,null, "");
+=======
+        Panel lastPanel = new Panel(TITLE, arr, sortedIndices, null, "Sorted");
+>>>>>>> Stashed changes
         output.add(lastPanel);
 
         return output;

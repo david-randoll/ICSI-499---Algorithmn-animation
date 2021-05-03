@@ -12,4 +12,11 @@ public class CustomJPanel extends JPanel {
         this.add(this.titleLabel);
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
+<<<<<<< Updated upstream:Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/CustomJPanel.java
+=======
+
+    public CustomJPanel() {
+
+    }
+>>>>>>> Stashed changes:Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/Components/CustomJPanel.java
 }
