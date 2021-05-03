@@ -10,8 +10,8 @@
       * [Binary Search](#BinarySearch)
    - [Installation](#Installation)
    - [How to use](#Howtouse)
-   - [Contribution](#Contribution)
-   - [Citation](#Citation)
+   - [Contributions](#Contributions)
+   - [Citations](#Citations)
 
 # <a name="description"/>Description 
   A Java based desktop application animates many of the fundamental sorting or searching algorithms used in Computer Science. Through our application, users will gain a better understanding of how these algorithms truly function.
@@ -53,7 +53,7 @@
    Here the user will be able to visually learn the selected algorithm. The user will also be able to speed up or slow down the animation to aid them in understanding the alogirithm. There is a pause/play button which allow the user to take their time learning. Additionally, the user will also be able to edit the data set by adding or deleting elements as they please, and all of this can be done right there on the learning page. Our searching algorithms will also allow the user search for a specific number in the data set.
    
    
-# <a name="Contribution"/>Contribution
+# <a name="Contributions"/>Contribution
 
 This application was created by the hard work of our team:
 
@@ -62,7 +62,7 @@ This application was created by the hard work of our team:
    * Kyler
    * Noah
 
-# <a name="Citation"/>Citations
+# <a name="Citations"/>Citations
 
 - <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 - <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
