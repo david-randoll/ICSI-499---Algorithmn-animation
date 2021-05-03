@@ -235,9 +235,9 @@ public class Panel extends JPanel {
         //Case for when swapping to highlight indices
         if (CONDITION.equals("swap") || CONDITION.equals("Yes, so we swap!")) {
             g2.setColor(Styles.SWAP_COLOR);
-        } else if (CONDITION.equals("found")) {
+        } else if (CONDITION.contains("found")) {
             g2.setColor(Styles.FOUND_COLOR);
-        } else if (CONDITION.equals("not found")) {
+        } else if (CONDITION.contains("not found")) {
             g2.setColor(Styles.APP_BACKGROUNDCOLOR);
         } else {
             g2.setColor(Styles.SEARCHING_COLOR);
