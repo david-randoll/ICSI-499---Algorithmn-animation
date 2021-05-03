@@ -14,7 +14,7 @@
    - [Citations](#Citations)
 
 # <a name="description"/>Description 
-  A Java based desktop application which animates many of the fundamental sorting or searching algorithms used in Computer Science. Through our application, users will gain a better understanding of how these algorithms truly function.
+  A Java based desktop application which animates many of the fundamental sorting and searching algorithms used in Computer Science. Through our application, users will gain a better understanding of how these algorithms truly function.
 
 
 # <a name="Whyuseourapp"/>Why Use Our Application
