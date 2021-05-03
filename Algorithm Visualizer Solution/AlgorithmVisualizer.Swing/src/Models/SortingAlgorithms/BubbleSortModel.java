@@ -3,22 +3,19 @@ package Models.SortingAlgorithms;
 import Shared.DataAccess;
 import Shared.Components.Panel;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
-public class BubbleSortModel {
-
-    public static JPanel Panels = new JPanel(new CardLayout());
+public class BubbleSortModel extends SorterModel implements IGeneratePanel {
 
     String TITLE = "Bubble Sort";
 
     public BubbleSortModel() {
+        super();
         int[] data = DataAccess.GetData();
         ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
-            this.Panels.add(panels.get(i), Integer.toString(i));
+            super.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 

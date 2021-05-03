@@ -12,4 +12,7 @@ public class CustomJPanel extends JPanel {
         this.add(this.titleLabel);
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
+    public CustomJPanel(){
+
+    }
 }

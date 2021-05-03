@@ -7,9 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class InsertionSortModel {
-
-    public static JPanel Panels = new JPanel(new CardLayout());
+public class InsertionSortModel extends SorterModel implements IGeneratePanel {
 
     String TITLE = "Insertion Sort";
 
