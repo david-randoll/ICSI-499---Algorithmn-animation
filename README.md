@@ -67,6 +67,7 @@ Noah
 
 # <a name="Citation"/>Citations
 
-Bubble Sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
-
-Insertion Sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
+- Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
+- Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
+- Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+- Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
