@@ -16,6 +16,7 @@
 # <a name="description"/>Description 
   A Java based desktop application which animates many of the fundamental sorting or searching algorithms used in Computer Science. Through our application, users will gain a better understanding of how these algorithms truly function.
 
+
 # <a name="Whyuseourapp"/>Why Use Our Application
   Our application have some unique options such as
  
@@ -23,6 +24,7 @@
     * Speed Control
     * Custom Datasets
     * Text Color Customization
+    
     
 # <a name="Algorithms"/>Algorithms
 ## <a name="BubbleSort"/>Bubble Sort  
@@ -38,6 +40,7 @@
   
 ## <a name="BinarySearch"/>Binary Search
   Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.[[4]](#Citation4)
+  
   
 # <a name="Installation"/>Installation
    Steps to install the app:
@@ -61,6 +64,7 @@ This application was created by the hard work of our team:
    * David
    * Kyler
    * Noah
+
 
 # <a name="Citations"/>Citations
 
