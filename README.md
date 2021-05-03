@@ -88,4 +88,11 @@ This application was created by the hard work of our team:
 3. <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
 4. <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
 5. <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+6. Linear Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/linear-search/
+7. Binary Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/binary-search/
+8. Bubble Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/bubble-sort/
+9. Insertion Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/insertion-sort/
+10. Selection Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/selection-sort/
+
+
 
