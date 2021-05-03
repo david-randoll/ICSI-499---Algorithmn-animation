@@ -5,23 +5,17 @@ import Views.SortingAlgorithms.InsertionSortView;
 
 import javax.swing.*;
 
-public class InsertionSortController {
+public class InsertionSortController extends SorterController {
 
     private InsertionSortView view;
     private InsertionSortModel model;
 
-    public void InitView() {
-        Runnable runnable = new Runnable() {
-            public void run() {
-                view.animateInsertionSort(model);
-            }
-        };
-        SwingUtilities.invokeLater(runnable);
+    public InsertionSortController() {
+        model = new InsertionSortModel();
+        view = new InsertionSortView(model);
     }
 
     public void InitController() {
-        view = new InsertionSortView();
-        model = new InsertionSortModel();
-        InitView();
+        super.InitController(model,view);
     }
 }
