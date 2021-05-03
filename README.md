@@ -80,7 +80,7 @@ This application was created by four hard-working students at the University at 
    * David
    * Kyler
    * Noah
- <img style="float: right;" src="https://en.wikipedia.org/wiki/Albany_Great_Danes#/media/File:Albany_Great_Danes_logo.svg">
+ <img style="float: right; width: 100px;" src="https://en.wikipedia.org/wiki/Albany_Great_Danes#/media/File:Albany_Great_Danes_logo.svg">
 
 
 # <a name="Citations"/>Citations
