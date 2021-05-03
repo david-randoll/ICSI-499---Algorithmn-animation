@@ -27,7 +27,7 @@ public class SorterView extends JPanel implements ISorterView {
     private AppTimer timer;
     SorterModel model;
 
-    public SorterView(SorterModel model,int defaultSpeed) {
+    public SorterView(SorterModel model, int defaultSpeed) {
         this.model = model;
         model.setSpeedValue(defaultSpeed);
         InitializeToolBar();
@@ -41,7 +41,7 @@ public class SorterView extends JPanel implements ISorterView {
 
             AppFrame.appFrame.repaint();
 
-            model.setCurrentIndex(model.getCurrentIndex()+1);
+            model.setCurrentIndex(model.getCurrentIndex() + 1);
         } else {
             timer.Stop();
             model.setCurrentIndex(0);
@@ -55,10 +55,10 @@ public class SorterView extends JPanel implements ISorterView {
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
 
-        this.timer = new AppTimer(this,model);
+        this.timer = new AppTimer(this, model);
     }
 
-    private void InitializeBackButton(){
+    private void InitializeBackButton() {
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         topPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         topPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.10)));
@@ -135,25 +135,31 @@ public class SorterView extends JPanel implements ISorterView {
     /*
         Add event listener
      */
-    public void addNextButtonListener(ActionListener listener){
+    public void addNextButtonListener(ActionListener listener) {
         nextButton.addActionListener(listener);
     }
-    public void addPreviousButtonListener(ActionListener listener){
+
+    public void addPreviousButtonListener(ActionListener listener) {
         previousButton.addActionListener(listener);
     }
-    public void addPlayPauseButtonListener(ActionListener listener){
+
+    public void addPlayPauseButtonListener(ActionListener listener) {
         playPauseButton.addActionListener(listener);
     }
-    public void addResetButtonListener(ActionListener listener){
+
+    public void addResetButtonListener(ActionListener listener) {
         resetButton.addActionListener(listener);
     }
-    public void addSpeedSliderListener(ChangeListener listener){
+
+    public void addSpeedSliderListener(ChangeListener listener) {
         speedSlider.addChangeListener(listener);
     }
-    public void addDataSetButtonListener(ActionListener listener){
+
+    public void addDataSetButtonListener(ActionListener listener) {
         changeDataSetButton.addActionListener(listener);
     }
-    public void addHomeButtonListener(ActionListener listener){
+
+    public void addHomeButtonListener(ActionListener listener) {
         backToHome.addActionListener(listener);
     }
 
@@ -189,14 +195,14 @@ public class SorterView extends JPanel implements ISorterView {
     /*
         set data button
      */
-    public JButton getChangeDataSetButton(){
+    public JButton getChangeDataSetButton() {
         return changeDataSetButton;
     }
 
     /*
         speed slider
      */
-    public int getSpeedSliderValue(){
+    public int getSpeedSliderValue() {
         return this.speedSlider.getValue();
     }
 
@@ -210,7 +216,7 @@ public class SorterView extends JPanel implements ISorterView {
     /*
         get the toolbar panel
      */
-    public JPanel getToolBarPanel(){
+    public JPanel getToolBarPanel() {
         return toolBarPanel;
     }
 }

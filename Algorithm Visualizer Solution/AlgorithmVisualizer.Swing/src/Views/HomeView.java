@@ -1,17 +1,18 @@
 package Views;
 
-import Shared.DataAccess;
 import Shared.Components.HomeSettingsLabel;
 import Shared.Components.InputBox;
 import Shared.Components.SubmitButton;
+import Shared.DataAccess;
 import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class HomeView extends JPanel {
-    private HomeSettingsLabel title = new HomeSettingsLabel("Learning Algorithms");
+    private final HomeSettingsLabel title = new HomeSettingsLabel("Learning Algorithms");
     public SubmitButton settings = new SubmitButton("Settings");
+    public SubmitButton LinearSearch = new SubmitButton("Linear Search");
     public SubmitButton BinarySearch = new SubmitButton("Binary Search");
     public SubmitButton BubbleSort = new SubmitButton("Bubble Sort");
     public SubmitButton InsertionSort = new SubmitButton("Insertion Sort");
@@ -22,9 +23,9 @@ public class HomeView extends JPanel {
 
 
     //Algorithm group Labels
-    private JLabel Searching = new JLabel();
-    private JLabel Sorting = new JLabel();
-    private JLabel PathFinding = new JLabel();
+    private final JLabel Searching = new JLabel();
+    private final JLabel Sorting = new JLabel();
+    private final JLabel PathFinding = new JLabel();
     public InputBox data = new InputBox(DataAccess.GetCommaSeparatedData());
 
     public HomeView() {
@@ -43,7 +44,10 @@ public class HomeView extends JPanel {
         settings.setBounds(675, 625, 100, 30);
         super.add(settings);
 
-        BinarySearch.setBounds(125, 425, 150, 25);
+        LinearSearch.setBounds(125, 425, 150, 25);
+        super.add(LinearSearch);
+
+        BinarySearch.setBounds(125, 475, 150, 25);
         super.add(BinarySearch);
 
         BubbleSort.setBounds(325, 425, 150, 25);
@@ -85,8 +89,6 @@ public class HomeView extends JPanel {
 
         PathFinding.setBounds(525, 375, 250, 35);
         super.add(PathFinding);
-
-
 
 
     }

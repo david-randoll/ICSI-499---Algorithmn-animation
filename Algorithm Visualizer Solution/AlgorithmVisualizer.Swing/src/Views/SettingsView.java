@@ -9,7 +9,7 @@ import java.awt.*;
 
 
 public class SettingsView extends JPanel {
-    private HomeSettingsLabel title = new HomeSettingsLabel("Settings");
+    private final HomeSettingsLabel title = new HomeSettingsLabel("Settings");
     public JButton titleColorsButton = new JButton("Save");
     public InputBox titleColors = new InputBox("");
     public JLabel titleColorsLabel = new JLabel("Headings Color");
@@ -40,7 +40,6 @@ public class SettingsView extends JPanel {
         titleColorsLabel.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         titleColors.setBounds(225, 200, 100, 25);
         titleColorsButton.setBounds(350, 200, 75, 25);
-
 
 
         submit.setBounds(100, 565, 100, 25);

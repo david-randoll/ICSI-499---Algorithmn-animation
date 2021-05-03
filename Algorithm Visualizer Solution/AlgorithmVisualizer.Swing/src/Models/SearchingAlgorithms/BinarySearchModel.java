@@ -1,13 +1,10 @@
 package Models.SearchingAlgorithms;
 
 import Models.Model;
-import Shared.DataAccess;
 import Shared.Components.Panel;
+import Shared.DataAccess;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class BinarySearchModel extends SearchModel implements Model {
 
@@ -32,17 +29,15 @@ public class BinarySearchModel extends SearchModel implements Model {
         Panel firstPanel = new Panel(TITLE, arr, null, "start");
         output.add(firstPanel);
 
-        int index = 0;
         while (l <= r) {
 
             int m = l + (r - l) / 2;
-            index = m;
             Integer[] indices = {m};
 
             // Check if x is present at mid
             if (arr[m] == x) {
                 Integer[] found = {m};
-                output.add(new Panel(TITLE, arr, found, indices, "found"));
+                output.add(new Panel(TITLE, arr, found, indices, String.format("%d was found!", x)));
                 return output;
             }
 
@@ -79,7 +74,7 @@ public class BinarySearchModel extends SearchModel implements Model {
         }
         // if we reach here, then element was
         // not present
-        output.add(new Panel(TITLE, arr, new Integer[]{}, new Integer[]{}, String.format("%d not found", x)));
+        output.add(new Panel(TITLE, arr, new Integer[]{}, new Integer[]{}, String.format("%d not found.", x)));
         return output;
     }
 

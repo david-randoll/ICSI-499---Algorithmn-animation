@@ -1,6 +1,7 @@
 package Controllers;
 
 import Controllers.SearchingAlgorithms.BinarySearchController;
+import Controllers.SearchingAlgorithms.LinearSearchController;
 import Controllers.SortingAlgorithms.BubbleSortController;
 import Controllers.SortingAlgorithms.InsertionSortController;
 import Controllers.SortingAlgorithms.SelectionSortController;
@@ -55,6 +56,7 @@ public class HomeController implements ActionListener {
 
     public void InitController() {
         this.homeView.settings.addActionListener(this);
+        this.homeView.LinearSearch.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
         this.homeView.BubbleSort.addActionListener(this);
         this.homeView.InsertionSort.addActionListener(this);
@@ -113,7 +115,13 @@ public class HomeController implements ActionListener {
             this.frame.getContentPane().removeAll();
             this.frame.repaint();
             SettingsController settingsController = new SettingsController(this.frame);
-        } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
+        } else if (e.getSource() == this.homeView.LinearSearch) { //Linear Search Button
+            frame.getContentPane().removeAll();
+            frame.dispose();
+            AppFrame appFrame = new AppFrame();
+            LinearSearchController linearSearch = new LinearSearchController();
+            linearSearch.InitController();
+        }  else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
             frame.getContentPane().removeAll();
             frame.dispose();
             AppFrame appFrame = new AppFrame();
@@ -131,6 +139,12 @@ public class HomeController implements ActionListener {
             AppFrame appFrame = new AppFrame();
             InsertionSortController insertionSortController = new InsertionSortController();
             insertionSortController.InitController();
+        } else if (e.getSource() == this.homeView.SelectionSort) {  //Selection Sort
+            frame.getContentPane().removeAll();
+            frame.dispose();
+            AppFrame appFrame = new AppFrame();
+            SelectionSortController selectionSortController = new SelectionSortController();
+            selectionSortController.InitController();
         } else if (e.getSource() == this.homeView.SelectionSort) {  //Selection Sort
             frame.getContentPane().removeAll();
             frame.dispose();

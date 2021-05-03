@@ -93,6 +93,25 @@ public class Panel extends JPanel {
                     drawRectangle(g, currentRectangle);
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                 }
+            } else if (TITLE.equalsIgnoreCase("Linear Search")) {
+                try {
+                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                    } else {
+                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
+                    }
+                    drawRectangle(g, currentRectangle);
+                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+
+                } catch (NullPointerException e) {
+                    if (CONDITION.equalsIgnoreCase("start")) {
+                        g.setColor(Styles.ELEMENT_COLOR);
+                    } else {
+                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
+                    }
+                    drawRectangle(g, currentRectangle);
+                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                }
             } else if (TITLE.equalsIgnoreCase("Bubble Sort")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
@@ -228,21 +247,24 @@ public class Panel extends JPanel {
     }
 
     void searchHandling(Graphics g) {
+
+        if (CONDITION.contains("found")) {
+            drawSearchValue(g, CONDITION);
+        }
+
         try {
             Integer.valueOf(CONDITION);
             if(TITLE.equalsIgnoreCase("Binary Search")) {
                 drawSearchValue(g, "Searching for: " + CONDITION);
-            }else if(TITLE.equalsIgnoreCase("Selection Sort")) {
+            } else if(TITLE.equalsIgnoreCase("Linear Search")) {
+                drawSearchValue(g, "Searching for:  " + CONDITION);
+            } else if(TITLE.equalsIgnoreCase("Selection Sort")) {
                 drawSearchValue(g, "Current minimum: " + CONDITION);
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) { //USED FOR PSEUDOCDODE
             if(TITLE.equalsIgnoreCase("Bubble Sort")){
                 drawSearchValue(g, CONDITION);
             }
-        }
-
-        if (CONDITION.contains("not found")) {
-            drawSearchValue(g, CONDITION);
         }
     }
 
