@@ -48,7 +48,7 @@
 ## <a name="LinearSearch"/>Linear Search
   In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
   
-![Linear Search](GIFS/Binary_Search.gif)
+![Linear Search](GIFS/Linear_Search.gif)
 
 
 ## <a name="BinarySearch"/>Binary Search
