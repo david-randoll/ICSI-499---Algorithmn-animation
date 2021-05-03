@@ -83,9 +83,9 @@ This application was created by the hard work of our team:
 
 
 # <a name="Citations"/>Citations
-- <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
-- <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
-- <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
-- <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
-- <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+1. <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
+2. <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
+3. <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
+4. <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+5. <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
 
