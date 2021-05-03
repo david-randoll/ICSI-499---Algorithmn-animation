@@ -61,14 +61,13 @@
    Here you will find a textbar with preset data to use or the user can manually enter a data set. Then the user can choose an Algorithm that they would like to learn. The user can enter the settings page from the home screen as well. 
    
 ## Settings
-   On this page the user can customize how the app should look that. The user will be able to customize the color of the font. Turn On/Off Color Blind Mode, and size of the font.
+   On this page the user can customize the look and feel of the application. Also this is where users can use our "Submit Feedback" form to let us know how we can improve!
    
 ## Within Each Algorithm
    The user will be able to visually learn the selected algorithm. The user will also be able to speed up or slow down the animation to aid them in understanding the alogirithm. There is a pause/play button which allow the user to take their time learning. Additionally, the user will also be able to edit the data set by adding or deleting elements as they please, and all of this can be done right there on the learning page. Our searching algorithms will also allow the user search for a specific number in the data set.
    
    
 # <a name="Contributions"/>Contribution
-
 This application was created by the hard work of our team:
 
    * Ahmad 
@@ -78,7 +77,6 @@ This application was created by the hard work of our team:
 
 
 # <a name="Citations"/>Citations
-
 - <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 - <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
 - <a name="Citation3"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
