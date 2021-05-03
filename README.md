@@ -80,7 +80,7 @@ This application was created by four hard-working students at the University at 
    * David
    * Kyler
    * Noah
-<img src="UAlbany-Logo.png" alt="SUNY University at Albany" width="200"/>
+<img src="UAlbany-Logo.png" alt="SUNY University at Albany" width="400"/>
 
 
 # <a name="Citations"/>Citations
