@@ -57,7 +57,7 @@
    3.  Download and run JAR file
 
 # <a name="Howtouse"/>How To Use
-## Front page
+## Home Page
    Here you will find a textbar with preset data to use or the user can manually enter a data set. Then the user can choose an Algorithm that they would like to learn. The user can enter the settings page from the home screen as well. 
    
 ## Settings
