@@ -57,10 +57,10 @@
 
 This application was created by the hard work of our team:
 
-* Ahmad 
-* David
-* Kyler
-* Noah
+   * Ahmad 
+   * David
+   * Kyler
+   * Noah
 
 # <a name="Citation"/>Citations
 
