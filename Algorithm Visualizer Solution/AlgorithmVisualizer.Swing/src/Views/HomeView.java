@@ -1,29 +1,31 @@
 package Views;
 
+import Shared.Components.HomeSettingsLabel;
+import Shared.Components.InputBox;
+import Shared.Components.SubmitButton;
 import Shared.DataAccess;
-import SharedComponents.HomeSettingsLabel;
-import SharedComponents.InputBox;
-import SharedComponents.SubmitButton;
-import res.Styles;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class HomeView extends JPanel {
-    private HomeSettingsLabel title = new HomeSettingsLabel("Learning Algorithms");
+    private final HomeSettingsLabel title = new HomeSettingsLabel("Learning Algorithms");
     public SubmitButton settings = new SubmitButton("Settings");
+    public SubmitButton LinearSearch = new SubmitButton("Linear Search");
     public SubmitButton BinarySearch = new SubmitButton("Binary Search");
     public SubmitButton BubbleSort = new SubmitButton("Bubble Sort");
     public SubmitButton InsertionSort = new SubmitButton("Insertion Sort");
+    public SubmitButton SelectionSort = new SubmitButton("Selection Sort");
     public SubmitButton setData = new SubmitButton("Set DataSet");
 
     public JLabel gitHub = new JLabel("github");
 
 
     //Algorithm group Labels
-    private JLabel Searching = new JLabel();
-    private JLabel Sorting = new JLabel();
-    private JLabel PathFinding = new JLabel();
+    private final JLabel Searching = new JLabel();
+    private final JLabel Sorting = new JLabel();
+    private final JLabel PathFinding = new JLabel();
     public InputBox data = new InputBox(DataAccess.GetCommaSeparatedData());
 
     public HomeView() {
@@ -42,7 +44,10 @@ public class HomeView extends JPanel {
         settings.setBounds(675, 625, 100, 30);
         super.add(settings);
 
-        BinarySearch.setBounds(125, 425, 150, 25);
+        LinearSearch.setBounds(125, 425, 150, 25);
+        super.add(LinearSearch);
+
+        BinarySearch.setBounds(125, 475, 150, 25);
         super.add(BinarySearch);
 
         BubbleSort.setBounds(325, 425, 150, 25);
@@ -50,6 +55,9 @@ public class HomeView extends JPanel {
 
         InsertionSort.setBounds(325, 475, 150, 25);
         super.add(InsertionSort);
+
+        SelectionSort.setBounds(325, 525, 150, 25);
+        super.add(SelectionSort);
 
         data.setBounds(100, 200, 575, 25);
         super.add(data);
@@ -81,8 +89,6 @@ public class HomeView extends JPanel {
 
         PathFinding.setBounds(525, 375, 250, 35);
         super.add(PathFinding);
-
-
 
 
     }

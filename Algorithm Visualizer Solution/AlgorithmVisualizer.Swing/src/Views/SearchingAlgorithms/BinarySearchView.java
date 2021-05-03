@@ -1,11 +1,11 @@
-package Views.SortingAlgorithms;
+package Views.SearchingAlgorithms;
 
 import Controllers.HomeController;
-import Models.SortingAlgorithms.InsertionSortModel;
+import Models.SearchingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
+import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.Components.CustomJPanel;
-import Shared.Components.Panel;
 import Shared.Components.toast;
 import Shared.res.Styles;
 
@@ -18,10 +18,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class InsertionSortView extends SorterView {
-    InsertionSortModel model;
+public class BinarySearchView extends SearchView {
+    BinarySearchModel model;
 
-    public InsertionSortView(InsertionSortModel model) {
+    public BinarySearchView(BinarySearchModel model) {
         super(model,1000);
         this.model = model;
 
@@ -30,4 +30,5 @@ public class InsertionSortView extends SorterView {
 
         PaintNewPanelOnScreen();
     }
+
 }

@@ -1,7 +1,8 @@
 package Views.SortingAlgorithms;
 
 import Controllers.HomeController;
-import Models.SortingAlgorithms.InsertionSortModel;
+import Models.SortingAlgorithms.SelectionSortModel;
+import Models.SortingAlgorithms.SorterModel;
 import Shared.AppFrame;
 import Shared.DataAccess;
 import Shared.Components.CustomJPanel;
@@ -18,10 +19,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-public class InsertionSortView extends SorterView {
-    InsertionSortModel model;
-
-    public InsertionSortView(InsertionSortModel model) {
+public class SelectionSortView extends SorterView {
+    SelectionSortModel model;
+    public SelectionSortView(SelectionSortModel model) {
         super(model,1000);
         this.model = model;
 

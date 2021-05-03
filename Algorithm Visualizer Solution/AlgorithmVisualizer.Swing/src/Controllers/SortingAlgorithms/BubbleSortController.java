@@ -1,28 +1,18 @@
 package Controllers.SortingAlgorithms;
 
-import Controllers.Controller;
 import Models.SortingAlgorithms.BubbleSortModel;
 import Views.SortingAlgorithms.BubbleSortView;
 
-import javax.swing.*;
-
-public class BubbleSortController implements Controller {
+public class BubbleSortController extends SorterController {
 
     private BubbleSortView view;
     private BubbleSortModel model;
 
-    public void InitView() {
-        Runnable runnable = new Runnable() {
-            public void run() {
-                view.animateBubbleSort(model);
-            }
-        };
-        SwingUtilities.invokeLater(runnable);
-    }
-
-    public void InitController() {
-        view = new BubbleSortView();
+    public BubbleSortController() {
         model = new BubbleSortModel();
-        InitView();
+        view = new BubbleSortView(model);
+    }
+    public void InitController(){
+        super.InitController(model,view);
     }
 }

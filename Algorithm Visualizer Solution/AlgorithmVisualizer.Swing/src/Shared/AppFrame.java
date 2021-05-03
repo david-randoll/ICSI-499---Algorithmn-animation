@@ -1,6 +1,6 @@
 package Shared;
 
-import SharedComponents.Frame;
+import Shared.Components.Frame;
 
 import java.awt.*;
 

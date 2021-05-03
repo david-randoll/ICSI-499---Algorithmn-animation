@@ -1,17 +1,15 @@
 package Views;
 
-import SharedComponents.CustomJPanel;
-import SharedComponents.HomeSettingsLabel;
-import SharedComponents.InputBox;
-import SharedComponents.TextBox;
-import res.Styles;
+import Shared.Components.HomeSettingsLabel;
+import Shared.Components.InputBox;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 
 
 public class SettingsView extends JPanel {
-    private HomeSettingsLabel title = new HomeSettingsLabel("Settings");
+    private final HomeSettingsLabel title = new HomeSettingsLabel("Settings");
     public JButton titleColorsButton = new JButton("Save");
     public InputBox titleColors = new InputBox("");
     public JLabel titleColorsLabel = new JLabel("Headings Color");
@@ -36,6 +34,13 @@ public class SettingsView extends JPanel {
         titleColorsLabel.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         titleColors.setBounds(225, 200, 100, 25);
         titleColorsButton.setBounds(350, 200, 75, 25);
+
+        titleColorsLabel.setBounds(100, 200, 100, 25);
+        titleColorsLabel.setFont(new Font(this.getFont().getFamily(), Font.PLAIN, 15));
+        titleColorsLabel.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
+        titleColors.setBounds(225, 200, 100, 25);
+        titleColorsButton.setBounds(350, 200, 75, 25);
+
 
         submit.setBounds(100, 565, 100, 25);
         Home.setBounds(675, 625, 100, 30);
