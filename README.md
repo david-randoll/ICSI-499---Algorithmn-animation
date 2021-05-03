@@ -20,7 +20,10 @@
 # <a name="Whyuseourapp"/>Why Use Our Application
   Our application have some unique options such as
  
-    * Pause/Play and Forward/Backward Media Control 
+    * Media Controls
+      - Pause/Play
+      - Forward/Backward 
+      - Restart
     * Speed Control
     * Custom Datasets
     * Text Color Customization
