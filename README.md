@@ -55,7 +55,7 @@
 
 # <a name="Howtouse"/>How To Use
 ## Front page
-   Here you will find a textbar with a preset data to use or the user can manually enter a data set. Then the user can choose an Algorithm that they would like to learn. The user can enter the settings page from the home screen as well. 
+   Here you will find a textbar with preset data to use or the user can manually enter a data set. Then the user can choose an Algorithm that they would like to learn. The user can enter the settings page from the home screen as well. 
    
 ## Settings
    On this page the user can customize how the app should look that. The user will be able to customize the color of the font. Turn On/Off Color Blind Mode, and size of the font.
