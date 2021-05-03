@@ -1,6 +1,6 @@
 # Animation of Algorithms for Effective Teaching and Learning
 
-# Table of Contents
+# Table Of Contents
    - [Description](#description)
    - [Why use our app](#Whyuseourapp)
    - [Algorithms](#Algorithms)
