@@ -45,8 +45,14 @@
   
 ![Insertion Sort](GIFS/Selection_sort.gif)
 
+## <a name="LinearSearch"/>Linear Search
+  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
+  
+![Linear Search](GIFS/Binary_Search.gif)
+
+
 ## <a name="BinarySearch"/>Binary Search
-  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[4]](#Citation4)
+  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[5]](#Citation4)
   
 ![Binary Search](GIFS/Binary_Search.gif)
 
@@ -79,5 +85,7 @@ This application was created by the hard work of our team:
 # <a name="Citations"/>Citations
 - <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 - <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
-- <a name="Citation3"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
-- <a name="Citation4"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
+- <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
+- <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+- <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+
