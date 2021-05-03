@@ -74,7 +74,7 @@
    
    
 # <a name="Contributions"/>Contribution
-This application was created by the hard work of our team:
+This application was created by four hard-working students at the University at Albany (SUNY):
 
    * Ahmad 
    * David
