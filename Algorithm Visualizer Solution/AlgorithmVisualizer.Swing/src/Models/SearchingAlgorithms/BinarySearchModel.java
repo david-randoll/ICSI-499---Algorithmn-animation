@@ -9,11 +9,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BinarySearchModel implements Model {
+public class BinarySearchModel extends SearchModel implements Model {
 
-    public static JPanel Panels = new JPanel(new CardLayout());
-    private Random rand = new Random();
-    private int SEARCH_VALUE = rand.nextInt(100);
+    final String TITLE = "Binary Search";
 
     public BinarySearchModel() {
         int[] data = DataAccess.GetSortedData();
@@ -25,25 +23,13 @@ public class BinarySearchModel implements Model {
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public int getSearchValue() {
-        return SEARCH_VALUE;
-    }
-
-    public int getData() {
-        return SEARCH_VALUE;
-    }
-
-    public void setSearchValue(int value) {
-        this.SEARCH_VALUE = value;
-    }
-
     public ArrayList<Panel> run(int arr[], int x) {
 
         ArrayList<Panel> output = new ArrayList<>();
 
         int l = 0, r = arr.length - 1;
 
-        Panel firstPanel = new Panel("Binary Search", arr, null, "start");
+        Panel firstPanel = new Panel(TITLE, arr, null, "start");
         output.add(firstPanel);
 
         int index = 0;
@@ -56,7 +42,7 @@ public class BinarySearchModel implements Model {
             // Check if x is present at mid
             if (arr[m] == x) {
                 Integer[] found = {m};
-                output.add(new Panel("Binary Search", arr, found, indices, "found"));
+                output.add(new Panel(TITLE, arr, found, indices, "found"));
                 return output;
             }
 
@@ -71,7 +57,7 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
+                Panel newPanel = new Panel(TITLE, arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
 
@@ -87,13 +73,13 @@ public class BinarySearchModel implements Model {
                 Integer[] enabledIndices = new Integer[list.size()];
                 enabledIndices = list.toArray(enabledIndices);
 
-                Panel newPanel = new Panel("Binary Search", arr, enabledIndices, indices, String.valueOf(x));
+                Panel newPanel = new Panel(TITLE, arr, enabledIndices, indices, String.valueOf(x));
                 output.add(newPanel);
             }
         }
         // if we reach here, then element was
         // not present
-        output.add(new Panel("Binary Search", arr, new Integer[]{}, new Integer[]{}, String.format("%d not found", x)));
+        output.add(new Panel(TITLE, arr, new Integer[]{}, new Integer[]{}, String.format("%d not found", x)));
         return output;
     }
 

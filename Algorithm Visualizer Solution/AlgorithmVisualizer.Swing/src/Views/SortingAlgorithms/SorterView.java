@@ -22,6 +22,7 @@ public class SorterView extends JPanel implements ISorterView {
     private JTextField dataSetTextBox;
     private JButton backToHome;
     private JButton changeDataSetButton;
+    JPanel toolBarPanel;
 
     private AppTimer timer;
     SorterModel model;
@@ -49,6 +50,7 @@ public class SorterView extends JPanel implements ISorterView {
     }
 
     public void runAnimation() {
+        AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
         AppFrame.appFrame.setBackground(Styles.APP_BACKGROUNDCOLOR);
         AppFrame.appFrame.pack();
         AppFrame.appFrame.setVisible(true);
@@ -72,7 +74,7 @@ public class SorterView extends JPanel implements ISorterView {
     }
 
     private void InitializeToolBar() {
-        JPanel toolBarPanel = new JPanel();
+        toolBarPanel = new JPanel();
         toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
         toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
 
@@ -128,8 +130,6 @@ public class SorterView extends JPanel implements ISorterView {
         toolBarPanel.add(speedSlider);
         toolBarPanel.add(dataSetTextBox);
         toolBarPanel.add(changeDataSetButton);
-
-        AppFrame.appFrame.add(toolBarPanel, BorderLayout.SOUTH);
     }
 
     /*
@@ -187,6 +187,13 @@ public class SorterView extends JPanel implements ISorterView {
     }
 
     /*
+        set data button
+     */
+    public JButton getChangeDataSetButton(){
+        return changeDataSetButton;
+    }
+
+    /*
         speed slider
      */
     public int getSpeedSliderValue(){
@@ -198,5 +205,12 @@ public class SorterView extends JPanel implements ISorterView {
      */
     public Dimension getScreenSize() {
         return this.screenSize;
+    }
+
+    /*
+        get the toolbar panel
+     */
+    public JPanel getToolBarPanel(){
+        return toolBarPanel;
     }
 }

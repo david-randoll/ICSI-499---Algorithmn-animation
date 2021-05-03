@@ -100,7 +100,7 @@ public class SorterController implements ISorterController {
         };
     }
 
-    private ActionListener updateDataSetActionListener() {
+    protected ActionListener updateDataSetActionListener() {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
