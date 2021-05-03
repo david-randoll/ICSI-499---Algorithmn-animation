@@ -49,7 +49,9 @@
 
 # <a name="Installation"/>Installation
    Steps to install the app:
-   - Download and run JAR file
+   1.  Download and install the latest version of the Java Runtime Environment for your computer
+       - https://www.oracle.com/java/technologies/javase-jre8-downloads.html
+   3.  Download and run JAR file
 
 # <a name="Howtouse"/>How To Use
 ## Front page
