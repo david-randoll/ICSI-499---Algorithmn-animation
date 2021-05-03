@@ -49,6 +49,7 @@
 
 # <a name="Installation"/>Installation
    Steps to install the app:
+   -Download and run JAR file
 
 # <a name="Howtouse"/>How To Use
 ## Front page
