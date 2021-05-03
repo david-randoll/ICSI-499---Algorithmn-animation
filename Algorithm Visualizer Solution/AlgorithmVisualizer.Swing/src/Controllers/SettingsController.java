@@ -1,7 +1,6 @@
 package Controllers;
 
 import Models.SettingsModel;
-import Shared.DataAccess;
 import SharedComponents.DefaultFrame;
 import Views.SettingsView;
 import res.Styles;
@@ -13,11 +12,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import DB.ServerConnection;
+
 public class SettingsController implements ActionListener {
     public SettingsView view;
     private SettingsModel model = new SettingsModel();
     private DefaultFrame frame;
     private Color color;
+    private String feedback;
 
     public SettingsController(DefaultFrame frame) {
         this.frame = frame;
@@ -56,11 +58,18 @@ public class SettingsController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Feedback form submit button
         if (e.getSource() == this.view.submit) {
-            //String feedback = this.view.feedbackForm.getText();
+            this.feedback = this.view.feedback.getText();
 
             //Connecting to Java spring Rest API
             //send data to db
-        } else if (e.getSource() == this.view.fontSizeSubmit) { //fontSize button
+            ServerConnection pt = new ServerConnection();
+            try {
+                pt.post("http://localhost:8080/home/add", this.feedback);
+            }catch(Exception t){
+                t.getMessage();
+            }
+        }
+        else if (e.getSource() == this.view.fontSizeSubmit) { //fontSize button
             Styles.PAGE_TITLE_FONTSIZE = this.view.fontSize.getColumns();
         } else if (e.getSource() == this.view.fontColorSubmit) { //fontColor Color
 
