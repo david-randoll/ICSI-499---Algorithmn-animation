@@ -1,12 +1,11 @@
 package Controllers.SearchingAlgorithms;
 
-import Controllers.Controller;
 import Models.SearchingAlgorithms.BinarySearchModel;
 import Views.SearchingAlgorithms.BinarySearchView;
 
 import javax.swing.*;
 
-public class BinarySearchController implements Controller {
+public class BinarySearchController {
 
     public BinarySearchView view;
     public BinarySearchModel model;
