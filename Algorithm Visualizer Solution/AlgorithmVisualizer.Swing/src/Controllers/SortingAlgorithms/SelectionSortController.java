@@ -5,22 +5,16 @@ import Views.SortingAlgorithms.SelectionSortView;
 
 import javax.swing.*;
 
-public class SelectionSortController {
+public class SelectionSortController extends SorterController {
     private SelectionSortView view;
     private SelectionSortModel model;
 
-    public void InitView() {
-        Runnable runnable = new Runnable() {
-            public void run() {
-                view.animateSelectionSort(model);
-            }
-        };
-        SwingUtilities.invokeLater(runnable);
+    public SelectionSortController() {
+        model = new SelectionSortModel();
+        view = new SelectionSortView(model);
     }
 
     public void InitController() {
-        view = new SelectionSortView();
-        model = new SelectionSortModel();
-        InitView();
+        super.InitController(model,view);
     }
 }
