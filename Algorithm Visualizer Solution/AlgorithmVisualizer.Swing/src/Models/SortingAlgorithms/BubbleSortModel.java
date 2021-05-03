@@ -40,8 +40,9 @@ public class BubbleSortModel extends SorterModel implements IGeneratePanel {
                 Integer[] sortedIndices = new Integer[list.size()];
                 sortedIndices = list.toArray(sortedIndices);
 
-                Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "none");
+                Panel newPanel = new Panel(TITLE, arr, sortedIndices , indices, "Is "+arr[j]+" greater than "+arr[j+1]+"?");
                 output.add(newPanel);
+
 
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j+1] and arr[j]
@@ -49,8 +50,11 @@ public class BubbleSortModel extends SorterModel implements IGeneratePanel {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
-                    Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "swap");
+                    Panel swapPanel = new Panel(TITLE, arr, sortedIndices, swapIndices, "Yes, so we swap!");
                     output.add(swapPanel);
+                }else {
+                    Panel noSwapPanel = new Panel(TITLE, arr, sortedIndices , indices, "Nope");
+                    output.add(noSwapPanel);
                 }
             }
         }
@@ -60,7 +64,7 @@ public class BubbleSortModel extends SorterModel implements IGeneratePanel {
            sortedIndices[i] = i;
         }
 
-        Panel lastPanel = new Panel(TITLE, arr, sortedIndices,null, "");
+        Panel lastPanel = new Panel(TITLE, arr, sortedIndices,null, "Sorted");
         output.add(lastPanel);
 
         return output;

@@ -1,12 +1,11 @@
 package Controllers.SortingAlgorithms;
 
-import Controllers.Controller;
 import Models.SortingAlgorithms.SelectionSortModel;
 import Views.SortingAlgorithms.SelectionSortView;
 
 import javax.swing.*;
 
-public class SelectionSortController implements Controller {
+public class SelectionSortController {
     private SelectionSortView view;
     private SelectionSortModel model;
 

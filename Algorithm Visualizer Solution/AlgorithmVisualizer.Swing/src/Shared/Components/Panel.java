@@ -214,7 +214,7 @@ public class Panel extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
 
         //Case for when swapping to highlight indices
-        if (CONDITION.equals("swap")) {
+        if (CONDITION.equals("swap") || CONDITION.equals("Yes, so we swap!")) {
             g2.setColor(Styles.SWAP_COLOR);
         } else if (CONDITION.equals("found")) {
             g2.setColor(Styles.FOUND_COLOR);
@@ -236,6 +236,9 @@ public class Panel extends JPanel {
                 drawSearchValue(g, "Current minimum: " + CONDITION);
             }
         } catch (NumberFormatException e) {
+            if(TITLE.equalsIgnoreCase("Bubble Sort")){
+                drawSearchValue(g, CONDITION);
+            }
         }
 
         if (CONDITION.contains("not found")) {
@@ -265,9 +268,5 @@ public class Panel extends JPanel {
         int stringY = currentRectangle.y + (currentRectangle.height - metrics.getHeight()) / 2 + metrics.getAscent();
         g.setColor(color);
         g.drawString(currentValue, stringX, stringY);
-    }
-
-    public void setTitle(String title) {
-        TITLE = title;
     }
 }
