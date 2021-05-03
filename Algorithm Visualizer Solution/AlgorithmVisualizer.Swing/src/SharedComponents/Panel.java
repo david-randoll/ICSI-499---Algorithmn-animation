@@ -209,24 +209,6 @@ public class Panel extends JPanel {
         if(CONDITION.contains("not found")){
             drawSearchValue(g, CONDITION);
         }
-<<<<<<< Updated upstream:Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/SharedComponents/Panel.java
-=======
-
-        try {
-            Integer.valueOf(CONDITION);
-            if (TITLE.equalsIgnoreCase("Binary Search")) {
-                drawSearchValue(g, "Searching for: " + CONDITION);
-            } else if (TITLE.equalsIgnoreCase("Linear Search")) {
-                drawSearchValue(g, "Searching for:  " + CONDITION);
-            } else if (TITLE.equalsIgnoreCase("Selection Sort")) {
-                drawSearchValue(g, "Current minimum: " + CONDITION);
-            }
-        } catch (NumberFormatException e) { //USED FOR PSEUDOCDODE
-            if (TITLE.equalsIgnoreCase("Bubble Sort")) {
-                drawSearchValue(g, CONDITION);
-            }
-        }
->>>>>>> Stashed changes:Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/Components/Panel.java
     }
 
     Rectangle[] buildRectangles(int[] inputs) {

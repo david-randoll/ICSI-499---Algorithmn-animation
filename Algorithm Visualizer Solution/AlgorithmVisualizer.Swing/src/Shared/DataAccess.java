@@ -12,28 +12,27 @@ public class DataAccess {
     //this is for testing purposes until home can give us data
     public static void Run() {
         SetData(RandomData(15, 100));
-        SetData(new int[]{5, 50, 52, 3, 70, 2, 7, 46, 4, 8, 436, 8});
+        SetData(new int[]{5,50,52,3,70, 2, 7,46,4,8,436,8});
     }
 
     public static void SetData(int[] dataset) {
         data = dataset;
         dataString = commaSeparateArray(data);
     }
-
-    public static boolean SetData(String elements) {
+    public static boolean SetData(String elements){
         final Pattern pattern = Pattern.compile("^([0-9]+\\s*,?\\s*)+$");
         Matcher matcher = pattern.matcher(elements);
         boolean isValid = matcher.matches();
-        if (isValid == false || elements == "") {
+        if(isValid == false || elements == ""){
             return false;
         }
 
         String[] arr = elements.split("[\\s]*[,][\\s]*");
         int[] dataSet = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            try {
+            try{
                 dataSet[i] = Integer.parseInt(arr[i]);
-            } catch (Exception ex) {
+            }catch (Exception ex){
                 return false;
             }
 

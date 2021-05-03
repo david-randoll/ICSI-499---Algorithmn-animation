@@ -21,11 +21,7 @@ public class BubbleSortController implements Controller {
     }
 
     public void InitController() {
-<<<<<<< Updated upstream
         model = new BubbleSortModel();
         InitView();
-=======
-        super.InitController(model, view);
->>>>>>> Stashed changes
     }
 }

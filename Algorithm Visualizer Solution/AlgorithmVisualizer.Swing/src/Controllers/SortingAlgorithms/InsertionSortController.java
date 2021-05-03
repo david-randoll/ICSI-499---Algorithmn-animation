@@ -6,13 +6,9 @@ import Models.SortingAlgorithms.InsertionSortModel;
 import Views.SortingAlgorithms.BubbleSortView;
 import Views.SortingAlgorithms.InsertionSortView;
 
-<<<<<<< Updated upstream
 import javax.swing.*;
 
 public class InsertionSortController implements Controller {
-=======
-public class InsertionSortController extends SorterController {
->>>>>>> Stashed changes
 
     private InsertionSortView view = new InsertionSortView();
     private InsertionSortModel model;
@@ -27,11 +23,7 @@ public class InsertionSortController extends SorterController {
     }
 
     public void InitController() {
-<<<<<<< Updated upstream
         model = new InsertionSortModel();
         InitView();
-=======
-        super.InitController(model, view);
->>>>>>> Stashed changes
     }
 }

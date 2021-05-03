@@ -1,18 +1,22 @@
 package Views.SortingAlgorithms;
 
+import Controllers.HomeController;
 import Models.SortingAlgorithms.InsertionSortModel;
 import Shared.AppFrame;
-<<<<<<< Updated upstream
 import Shared.DataAccess;
 import SharedComponents.CustomJPanel;
 import SharedComponents.Panel;
 import SharedComponents.toast;
 import res.Styles;
-=======
-import Shared.res.Styles;
->>>>>>> Stashed changes
 
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Hashtable;
 
 public class InsertionSortView extends CustomJPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -33,7 +37,6 @@ public class InsertionSortView extends CustomJPanel {
 
     InsertionSortModel model;
 
-<<<<<<< Updated upstream
     public InsertionSortView() {
         super("Insertion Sort");
         speedValue = 1000;
@@ -49,11 +52,6 @@ public class InsertionSortView extends CustomJPanel {
         CardLayout cardLayout = (CardLayout) model.Panels.getLayout();
         if (currentIndex >= 0 && currentIndex < model.Panels.getComponentCount()) {
             cardLayout.show(model.Panels, Integer.toString(currentIndex));
-=======
-    public InsertionSortView(InsertionSortModel model) {
-        super(model, 1000);
-        this.model = model;
->>>>>>> Stashed changes
 
             AppFrame.appFrame.repaint();
 

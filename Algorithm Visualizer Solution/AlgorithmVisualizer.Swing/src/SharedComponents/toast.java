@@ -2,10 +2,9 @@ package SharedComponents;
 
 // Java program that creates the toast message
 //(which is a selectively translucent JWindow)
-
-import javax.swing.*;
 import java.awt.*;
-
+import javax.swing.*;
+import java.awt.event.*;
 public class toast extends JFrame {
 
     //String of toast
@@ -17,7 +16,8 @@ public class toast extends JFrame {
     int WIDTH = 0;
     int HEIGHT = 0;
 
-    public toast(String toastText, int width, int height) {
+    public toast(String toastText, int width, int height)
+    {
         this.WIDTH = width;
         this.HEIGHT = height;
         w = new JWindow();
@@ -27,10 +27,11 @@ public class toast extends JFrame {
 
         // create a panel
         JPanel p = new JPanel() {
-            public void paintComponent(Graphics g) {
+            public void paintComponent(Graphics g)
+            {
                 int wid = g.getFontMetrics().stringWidth(toastText);
                 int hei = g.getFontMetrics().getHeight();
-                w.setLocation(width - (wid / 2), height);
+                w.setLocation(width-(wid/2), height);
 
                 // draw the boundary of the toast and fill it
                 g.setColor(Color.RED);
@@ -59,7 +60,8 @@ public class toast extends JFrame {
     }
 
     // function to pop up the toast
-    public void showtoast() {
+    public void showtoast()
+    {
         try {
             w.setOpacity(1);
             w.setVisible(true);
@@ -70,12 +72,13 @@ public class toast extends JFrame {
             // make the message disappear slowly
             for (double d = 1.0; d > 0.2; d -= 0.1) {
                 Thread.sleep(100);
-                w.setOpacity((float) d);
+                w.setOpacity((float)d);
             }
 
             // set the visibility to false
             w.setVisible(false);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

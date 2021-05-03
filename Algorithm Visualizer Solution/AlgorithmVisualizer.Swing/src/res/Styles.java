@@ -10,7 +10,7 @@ public class Styles {
 
     public static Color PAGE_TITLE_FOREGROUNGCOLOR = new Color(0x5D8EFF);
     public static Color SEARCHING_COLOR = Color.red;
-    public static Color SWAP_COLOR = Color.green;
+    public static Color SWAP_COLOR = Color.green ;
     public static Color FOUND_COLOR = Color.green;
     public static Color ELEMENT_COLOR = Color.white;
     public static Color DATA_COLOR = Color.red;

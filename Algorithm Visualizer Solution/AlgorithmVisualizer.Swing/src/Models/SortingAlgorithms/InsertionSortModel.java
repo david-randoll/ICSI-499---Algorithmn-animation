@@ -1,17 +1,14 @@
 package Models.SortingAlgorithms;
 
-<<<<<<< Updated upstream
 import Shared.DataAccess;
 import SharedComponents.Panel;
 import Views.SortingAlgorithms.BinarySearchView;
 import Views.SortingAlgorithms.BubbleSortView;
 import Views.SortingAlgorithms.InsertionSortView;
 import res.Styles;
-=======
-import Shared.Components.Panel;
-import Shared.DataAccess;
->>>>>>> Stashed changes
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 

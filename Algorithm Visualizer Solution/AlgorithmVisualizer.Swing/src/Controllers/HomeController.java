@@ -5,13 +5,8 @@ import Controllers.SortingAlgorithms.BubbleSortController;
 import Controllers.SortingAlgorithms.InsertionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
-<<<<<<< Updated upstream
 import Shared.DataAccess;
 import SharedComponents.DefaultFrame;
-=======
-import Shared.Components.DefaultFrame;
-import Shared.DataAccess;
->>>>>>> Stashed changes
 import Views.HomeView;
 
 import javax.swing.*;
@@ -33,17 +28,6 @@ public class HomeController implements ActionListener {
     private int flag = 0;
 
     public HomeController() {
-<<<<<<< Updated upstream
-=======
-        this.frame = new DefaultFrame();
-        InitView();
-        InitController();
-    }
-
-    //For settings page
-    public HomeController(DefaultFrame frame) {
-        this.frame = frame;
->>>>>>> Stashed changes
         InitView();
         InitController();
     }
@@ -55,17 +39,10 @@ public class HomeController implements ActionListener {
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int ADJUSTED_MIDPOINT_HORIZONTAL = (screenSize.width / 2) - (frame.getWidth() / 2);
-<<<<<<< Updated upstream
         
         frame.add(this.homeView);
         frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
         frame.setVisible(true);
-=======
-
-        this.frame.add(this.homeView);
-        this.frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
-        this.frame.setVisible(true);
->>>>>>> Stashed changes
     }
 
     public void InitController() {
@@ -79,11 +56,11 @@ public class HomeController implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 flag = 0;
-                if (homeView.data.getText().equals("")) {
+                if(homeView.data.getText().equals("")){
                     JOptionPane.showMessageDialog(null, "Please enter a valid data set");
                     flag = 1;
                 }
-                if (flag != 1) {
+                if(flag != 1) {
                     flag = 0;
                     String dataSet = homeView.data.getText();
 
@@ -91,11 +68,12 @@ public class HomeController implements ActionListener {
                     String pattern = "^(\\d+(,\\d+)*)?$";
                     Pattern r = Pattern.compile(pattern);
                     Matcher m = r.matcher(dataSet);
-                    if (m.find()) {
+                    if(m.find()) {
                         homeModel.setInputtedElementsList(dataSet);
                         DataAccess.SetData(homeModel.getInputtedElementsList());
                         flag = 0;
-                    } else {
+                    }
+                    else{
                         flag = 1;
                         JOptionPane.showMessageDialog(null, "Please enter a valid data set");
                     }
@@ -125,15 +103,8 @@ public class HomeController implements ActionListener {
         if (e.getSource() == this.homeView.settings) {
             SettingsController settingsController = new SettingsController(this.frame);
             frame.getContentPane().removeAll();
-<<<<<<< Updated upstream
             frame.getContentPane().add(settingsController.view);
             frame.setVisible(true);
-=======
-            frame.dispose();
-            AppFrame appFrame = new AppFrame();
-            LinearSearchController linearSearch = new LinearSearchController();
-            linearSearch.InitController();
->>>>>>> Stashed changes
         } else if (e.getSource() == this.homeView.BinarySearch) { //Binary Search Button
             frame.getContentPane().removeAll();
             frame.dispose();
