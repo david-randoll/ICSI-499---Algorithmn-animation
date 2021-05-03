@@ -67,7 +67,7 @@ public class toast extends JFrame {
             w.setVisible(true);
 
             // wait for some time
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
             // make the message disappear slowly
             for (double d = 1.0; d > 0.2; d -= 0.1) {
