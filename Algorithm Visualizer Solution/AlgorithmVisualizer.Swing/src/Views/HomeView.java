@@ -17,6 +17,7 @@ public class HomeView extends JPanel {
     public SubmitButton BubbleSort = new SubmitButton("Bubble Sort");
     public SubmitButton InsertionSort = new SubmitButton("Insertion Sort");
     public SubmitButton SelectionSort = new SubmitButton("Selection Sort");
+    public SubmitButton QuickSort = new SubmitButton("Quick Sort");
     public SubmitButton setData = new SubmitButton("Set DataSet");
 
     public JLabel gitHub = new JLabel("github");
@@ -58,6 +59,9 @@ public class HomeView extends JPanel {
 
         SelectionSort.setBounds(325, 525, 150, 25);
         super.add(SelectionSort);
+
+        QuickSort.setBounds(325, 575, 150, 25);
+        super.add(QuickSort);
 
         data.setBounds(100, 200, 575, 25);
         super.add(data);

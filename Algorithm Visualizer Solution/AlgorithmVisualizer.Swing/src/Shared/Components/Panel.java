@@ -112,7 +112,7 @@ public class Panel extends JPanel {
                     drawRectangle(g, currentRectangle);
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                 }
-            } else if (TITLE.equalsIgnoreCase("Bubble Sort")) {
+            } else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
@@ -262,7 +262,7 @@ public class Panel extends JPanel {
                 drawSearchValue(g, "Current minimum: " + CONDITION);
             }
         } catch (NumberFormatException e) { //USED FOR PSEUDOCDODE
-            if(TITLE.equalsIgnoreCase("Bubble Sort")){
+            if(TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")){
                 drawSearchValue(g, CONDITION);
             }
         }
