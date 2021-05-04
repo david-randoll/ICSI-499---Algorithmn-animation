@@ -1,4 +1,4 @@
-# Animation of Algorithms for Effective Teaching and Learning
+<tite>Animation of Algorithms for Effective Teaching and Learning</title>
 
 # Table Of Contents
    - [Description](#description)
