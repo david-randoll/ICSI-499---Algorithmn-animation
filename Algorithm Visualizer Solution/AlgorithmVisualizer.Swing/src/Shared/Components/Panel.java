@@ -43,7 +43,7 @@ public class Panel extends JPanel {
         CONDITION = condition;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.75)));
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));
     }
 
     public Panel(String title, int[] data, Integer[] enabledIndices, Integer[] highlightIndices, String condition) {
