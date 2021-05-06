@@ -57,14 +57,6 @@ public class Panel extends JPanel {
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
     }
 
-    public int[] getFrameInput() {
-        return USER_INPUT;
-    }
-
-    public Rectangle[] getFrameRectangles() {
-        return RECTANGLES;
-    }
-
     void drawElements(Graphics g) {
         Font stringFont = new Font("Arial", Font.PLAIN, RECTANGLES[0].height - 22);
         FontMetrics metrics = g.getFontMetrics(stringFont);
@@ -74,7 +66,7 @@ public class Panel extends JPanel {
             String currentValue = Integer.toString(USER_INPUT[i]);
             Rectangle currentRectangle = RECTANGLES[i];
 
-            if (TITLE.equalsIgnoreCase("Binary Search")) {
+            if (TITLE.equalsIgnoreCase("Binary Search") || TITLE.equalsIgnoreCase("Linear Search")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
@@ -93,108 +85,58 @@ public class Panel extends JPanel {
                     drawRectangle(g, currentRectangle);
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                 }
-            } else if (TITLE.equalsIgnoreCase("Linear Search")) {
+            }
+            else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")) {
                 try {
-                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
+                    if (IsSortedPosition(i)) {
+                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
                     } else {
-                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
+                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                     }
-                    drawRectangle(g, currentRectangle);
-                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-
                 } catch (NullPointerException e) {
                     if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
+                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
                     } else {
-                        g.setColor(Styles.DISABLED_ELEMENT_COLOR);
-                    }
-                    drawRectangle(g, currentRectangle);
-                    drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-                }
-            } else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")) {
-                try {
-                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
-                        g.setColor(Styles.SORTED_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
-                    } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-                    }
-
-
-                } catch (NullPointerException e) {
-                    if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Styles.SORTED_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
-                    } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                     }
                 }
 
-            } else if (TITLE.equalsIgnoreCase("Insertion Sort")) {
+            } else if (TITLE.equalsIgnoreCase("Insertion Sort") || TITLE.equalsIgnoreCase("Selection Sort")) {
                 try {
-                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
-                        g.setColor(Styles.SORTED_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
+                    if (IsSortedPosition(i)) {
+                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
                     } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                     }
-
-
                 } catch (NullPointerException e) {
                     if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                         outlineRectangle(g, currentRectangle);
                     } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-                    }
-                }
-
-            } else if (TITLE.equalsIgnoreCase("Selection Sort")) {
-                try {
-                    if (Arrays.asList(ENABLED_INDICES).contains(i)) {
-                        g.setColor(Styles.SORTED_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
-                    } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-                    }
-
-
-                } catch (NullPointerException e) {
-                    if (CONDITION.equalsIgnoreCase("start")) {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
-                        outlineRectangle(g, currentRectangle);
-                    } else {
-                        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                        drawRectangle(g, currentRectangle);
-                        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                     }
                 }
 
             } else {
-                g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-                drawRectangle(g, currentRectangle);
-                drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
+                FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
             }
         }
+    }
+
+    private boolean IsSortedPosition(int i) {
+        return Arrays.asList(ENABLED_INDICES).contains(i);
+    }
+
+    private void FillRectangleWithSortedColor(Graphics g, FontMetrics metrics, String currentValue, Rectangle currentRectangle) {
+        g.setColor(Styles.SORTED_BACKGROUND_COLOR);
+        drawRectangle(g, currentRectangle);
+        drawElementData(g, currentValue, currentRectangle, metrics, Styles.SORTED_DATA_COLOR);
+    }
+
+    private void FillRectangleWithNormalColor(Graphics g, FontMetrics metrics, String currentValue, Rectangle currentRectangle) {
+        g.setColor(Styles.RECTANGLE_BACKGROUND_COLOR);
+        drawRectangle(g, currentRectangle);
+        drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
     }
 
     void drawRectangle(Graphics g, Rectangle rectangle) {

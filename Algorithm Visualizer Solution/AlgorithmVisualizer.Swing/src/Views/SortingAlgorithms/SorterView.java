@@ -116,29 +116,28 @@ public class SorterView extends JPanel implements ISorterView {
         speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
         speedSlider.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         speedSlider.setInverted(true);
-        speedSlider.setBorder(new EmptyBorder(0, 50, 0, 0));
-        speedSlider.setPreferredSize(new Dimension(350, 40));
+        speedSlider.setBorder(new EmptyBorder(0, 0, 0, 50));
+        speedSlider.setPreferredSize(new Dimension(340, 40));
 
-        label = new JLabel("DataSet: ");
-        label.setForeground(Styles.COLOR_WHITE);
+        label = new JLabel("");
+//        label.setForeground(Styles.COLOR_WHITE);
         label.setBorder(new EmptyBorder(0, 50, 0, 0));
-        label.setFont(Styles.APP_FONT);
+//        label.setFont(Styles.APP_FONT);
 
         dataSetTextBox = new JTextField();
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
-        dataSetTextBox.setPreferredSize(new Dimension(300, 30));
+        dataSetTextBox.setPreferredSize(new Dimension(290, 30));
         dataSetTextBox.setBorder(new EmptyBorder(5, 5, 5, 0));
 
         changeDataSetButton = new JButton("Change DataSet");
-        changeDataSetButton.setPreferredSize(new Dimension(155, 30));
-        changeDataSetButton.setBorder(new EmptyBorder(5, 5, 5, 0));
+        changeDataSetButton.setPreferredSize(new Dimension(130, 30));
+
+        toolBarPanel.add(speedSlider);
 
         toolBarPanel.add(previousButton);
         toolBarPanel.add(playPauseButton);
         toolBarPanel.add(nextButton);
         toolBarPanel.add(resetButton);
-
-        toolBarPanel.add(speedSlider);
 
         toolBarPanel.add(label);
         toolBarPanel.add(dataSetTextBox);

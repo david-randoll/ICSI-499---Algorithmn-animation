@@ -24,17 +24,15 @@ public class SearchView extends SorterView {
     private void InitializeToolBar() {
         JPanel toolBarPanel = super.getToolBarPanel();
 
-        searchValueSubmit = new JButton("Submit");
-        searchValueSubmit.setPreferredSize(new Dimension(100, 30));
+        searchValueSubmit = new JButton("Change Search");
+        searchValueSubmit.setPreferredSize(new Dimension(130, 30));
 
-        JLabel label = new JLabel("Search Value: ");
-        label.setForeground(Styles.COLOR_WHITE);
+        JLabel label = new JLabel("");
         label.setBorder(new EmptyBorder(0, 50, 0, 0));
-        label.setFont(Styles.APP_FONT);
 
         searchTextBox = new JTextField();
         searchTextBox.setText(Integer.toString(model.getSearchValue()));
-        searchTextBox.setPreferredSize(new Dimension(60, 30));
+        searchTextBox.setPreferredSize(new Dimension(100, 30));
         searchTextBox.setBorder(new EmptyBorder(5, 5, 5, 0));
 
         toolBarPanel.add(label);
