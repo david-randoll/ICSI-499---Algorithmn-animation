@@ -126,7 +126,7 @@ public class SorterView extends JPanel implements ISorterView {
 
         dataSetTextBox = new JTextField();
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
-        dataSetTextBox.setPreferredSize(new Dimension(500, 30));
+        dataSetTextBox.setPreferredSize(new Dimension(300, 30));
         dataSetTextBox.setBorder(new EmptyBorder(5, 5, 5, 0));
 
         changeDataSetButton = new JButton("Change DataSet");
