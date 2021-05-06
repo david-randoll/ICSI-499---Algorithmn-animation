@@ -16,7 +16,6 @@ public class Panel extends JPanel {
     Integer[] ENABLED_INDICES;
     String TITLE;
     String CONDITION;
-    public SortingToolBar toolBar;
 
     @Override
     public void paint(Graphics g) {
@@ -86,35 +85,12 @@ public class Panel extends JPanel {
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                 }
             }
-            else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")) {
-                try {
-                    if (IsSortedPosition(i)) {
-                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
-                    } else {
-                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
-                    }
-                } catch (NullPointerException e) {
-                    if (CONDITION.equalsIgnoreCase("start")) {
-                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
-                    } else {
-                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
-                    }
-                }
-
-            } else if (TITLE.equalsIgnoreCase("Insertion Sort") || TITLE.equalsIgnoreCase("Selection Sort")) {
-                try {
-                    if (IsSortedPosition(i)) {
-                        FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
-                    } else {
-                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
-                    }
-                } catch (NullPointerException e) {
-                    if (CONDITION.equalsIgnoreCase("start")) {
-                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
-                        outlineRectangle(g, currentRectangle);
-                    } else {
-                        FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
-                    }
+            else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")
+                    || TITLE.equalsIgnoreCase("Insertion Sort") || TITLE.equalsIgnoreCase("Selection Sort")) {
+                if (IsSortedPosition(i)) {
+                    FillRectangleWithSortedColor(g, metrics, currentValue, currentRectangle);
+                } else {
+                    FillRectangleWithNormalColor(g, metrics, currentValue, currentRectangle);
                 }
 
             } else {
@@ -124,6 +100,7 @@ public class Panel extends JPanel {
     }
 
     private boolean IsSortedPosition(int i) {
+        if(ENABLED_INDICES == null) return false;
         return Arrays.asList(ENABLED_INDICES).contains(i);
     }
 
@@ -202,8 +179,8 @@ public class Panel extends JPanel {
             } else if(TITLE.equalsIgnoreCase("Selection Sort")) {
                 drawInstructionOnScreen(g, "Current minimum: " + CONDITION);
             }
-        } catch (NumberFormatException e) { //USED FOR PSEUDOCDODE
-            if(TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")){
+        } catch (NumberFormatException e) { //USED FOR PSEUDOCODE
+            if(TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Insertion Sort")|| TITLE.equalsIgnoreCase("Quick Sort")){
                 drawInstructionOnScreen(g, CONDITION);
             }
         }
