@@ -42,7 +42,7 @@ public class SelectionSortModel extends SorterModel implements IGeneratePanel {
             // Swap the found minimum element with the first element
             swap(dataSetRectangle,arr, min_idx, i);
 
-            UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{min_idx, i}, "swap", Styles.SWAP_COLOR);
+            UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{min_idx, i}, "Swap", Styles.SWAP_COLOR);
 
             //sorted index
             updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);

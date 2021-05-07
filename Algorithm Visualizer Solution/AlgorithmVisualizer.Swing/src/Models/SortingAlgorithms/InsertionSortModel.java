@@ -46,7 +46,7 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
                 } else {
                     if (counter == 0) {
                         UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "", Styles.OUTLINE_COLOR);
-                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"swap");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"Swap");
                     }
                 }
 
@@ -62,7 +62,7 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
 
                 if (j > -1) {
                     if (arr[j] > key) {
-                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"swap");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"Swap");
                     } else {
                         OutlineBorderWithBackground(output, dataSetRectangle, i, j,"");
                     }
@@ -90,7 +90,7 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
             dataSetRectangle[i].setBackgroundColor(Styles.SORTED_BACKGROUND_COLOR);
         }
 
-        output.add( new Panel(getTitle(), dataSetRectangle,  "sorted"));
+        output.add( new Panel(getTitle(), dataSetRectangle,  "Sorted"));
 
         return output;
     }
