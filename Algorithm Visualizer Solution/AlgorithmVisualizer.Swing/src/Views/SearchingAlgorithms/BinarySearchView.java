@@ -1,22 +1,10 @@
 package Views.SearchingAlgorithms;
 
-import Controllers.HomeController;
 import Models.SearchingAlgorithms.BinarySearchModel;
 import Shared.AppFrame;
-import Shared.Components.Panel;
-import Shared.DataAccess;
-import Shared.Components.CustomJPanel;
-import Shared.Components.toast;
 import Shared.res.Styles;
 
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class BinarySearchView extends SearchView {
     BinarySearchModel model;

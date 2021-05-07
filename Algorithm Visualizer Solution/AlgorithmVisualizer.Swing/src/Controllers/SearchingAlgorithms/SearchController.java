@@ -4,7 +4,6 @@ import Controllers.SortingAlgorithms.SorterController;
 import Models.Model;
 import Models.SearchingAlgorithms.SearchModel;
 import Shared.AppFrame;
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 import Shared.Components.toast;
 import Shared.DataAccess;

@@ -1,13 +1,11 @@
 package Models.SearchingAlgorithms;
 
 import Models.Model;
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class BinarySearchModel extends SearchModel implements Model {

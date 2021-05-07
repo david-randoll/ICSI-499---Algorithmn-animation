@@ -1,6 +1,5 @@
 package Models;
 
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 
 import java.util.ArrayList;

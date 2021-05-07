@@ -2,12 +2,9 @@ package Models.SortingAlgorithms;
 
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
-import Shared.Components.Panel;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class InsertionSortModel extends SorterModel implements IGeneratePanel {

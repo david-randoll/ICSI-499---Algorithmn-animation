@@ -3,14 +3,10 @@ package Models.SearchingAlgorithms;
 import Models.Model;
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
-import Shared.Components.Panel;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class LinearSearchModel extends SearchModel implements Model {
 

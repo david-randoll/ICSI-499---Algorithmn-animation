@@ -2,13 +2,10 @@ package Models.SortingAlgorithms;
 
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
-import Shared.Components.Panel;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BubbleSortModel extends SorterModel implements IGeneratePanel {
 

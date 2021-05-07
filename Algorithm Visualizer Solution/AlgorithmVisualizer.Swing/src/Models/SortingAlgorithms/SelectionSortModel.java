@@ -1,13 +1,10 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class SelectionSortModel extends SorterModel implements IGeneratePanel {

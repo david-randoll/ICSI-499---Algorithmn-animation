@@ -4,7 +4,6 @@ import Controllers.HomeController;
 import Models.SortingAlgorithms.IGeneratePanel;
 import Models.SortingAlgorithms.SorterModel;
 import Shared.AppFrame;
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 import Shared.Components.toast;
 import Shared.DataAccess;

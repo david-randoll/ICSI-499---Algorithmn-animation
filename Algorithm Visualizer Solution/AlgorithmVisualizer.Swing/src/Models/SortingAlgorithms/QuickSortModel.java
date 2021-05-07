@@ -1,13 +1,11 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.Panel;
 import Shared.Components.PanelClone;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class QuickSortModel extends SorterModel implements IGeneratePanel {
 
