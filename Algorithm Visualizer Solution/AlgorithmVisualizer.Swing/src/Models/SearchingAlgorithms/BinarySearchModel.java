@@ -1,7 +1,7 @@
 package Models.SearchingAlgorithms;
 
 import Models.Model;
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
@@ -14,19 +14,19 @@ public class BinarySearchModel extends SearchModel implements Model {
         setTitle("Binary Search");
         int[] data = DataAccess.GetSortedData();
         int searchValue = getSearchValue();
-        ArrayList<PanelClone> panels = run(data, searchValue);
+        ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<PanelClone> run(int arr[], int x) {
+    public ArrayList<Panel> run(int arr[], int x) {
 
-        ArrayList<PanelClone> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
         RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
         int left = 0, right = arr.length - 1;
 
@@ -41,7 +41,7 @@ public class BinarySearchModel extends SearchModel implements Model {
                 }
                 updateBackgroundColor(dataSetRectangle, new int[]{middle}, Styles.SORTED_BACKGROUND_COLOR);
                 updateForegroundColor(dataSetRectangle, new int[]{middle}, Styles.SORTED_DATA_COLOR);
-                output.add( new PanelClone(getTitle(), dataSetRectangle,  String.format("%d was found!", x)));
+                output.add( new Panel(getTitle(), dataSetRectangle,  String.format("%d was found!", x)));
                 return output;
             }
 
@@ -68,7 +68,7 @@ public class BinarySearchModel extends SearchModel implements Model {
             }
         }
         // if we reach here, then element was not present
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  String.format("%d not found.", x)));
+        output.add( new Panel(getTitle(), dataSetRectangle,  String.format("%d not found.", x)));
         return output;
     }
 }

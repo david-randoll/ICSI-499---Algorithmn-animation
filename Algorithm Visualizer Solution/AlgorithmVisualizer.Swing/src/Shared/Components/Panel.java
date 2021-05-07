@@ -6,7 +6,7 @@ import Shared.res.Styles;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelClone extends JPanel {
+public class Panel extends JPanel {
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     static int MIDPOINT_HORIZONTAL = (screenSize.width / 2);
     static int MIDPOINT_VERTICAL = (screenSize.height / 2);
@@ -38,7 +38,7 @@ public class PanelClone extends JPanel {
         drawElements(g);
     }
 
-    public PanelClone(String title, RectangleElement[] elements, String instruction) {
+    public Panel(String title, RectangleElement[] elements, String instruction) {
         TITLE = title;
         ELEMENTS = cloneRectangleElement(elements);
         RECTANGLES = buildRectangles();

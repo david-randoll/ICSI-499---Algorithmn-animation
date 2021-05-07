@@ -1,6 +1,6 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
@@ -15,18 +15,18 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
         super();
         setTitle("Quick Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<PanelClone> panels = run(data);
+        ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             super.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<PanelClone> run(int arr[]) {
+    public ArrayList<Panel> run(int arr[]) {
         dataSetRectangle = InitializeRectangleElements(arr);
-        ArrayList<PanelClone> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
         sort(arr,0,arr.length - 1,output);
 
@@ -35,12 +35,12 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
             updateForegroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_DATA_COLOR);
         }
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  "Sorted"));
+        output.add( new Panel(getTitle(), dataSetRectangle,  "Sorted"));
 
         return output;
     }
 
-    private void sort(int[] array,int start, int end,ArrayList<PanelClone> output){
+    private void sort(int[] array,int start, int end,ArrayList<Panel> output){
         if(start >= end) return;
 
         var boundary = partition(array,start,end,output);
@@ -49,7 +49,7 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
         sort(array,boundary+1,end,output);
 
     }
-    private int partition(int[] array,int start, int end,ArrayList<PanelClone> output){
+    private int partition(int[] array,int start, int end,ArrayList<Panel> output){
         int pivot = array[end];
         int boundary = start - 1;
 

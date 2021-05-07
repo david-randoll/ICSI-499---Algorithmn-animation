@@ -1,9 +1,9 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 
 import java.util.ArrayList;
 
 public interface IGeneratePanel {
-    ArrayList<PanelClone> run(int arr[]);
+    ArrayList<Panel> run(int arr[]);
 }

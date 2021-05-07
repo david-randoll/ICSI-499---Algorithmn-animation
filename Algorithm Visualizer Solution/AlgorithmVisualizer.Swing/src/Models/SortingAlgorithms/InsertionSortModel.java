@@ -1,6 +1,6 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
@@ -12,20 +12,20 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
     public InsertionSortModel() {
         setTitle("Insertion Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<PanelClone> panels = run(data);
+        ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<PanelClone> run(int arr[]) {
-        ArrayList<PanelClone> output = new ArrayList<>();
+    public ArrayList<Panel> run(int arr[]) {
+        ArrayList<Panel> output = new ArrayList<>();
         int n = arr.length;
 
         RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
         for (int i = 1; i < n; ++i) {
             int key = arr[i];
@@ -78,7 +78,7 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
                     //add the outline color
                     updateBorderColor(dataSetRectangle,new int[]{i, j},Styles.OUTLINE_COLOR);
 
-                    output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+                    output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
                     //remove the outline color
                     updateBorderColor(dataSetRectangle,new int[]{i, j},null);
@@ -90,19 +90,19 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
             dataSetRectangle[i].setBackgroundColor(Styles.SORTED_BACKGROUND_COLOR);
         }
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  "sorted"));
+        output.add( new Panel(getTitle(), dataSetRectangle,  "sorted"));
 
         return output;
     }
 
-    private void OutlineBorderWithBackground(ArrayList<PanelClone> output, RectangleElement[] dataSetRectangle, int i, int j, String instruction) {
+    private void OutlineBorderWithBackground(ArrayList<Panel> output, RectangleElement[] dataSetRectangle, int i, int j, String instruction) {
         //add the outline color
         updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.SWAP_COLOR);
 
         //add background color
         updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  instruction));
+        output.add( new Panel(getTitle(), dataSetRectangle,  instruction));
 
         //remove the outline color
         updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);
@@ -111,11 +111,11 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
         updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.RECTANGLE_BACKGROUND_COLOR);
     }
 
-    private void OutlineBorderWithNoBackground(ArrayList<PanelClone> output, RectangleElement[] dataSetRectangle, int j) {
+    private void OutlineBorderWithNoBackground(ArrayList<Panel> output, RectangleElement[] dataSetRectangle, int j) {
         //add the outline color
         updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.OUTLINE_COLOR);
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
         //remove the outline color
         updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);

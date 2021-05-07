@@ -1,6 +1,6 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
@@ -12,18 +12,18 @@ public class SelectionSortModel extends SorterModel implements IGeneratePanel {
     public SelectionSortModel() {
         setTitle("Selection Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<PanelClone> panels = run(data);
+        ArrayList<Panel> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<PanelClone> run(int arr[]) {
+    public ArrayList<Panel> run(int arr[]) {
         RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
-        ArrayList<PanelClone> output = new ArrayList<>();
+        ArrayList<Panel> output = new ArrayList<>();
 
-        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
+        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
 
         for (int i = 0; i < arr.length; i++) {
 
@@ -49,7 +49,7 @@ public class SelectionSortModel extends SorterModel implements IGeneratePanel {
             updateForegroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_DATA_COLOR);
         }
 
-        output.add(new PanelClone(getTitle(), dataSetRectangle, "Sorted"));
+        output.add(new Panel(getTitle(), dataSetRectangle, "Sorted"));
 
         return output;
     }

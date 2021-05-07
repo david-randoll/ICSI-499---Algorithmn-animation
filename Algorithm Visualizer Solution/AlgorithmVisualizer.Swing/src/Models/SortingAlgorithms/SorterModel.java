@@ -1,6 +1,6 @@
 package Models.SortingAlgorithms;
 
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
@@ -103,9 +103,9 @@ public class SorterModel implements ISorterModel {
         }
     }
 
-    protected void UpdateBorderColorAndAddToOutput(RectangleElement[] dataSetRectangle, ArrayList<PanelClone> output, int[] indexes, String instruction, Color color) {
+    protected void UpdateBorderColorAndAddToOutput(RectangleElement[] dataSetRectangle, ArrayList<Panel> output, int[] indexes, String instruction, Color color) {
         updateBorderColor(dataSetRectangle, indexes, color);
-        output.add(new PanelClone(getTitle(), dataSetRectangle, instruction));
+        output.add(new Panel(getTitle(), dataSetRectangle, instruction));
         updateBorderColor(dataSetRectangle, indexes, null);
     }
 }

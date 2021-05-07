@@ -4,7 +4,7 @@ import Controllers.SortingAlgorithms.SorterController;
 import Models.Model;
 import Models.SearchingAlgorithms.SearchModel;
 import Shared.AppFrame;
-import Shared.Components.PanelClone;
+import Shared.Components.Panel;
 import Shared.Components.toast;
 import Shared.DataAccess;
 import Views.SearchingAlgorithms.SearchView;
@@ -40,7 +40,7 @@ public class SearchController extends SorterController {
                 view.getTimer().Stop();
                 int newSearchValue = Integer.parseInt(view.getSearchTextBox().getText());
                 model.Panels.removeAll();
-                ArrayList<PanelClone> panels = ((Model)model).run(DataAccess.GetSortedData(), newSearchValue);
+                ArrayList<Panel> panels = ((Model)model).run(DataAccess.GetSortedData(), newSearchValue);
                 model.setSearchValue(newSearchValue);
 
                 for (int i = 0; i < panels.size(); i++) {
@@ -66,7 +66,7 @@ public class SearchController extends SorterController {
                     t.showtoast();
                 }
                 model.Panels.removeAll();
-                ArrayList<PanelClone> panels = ((Model)model).run(DataAccess.GetSortedData(), model.getSearchValue());
+                ArrayList<Panel> panels = ((Model)model).run(DataAccess.GetSortedData(), model.getSearchValue());
 
                 for (int i = 0; i < panels.size(); i++) {
                     model.Panels.add(panels.get(i), Integer.toString(i));
