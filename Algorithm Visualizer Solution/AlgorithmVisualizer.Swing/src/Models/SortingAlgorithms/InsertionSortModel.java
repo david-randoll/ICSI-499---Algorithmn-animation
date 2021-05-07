@@ -39,13 +39,13 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
             while (j >= 0 && arr[j] > key) {
                 if (arr[j + 1] > key) {
                     if(counter == 0){
-                        OutlineBorderWithNoBackground(output, dataSetRectangle, j);
+                        UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "", Styles.OUTLINE_COLOR);
                     }else{
                         OutlineBorderWithBackground(output, dataSetRectangle, i, j,"");
                     }
                 } else {
                     if (counter == 0) {
-                        OutlineBorderWithNoBackground(output, dataSetRectangle, j);
+                        UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "", Styles.OUTLINE_COLOR);
                         OutlineBorderWithBackground(output, dataSetRectangle, i, j,"swap");
                     }
                 }
@@ -96,28 +96,11 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
     }
 
     private void OutlineBorderWithBackground(ArrayList<Panel> output, RectangleElement[] dataSetRectangle, int i, int j, String instruction) {
-        //add the outline color
-        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.SWAP_COLOR);
-
         //add background color
         updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);
-
-        output.add( new Panel(getTitle(), dataSetRectangle,  instruction));
-
-        //remove the outline color
-        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);
-
+        //add the outline color
+        UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "", Styles.SWAP_COLOR);
         //remove the background color
         updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.RECTANGLE_BACKGROUND_COLOR);
-    }
-
-    private void OutlineBorderWithNoBackground(ArrayList<Panel> output, RectangleElement[] dataSetRectangle, int j) {
-        //add the outline color
-        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.OUTLINE_COLOR);
-
-        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
-
-        //remove the outline color
-        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);
     }
 }
