@@ -1,49 +1,48 @@
 package Models.SortingAlgorithms;
 
 import Shared.Components.Panel;
+import Shared.Components.PanelClone;
 import Shared.DataAccess;
+import Shared.RectangleElement;
+import Shared.res.Styles;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class QuickSortModel extends SorterModel implements IGeneratePanel {
 
-    String TITLE = "Quick Sort";
-    ArrayList<Integer> sortedIndexList;
+    RectangleElement[] dataSetRectangle;
 
     public QuickSortModel() {
         super();
+        setTitle("Quick Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<Panel> panels = run(data);
+        ArrayList<PanelClone> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             super.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<Panel> run(int arr[]) {
+    public ArrayList<PanelClone> run(int arr[]) {
+        dataSetRectangle = InitializeRectangleElements(arr);
+        ArrayList<PanelClone> output = new ArrayList<>();
 
-        sortedIndexList = new ArrayList<>();
-        ArrayList<Panel> output = new ArrayList<>();
-
-        int l = 0, r = arr.length - 1;
-
-        Panel firstPanel = new Panel(TITLE, arr, null, "");
-        output.add(firstPanel);
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
 
         sort(arr,0,arr.length - 1,output);
 
-        Integer[] sortedIndices = new Integer[arr.length];
-        for(int i =0; i < sortedIndices.length;i++){
-            sortedIndices[i] = i;
+        for(int i =0; i < arr.length;i++){
+            updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);
+            updateForegroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_DATA_COLOR);
         }
-        Panel lastPanel = new Panel(TITLE, arr, sortedIndices,null, "Sorted");
-        output.add(lastPanel);
+
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  "Sorted"));
 
         return output;
     }
 
-    private void sort(int[] array,int start, int end,ArrayList<Panel> output){
+    private void sort(int[] array,int start, int end,ArrayList<PanelClone> output){
         if(start >= end) return;
 
         var boundary = partition(array,start,end,output);
@@ -52,38 +51,29 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
         sort(array,boundary+1,end,output);
 
     }
-    private int partition(int[] array,int start, int end,ArrayList<Panel> output){
+    private int partition(int[] array,int start, int end,ArrayList<PanelClone> output){
         int pivot = array[end];
         int boundary = start - 1;
 
-        Panel newPanel = new Panel(TITLE, array, sortedIndexList.toArray(new Integer[]{}) , new Integer[]{start-1, end,end}, "pivot: "+pivot +", boundary index: "+boundary);
-        output.add(newPanel);
+        UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{boundary, end,end},"pivot: "+pivot +", boundary index: "+boundary, Styles.OUTLINE_COLOR);
 
         for (var i = start; i <= end; i++){
-            Panel partPanel = new Panel(TITLE, array, sortedIndexList.toArray(new Integer[]{}) , new Integer[]{i,boundary,end}, "Is "+array[i]+" <= pivot: "+pivot+"?");
-            output.add(partPanel);
+            UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Is "+array[i]+" <= pivot: "+pivot+"?", Styles.OUTLINE_COLOR);
             if(array[i] <= pivot){
                 boundary++;
                 //telling the user we need to increment the boundary
-                Panel beforeSwapPanel = new Panel(TITLE, array, sortedIndexList.toArray(new Integer[]{}) , new Integer[]{i,boundary,end}, "Increment boundary (index: "+boundary+")");
-                output.add(beforeSwapPanel);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Increment boundary (index: "+boundary+")", Styles.OUTLINE_COLOR);
 
+                swap(dataSetRectangle, array, i, boundary);
                 if(i == end){
-                    sortedIndexList.add(boundary);
+                    updateBackgroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_BACKGROUND_COLOR);
+                    updateForegroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_DATA_COLOR);
                 }
-                swap(array, i, boundary);
-                Panel swapPanel = new Panel(TITLE, array, sortedIndexList.toArray(new Integer[]{}) , new Integer[]{i,boundary}, "swap");
-                output.add(swapPanel);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary},"swap", Styles.SWAP_COLOR);
             }else {
-                Panel noSwapPanel = new Panel(TITLE, array, sortedIndexList.toArray(new Integer[]{}) , new Integer[]{i,boundary,end}, "Nope");
-                output.add(noSwapPanel);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Nope", Styles.OUTLINE_COLOR);
             }
         }
         return boundary;
-    }
-    private void swap(int array[], int index1, int index2){
-        var temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
     }
 }

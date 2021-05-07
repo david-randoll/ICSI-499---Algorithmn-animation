@@ -9,4 +9,7 @@ public interface ISorterModel {
 
     int getCurrentIndex();
     void setCurrentIndex(int currentIndex);
+
+    String getTitle();
+    void setTitle(String title);
 }

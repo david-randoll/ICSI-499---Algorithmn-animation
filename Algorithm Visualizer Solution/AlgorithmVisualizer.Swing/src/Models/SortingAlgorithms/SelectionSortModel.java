@@ -1,7 +1,10 @@
 package Models.SortingAlgorithms;
 
 import Shared.Components.Panel;
+import Shared.Components.PanelClone;
 import Shared.DataAccess;
+import Shared.RectangleElement;
+import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,64 +12,47 @@ import java.util.ArrayList;
 
 public class SelectionSortModel extends SorterModel implements IGeneratePanel {
 
-    String TITLE = "Selection Sort";
-
     public SelectionSortModel() {
+        setTitle("Selection Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<Shared.Components.Panel> panels = run(data);
+        ArrayList<PanelClone> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<Shared.Components.Panel> run(int arr[]) {
-        ArrayList<Shared.Components.Panel> output = new ArrayList<>();
-        int n = arr.length;
+    public ArrayList<PanelClone> run(int arr[]) {
+        RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
+        ArrayList<PanelClone> output = new ArrayList<>();
 
-        Shared.Components.Panel firstPanel = new Shared.Components.Panel(TITLE, arr, null, "");
-        output.add(firstPanel);
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
 
-        for (int i = 0; i < n - 1; i++) {
-            Panel preSwapPanel;
-            Panel swapPanel;
-            Panel searchingPanel;
-
-            Integer[] sortedIndices = new Integer[i];
-            for (int k = 0; k < i; k++) {
-                sortedIndices[k] = k;
-            }
+        for (int i = 0; i < arr.length; i++) {
 
             // Find the minimum element in unsorted array
             int min_idx = i;
 
 
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[min_idx]) {
                     min_idx = j;
                 }
-                searchingPanel = new Panel(TITLE, arr, sortedIndices, new Integer[]{min_idx, j}, String.valueOf(arr[min_idx]));
-                output.add(searchingPanel);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{min_idx, j}, "Current minimum: " + arr[min_idx], Styles.OUTLINE_COLOR);
             }
+            UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{min_idx, i}, "", Styles.OUTLINE_COLOR);
 
-            preSwapPanel = new Panel(TITLE, arr, sortedIndices, new Integer[]{min_idx, i}, "");
-            output.add(preSwapPanel);
+            // Swap the found minimum element with the first element
+            swap(dataSetRectangle,arr, min_idx, i);
 
-            // Swap the found minimum element with the first
-            // element
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
-            swapPanel = new Panel(TITLE, arr, sortedIndices, new Integer[]{min_idx, i}, "swap");
-            output.add(swapPanel);
+            UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{min_idx, i}, "swap", Styles.SWAP_COLOR);
+
+            //sorted index
+            updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);
+            updateForegroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_DATA_COLOR);
         }
 
-        Integer[] sortedIndices = new Integer[arr.length];
-        for (int k = 0; k < sortedIndices.length; k++) {
-            sortedIndices[k] = k;
-        }
-        Shared.Components.Panel lastPanel = new Panel(TITLE, arr, sortedIndices, null, "");
-        output.add(lastPanel);
+        output.add(new PanelClone(getTitle(), dataSetRectangle, "Sorted"));
 
         return output;
     }

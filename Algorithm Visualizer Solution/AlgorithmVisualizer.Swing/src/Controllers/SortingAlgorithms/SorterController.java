@@ -5,6 +5,7 @@ import Models.SortingAlgorithms.IGeneratePanel;
 import Models.SortingAlgorithms.SorterModel;
 import Shared.AppFrame;
 import Shared.Components.Panel;
+import Shared.Components.PanelClone;
 import Shared.Components.toast;
 import Shared.DataAccess;
 import Views.SortingAlgorithms.SorterView;
@@ -111,7 +112,7 @@ public class SorterController implements ISorterController {
                     t.showtoast();
                 }
                 model.Panels.removeAll();
-                ArrayList<Panel> panels = ((IGeneratePanel)model).run(DataAccess.GetData());
+                ArrayList<PanelClone> panels = ((IGeneratePanel)model).run(DataAccess.GetData());
 
                 for (int i = 0; i < panels.size(); i++) {
                     model.Panels.add(panels.get(i), Integer.toString(i));

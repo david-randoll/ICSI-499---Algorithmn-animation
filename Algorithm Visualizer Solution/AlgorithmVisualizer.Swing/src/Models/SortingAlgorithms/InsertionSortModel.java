@@ -12,30 +12,23 @@ import java.util.ArrayList;
 
 public class InsertionSortModel extends SorterModel implements IGeneratePanel {
 
-    String TITLE = "Insertion Sort";
-
     public InsertionSortModel() {
+        setTitle("Insertion Sort");
         int[] data = DataAccess.GetData();
-        ArrayList<PanelClone> panels = runClone(data);
+        ArrayList<PanelClone> panels = run(data);
 
         for (int i = 0; i < panels.size(); i++) {
             this.Panels.add(panels.get(i), Integer.toString(i));
         }//Add all cards to the card panel so we can transition panels easily
     }
 
-    public ArrayList<PanelClone> runClone(int arr[]) {
+    public ArrayList<PanelClone> run(int arr[]) {
         ArrayList<PanelClone> output = new ArrayList<>();
         int n = arr.length;
 
-        RectangleElement[] dataSetRectangle = new RectangleElement[arr.length];
-        for(int i = 0; i < arr.length; i++){
-            dataSetRectangle[i] = new RectangleElement();
-            dataSetRectangle[i].setDataValue(arr[i]);
-            dataSetRectangle[i].setBackgroundColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-            dataSetRectangle[i].setForegroundColor(Styles.DATA_COLOR);
-        }
+        RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
 
-        output.add( new PanelClone(TITLE, dataSetRectangle,  ""));
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
 
         for (int i = 1; i < n; ++i) {
             int key = arr[i];
@@ -51,12 +44,12 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
                     if(counter == 0){
                         OutlineBorderWithNoBackground(output, dataSetRectangle, j);
                     }else{
-                        OutlineBorderWithBackground(output, dataSetRectangle, dataSetRectangle[i], j,"");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"");
                     }
                 } else {
                     if (counter == 0) {
                         OutlineBorderWithNoBackground(output, dataSetRectangle, j);
-                        OutlineBorderWithBackground(output, dataSetRectangle, dataSetRectangle[i], j,"swap");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"swap");
                     }
                 }
 
@@ -72,9 +65,9 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
 
                 if (j > -1) {
                     if (arr[j] > key) {
-                        OutlineBorderWithBackground(output, dataSetRectangle, dataSetRectangle[i], j,"swap");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"swap");
                     } else {
-                        OutlineBorderWithBackground(output, dataSetRectangle, dataSetRectangle[i], j,"");
+                        OutlineBorderWithBackground(output, dataSetRectangle, i, j,"");
                     }
                 }
             }
@@ -86,14 +79,12 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
                 case -1:
                 case 0:
                     //add the outline color
-                    dataSetRectangle[i].setBorderColor(Styles.OUTLINE_COLOR);
-                    dataSetRectangle[j].setBorderColor(Styles.OUTLINE_COLOR);
+                    updateBorderColor(dataSetRectangle,new int[]{i, j},Styles.OUTLINE_COLOR);
 
-                    output.add( new PanelClone(TITLE, dataSetRectangle,  ""));
+                    output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
 
                     //remove the outline color
-                    dataSetRectangle[i].setBorderColor(null);
-                    dataSetRectangle[j].setBorderColor(null);
+                    updateBorderColor(dataSetRectangle,new int[]{i, j},null);
                     break;
             }
         }
@@ -102,123 +93,34 @@ public class InsertionSortModel extends SorterModel implements IGeneratePanel {
             dataSetRectangle[i].setBackgroundColor(Styles.SORTED_BACKGROUND_COLOR);
         }
 
-        output.add( new PanelClone(TITLE, dataSetRectangle,  "sorted"));
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  "sorted"));
 
         return output;
     }
 
-    private void OutlineBorderWithBackground(ArrayList<PanelClone> output, RectangleElement[] dataSetRectangle, RectangleElement rectangleElement, int j, String instruction) {
+    private void OutlineBorderWithBackground(ArrayList<PanelClone> output, RectangleElement[] dataSetRectangle, int i, int j, String instruction) {
         //add the outline color
-        dataSetRectangle[j].setBorderColor(Styles.SWAP_COLOR);
-        dataSetRectangle[j + 1].setBorderColor(Styles.SWAP_COLOR);
+        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.SWAP_COLOR);
 
         //add background color
-        rectangleElement.setBackgroundColor(Styles.SORTED_BACKGROUND_COLOR);
+        updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.SORTED_BACKGROUND_COLOR);
 
-        output.add( new PanelClone(TITLE, dataSetRectangle,  instruction));
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  instruction));
 
         //remove the outline color
-        dataSetRectangle[j].setBorderColor(null);
-        dataSetRectangle[j + 1].setBorderColor(null);
+        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);
 
         //remove the background color
-        rectangleElement.setBackgroundColor(Styles.RECTANGLE_BACKGROUND_COLOR);
+        updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.RECTANGLE_BACKGROUND_COLOR);
     }
 
     private void OutlineBorderWithNoBackground(ArrayList<PanelClone> output, RectangleElement[] dataSetRectangle, int j) {
         //add the outline color
-        dataSetRectangle[j].setBorderColor(Styles.OUTLINE_COLOR);
-        dataSetRectangle[j + 1].setBorderColor(Styles.OUTLINE_COLOR);
+        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, Styles.OUTLINE_COLOR);
 
-        output.add( new PanelClone(TITLE, dataSetRectangle,  ""));
+        output.add( new PanelClone(getTitle(), dataSetRectangle,  ""));
 
         //remove the outline color
-        dataSetRectangle[j].setBorderColor(null);
-        dataSetRectangle[j + 1].setBorderColor(null);
+        updateBorderColor(dataSetRectangle, new int[]{j, j+1}, null);
     }
-
-
-    //    public InsertionSortModel() {
-//        int[] data = DataAccess.GetData();
-//        ArrayList<Panel> panels = run(data);
-//
-//        for (int i = 0; i < panels.size(); i++) {
-//            this.Panels.add(panels.get(i), Integer.toString(i));
-//        }//Add all cards to the card panel so we can transition panels easily
-//    }
-//
-    public ArrayList<Panel> run(int arr[]) {
-        ArrayList<Panel> output = new ArrayList<>();
-        int n = arr.length;
-
-        Panel firstPanel = new Panel(TITLE, arr, null, "");
-        output.add(firstPanel);
-
-        for (int i = 1; i < n; ++i) {
-            int key = arr[i];
-            int j = i - 1;
-
-            /* Move elements of arr[0..i-1], that are
-               greater than key, to one position ahead
-               of their current position */
-            int counter = 0;
-            while (j >= 0 && arr[j] > key) {
-                Panel swapPanel;
-
-                Panel preSwapPanel;
-                if (arr[j + 1] > key) {
-                    if (counter == 0) {
-                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{}, new Integer[]{j, j + 1}, "");
-                    } else {
-                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "");
-                    }
-                    output.add(preSwapPanel);
-                } else {
-                    if (counter == 0) {
-                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{}, new Integer[]{j, j + 1}, "");
-                        output.add(preSwapPanel);
-                        preSwapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "swap");
-                        output.add(preSwapPanel);
-                    }
-                }
-
-                counter++; //used for the first case of highlighting
-
-                arr[j + 1] = arr[j];
-                arr[j] = key;
-                j = j - 1;
-
-                if (j > -1) {
-                    if (arr[j] > key) {
-                        swapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "swap");
-                    } else {
-                        swapPanel = new Panel(TITLE, arr, new Integer[]{i}, new Integer[]{j, j + 1}, "");
-                    }
-                    output.add(swapPanel);
-                }
-            }
-            arr[j + 1] = key;
-
-            switch (i - j) {
-                case 1:
-                case -1:
-                case 0:
-                    Panel comparePanel = new Panel(TITLE, arr, new Integer[]{i, j}, "");
-                    output.add(comparePanel);
-                    break;
-            }
-
-        }
-
-        Integer[] sortedIndices = new Integer[arr.length];
-        for (int i = 0; i < sortedIndices.length; i++) {
-            sortedIndices[i] = i;
-        }
-
-        Panel lastPanel = new Panel(TITLE, arr, sortedIndices, null, "");
-        output.add(lastPanel);
-
-        return output;
-    }
-
 }
