@@ -18,7 +18,6 @@ public class Panel extends JPanel {
 
     @Override
     public void paint(Graphics g) {
-
         super.paintComponents(g);
         drawTitle(g, TITLE);
         drawElements(g);

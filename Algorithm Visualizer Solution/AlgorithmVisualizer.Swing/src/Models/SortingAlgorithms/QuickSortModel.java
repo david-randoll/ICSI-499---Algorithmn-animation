@@ -5,6 +5,7 @@ import Shared.DataAccess;
 import Shared.RectangleElement;
 import Shared.res.Styles;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class QuickSortModel extends SorterModel implements IGeneratePanel {
@@ -53,25 +54,50 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
         int pivot = array[end];
         int boundary = start - 1;
 
-        UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{boundary, end,end},"pivot: "+pivot +", boundary index: "+boundary, Styles.OUTLINE_COLOR);
+
+        DrawOutlineColor(end, Styles.PIVOT_COLOR);
+        DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
+        output.add(new Panel(getTitle(),dataSetRectangle,"pivot: "+pivot +", boundary index: "+boundary));
+        DrawOutlineColor(end, null);
+        DrawOutlineColor(boundary, null);
 
         for (var i = start; i <= end; i++){
-            UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Is "+array[i]+" <= pivot: "+pivot+"?", Styles.OUTLINE_COLOR);
+            DrawOutlineColor(end, Styles.PIVOT_COLOR);
+            DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
+            UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i},"Is "+array[i]+" <= pivot: "+pivot+"?", Styles.OUTLINE_COLOR);
+            DrawOutlineColor(end, null);
+            DrawOutlineColor(boundary, null);
             if(array[i] <= pivot){
                 boundary++;
                 //telling the user we need to increment the boundary
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Increment boundary (index: "+boundary+")", Styles.OUTLINE_COLOR);
+                DrawOutlineColor(end, Styles.PIVOT_COLOR);
+                DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i},"Increment boundary (index: "+boundary+")", Styles.OUTLINE_COLOR);
+                DrawOutlineColor(end, null);
+                DrawOutlineColor(boundary, null);
 
                 swap(dataSetRectangle, array, i, boundary);
                 if(i == end){
                     updateBackgroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_BACKGROUND_COLOR);
                     updateForegroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_DATA_COLOR);
                 }
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary},"swap", Styles.SWAP_COLOR);
+                DrawOutlineColor(end, Styles.PIVOT_COLOR);
+                DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i},"swap", Styles.SWAP_COLOR);
+                DrawOutlineColor(end, null);
+                DrawOutlineColor(boundary, null);
             }else {
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary,end},"Nope", Styles.OUTLINE_COLOR);
+                DrawOutlineColor(end, Styles.PIVOT_COLOR);
+                DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i},"Nope", Styles.OUTLINE_COLOR);
+                DrawOutlineColor(end, null);
+                DrawOutlineColor(boundary, null);
             }
         }
         return boundary;
+    }
+
+    private void DrawOutlineColor(int index, Color color) {
+        updateBorderColor(dataSetRectangle, new int[]{index}, color);
     }
 }
