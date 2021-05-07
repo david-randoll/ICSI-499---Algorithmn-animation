@@ -76,7 +76,8 @@ public class Panel extends JPanel {
     }
 
     void drawElements(Graphics g) {
-        Font stringFont = new Font("Arial", Font.PLAIN, RECTANGLES[0].height - 22);
+        int fontSize = RECTANGLES[0].height - 15;
+        Font stringFont = new Font("Arial", Font.PLAIN, (fontSize < 0)? 0:fontSize);
         FontMetrics metrics = g.getFontMetrics(stringFont);
         g.setFont(stringFont);
 
