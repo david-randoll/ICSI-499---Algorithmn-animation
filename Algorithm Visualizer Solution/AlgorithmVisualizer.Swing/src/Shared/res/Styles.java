@@ -19,9 +19,9 @@ public class Styles {
 
     //SORTING
     public static Color SWAP_COLOR = Color.green;
-    public static Color PIVOT_COLOR = new Color(0xb200ff);
-    public static Color BOUNDARY_COLOR = new Color(0xed7134);
-    public static Color OUTLINE_COLOR = Color.RED;
+    public static Color PIVOT_COLOR = new Color(0x8C74D0);
+    public static Color BOUNDARY_COLOR = new Color(0xEDB059);
+    public static Color OUTLINE_COLOR = new Color(0xFF5D64);
     public static Color DATA_COLOR = new Color(255,255,255,190);
     public static Color SORTED_DATA_COLOR = new Color(255,255,255,255);
     public static Color SORTED_BACKGROUND_COLOR = new Color(0x4167BE);

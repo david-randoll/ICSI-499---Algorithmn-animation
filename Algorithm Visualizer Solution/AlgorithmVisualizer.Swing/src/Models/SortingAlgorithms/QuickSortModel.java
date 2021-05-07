@@ -81,9 +81,7 @@ public class QuickSortModel extends SorterModel implements IGeneratePanel {
                     updateBackgroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_BACKGROUND_COLOR);
                     updateForegroundColor(dataSetRectangle, new int[]{boundary}, Styles.SORTED_DATA_COLOR);
                 }
-                DrawOutlineColor(end, Styles.PIVOT_COLOR);
-                DrawOutlineColor(boundary, Styles.BOUNDARY_COLOR);
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i},"swap", Styles.SWAP_COLOR);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle,output, new int[]{i,boundary},"swap", Styles.SWAP_COLOR);
                 DrawOutlineColor(end, null);
                 DrawOutlineColor(boundary, null);
             }else {
