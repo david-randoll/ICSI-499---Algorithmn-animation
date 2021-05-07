@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ICSI-499---Algorithmn-animation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICSI-499---Algorithmn-animation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/ApacheHttpClientPost.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/ColorToggle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SettingsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Controllers/SortingAlgorithms/BubbleSortController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Models/HomeModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Models/SettingsModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Models/SortingAlgorithms/BubbleSortModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Shared/DataAccess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/CustomJPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/DefaultFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/InputBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/SubmitButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/SharedComponents/TextBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Startup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/HomeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/SettingsView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/Views/SortingAlgorithms/BubbleSortView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/out/production/ICSI-499---Algorithmn-animation/res/Styles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +30,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/BinarySearchView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BubbleSortController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SortingAlgorithms/BinarySearchController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/DataAccess.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" root0="FORCE_HIGHLIGHTING" />
@@ -206,7 +184,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619408788762" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/499Final2021" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

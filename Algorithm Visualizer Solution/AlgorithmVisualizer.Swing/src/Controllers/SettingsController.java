@@ -18,7 +18,11 @@ public class SettingsController implements ActionListener {
     public SettingsView view;
     private SettingsModel model = new SettingsModel();
     private DefaultFrame frame;
+
     private Color color;
+    private Color dataColor;
+    private Color backgroundColor;
+
     private String feedback;
 
     public SettingsController(DefaultFrame frame) {
@@ -39,20 +43,40 @@ public class SettingsController implements ActionListener {
 
         this.view.submit.addActionListener(this);
         this.view.Home.addActionListener(this);
-        this.view.titleColorsButton.addActionListener(this);
 
         view.titleColors.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                setColor();
+                setColor(1);
             }
         });
+        this.view.titleColorsButton.addActionListener(this);
+
+        view.DataColor.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                setColor(2);
+            }
+        });
+        this.view.DataColorSubmit.addActionListener(this);
+
+        view.backgroundColor.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                setColor(3);
+            }
+        });
+        view.backgroundColorButton.addActionListener(this);
+
+        view.saveAll.addActionListener(this);
+
         view.feedback.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 view.feedback.setText("");
             }
         });
+
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -69,28 +93,60 @@ public class SettingsController implements ActionListener {
                 t.getMessage();
             }
         }
-        else if (e.getSource() == this.view.fontSizeSubmit) { //fontSize button
-            Styles.PAGE_TITLE_FONTSIZE = this.view.fontSize.getColumns();
-        } else if (e.getSource() == this.view.fontColorSubmit) { //fontColor Color
+        else if (e.getSource() == this.view.backgroundColorButton) { //background color button
+            Styles.APP_BACKGROUNDCOLOR = this.backgroundColor;
+            JOptionPane.showMessageDialog(null, "Return Home to view the changes");
+        }
 
-        } else if (e.getSource() == this.view.Home) {
+        else if(e.getSource() == this.view.DataColorSubmit){
+            Styles.DATA_COLOR = this.dataColor;
+            JOptionPane.showMessageDialog(null, "Return Home to view the changes");
+        }
+        else if (e.getSource() == this.view.Home) {
             frame.getContentPane().removeAll();
             this.frame.repaint();
             HomeController homeController = new HomeController(this.frame);
         }
-        else if (e.getSource() == this.view.titleColors){
-            this.color=JColorChooser.showDialog(this.frame,"Select a color", Color.BLUE);
-            this.view.titleColors.setText(color.toString());
+
+        else if(e.getSource() == this.view.saveAll){
+            Styles.PAGE_TITLE_FOREGROUNGCOLOR = this.color;
+            Styles.DATA_COLOR = this.dataColor;
+            Styles.APP_BACKGROUNDCOLOR = this.backgroundColor;
+            JOptionPane.showMessageDialog(null, "Styles Saved. Return Home to view the changes");
         }
+
         else if (e.getSource() == this.view.titleColorsButton){
             Styles.PAGE_TITLE_FOREGROUNGCOLOR = color;
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
     }
 
-    public void setColor(){
-        this.color=JColorChooser.showDialog(this.frame,"Select a color", Color.BLUE);
-        this.view.titleColors.setText(color.toString());
+    public void setColor(int flag){
+        if(flag == 1) { //title color
+            this.color = JColorChooser.showDialog(this.frame, "Select a color", Color.BLUE);
+
+            String hex = "#"+Integer.toHexString(this.color.getRGB()).substring(2);
+
+            this.view.titleColors.setText(hex);
+
+        }
+
+        else if(flag == 2){ //data color
+            this.dataColor=JColorChooser.showDialog(this.frame,"Select a color", Color.BLUE);
+
+            String hex = "#"+Integer.toHexString(this.dataColor.getRGB()).substring(2);
+
+            this.view.DataColor.setText(hex);
+        }
+
+        else if(flag == 3){ //Background color
+            this.backgroundColor=JColorChooser.showDialog(this.frame,"Select a color", Color.BLUE);
+
+            String hex = "#"+Integer.toHexString(this.backgroundColor.getRGB()).substring(2);
+
+            this.view.backgroundColor.setText(hex);
+        }
+
     }
 
 }
