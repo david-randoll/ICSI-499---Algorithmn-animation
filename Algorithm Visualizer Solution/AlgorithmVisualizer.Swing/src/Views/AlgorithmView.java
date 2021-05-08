@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.util.Hashtable;
 
 public class AlgorithmView extends JPanel implements IAlgorithmView {
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private JButton previousButton;
     private JButton nextButton;
     private JButton playPauseButton;
@@ -62,11 +61,11 @@ public class AlgorithmView extends JPanel implements IAlgorithmView {
     private void InitializeBackButton() {
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         topPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        topPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.10)));
+        topPanel.setPreferredSize(new Dimension(AppFrame.getScreenWidth(), (int) (AppFrame.getScreenHeight() * 0.10)));
 
         backToHome = new JButton("\uD83E\uDC44");
-        backToHome.setFont(Styles.UNICODE_FONT);
-        int buttonFontSize = Styles.UNICODE_FONT.getSize();
+        backToHome.setFont(Styles.WINDOWS_MEDIA_CONTROL_FONT);
+        int buttonFontSize = Styles.WINDOWS_MEDIA_CONTROL_FONT.getSize();
         topPanel.setBorder(BorderFactory.createEmptyBorder(25, 25, 0, 0));
         backToHome.setPreferredSize(new Dimension(buttonFontSize * 3, buttonFontSize + 10));
         topPanel.add(backToHome);
@@ -77,19 +76,36 @@ public class AlgorithmView extends JPanel implements IAlgorithmView {
     private void InitializeToolBar() {
         toolBarPanel = new JPanel();
         toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.13)));
+        toolBarPanel.setPreferredSize(new Dimension(AppFrame.getScreenWidth(), (int) (AppFrame.getScreenHeight() * 0.13)));
 
-        playPauseButton = new JButton("\u23F5");
-        playPauseButton.setFont(Styles.UNICODE_FONT);
+        String osName = System.getProperty("os.name").toLowerCase();
+        boolean isMacOs = osName.startsWith("mac os x");
+        if (isMacOs)
+        {
+            playPauseButton = new JButton("Play");
+            playPauseButton.setFont(Styles.MAC_MEDIA_CONTROL_FONT);
 
-        resetButton = new JButton("\uD83D\uDD03");
-        resetButton.setFont(Styles.UNICODE_FONT);
+            resetButton = new JButton("Reset");
+            resetButton.setFont(Styles.MAC_MEDIA_CONTROL_FONT);
 
-        previousButton = new JButton("\u23EA");
-        previousButton.setFont(Styles.UNICODE_FONT);
+            previousButton = new JButton("Previous");
+            previousButton.setFont(Styles.MAC_MEDIA_CONTROL_FONT);
 
-        nextButton = new JButton("\u23E9");
-        nextButton.setFont(Styles.UNICODE_FONT);
+            nextButton = new JButton("Next");
+            nextButton.setFont(Styles.MAC_MEDIA_CONTROL_FONT);
+        }else{
+            playPauseButton = new JButton("\u23F5");
+            playPauseButton.setFont(Styles.WINDOWS_MEDIA_CONTROL_FONT);
+
+            resetButton = new JButton("\uD83D\uDD03");
+            resetButton.setFont(Styles.WINDOWS_MEDIA_CONTROL_FONT);
+
+            previousButton = new JButton("\u23EA");
+            previousButton.setFont(Styles.WINDOWS_MEDIA_CONTROL_FONT);
+
+            nextButton = new JButton("\u23E9");
+            nextButton.setFont(Styles.WINDOWS_MEDIA_CONTROL_FONT);
+        }
 
         Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
 
@@ -216,13 +232,6 @@ public class AlgorithmView extends JPanel implements IAlgorithmView {
      */
     public int getSpeedSliderValue() {
         return this.speedSlider.getValue();
-    }
-
-    /*
-        screen size
-     */
-    public Dimension getScreenSize() {
-        return this.screenSize;
     }
 
     /*

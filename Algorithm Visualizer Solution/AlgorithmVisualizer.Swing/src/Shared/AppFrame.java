@@ -8,9 +8,18 @@ public class AppFrame {
 
     public static Frame appFrame = new Frame();
 
+    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
     public AppFrame() {
         appFrame.setLayout(new BorderLayout());
         appFrame.pack();
         appFrame.setVisible(true);
+    }
+
+    public static int getScreenHeight() {
+        return screenSize.height;
+    }
+    public static int getScreenWidth() {
+        return screenSize.width;
     }
 }

@@ -8,6 +8,7 @@ import Controllers.SortingAlgorithms.QuickSortController;
 import Controllers.SortingAlgorithms.SelectionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
+import Shared.Components.toast;
 import Shared.DataAccess;
 import Shared.Components.DefaultFrame;
 import Views.HomeView;
@@ -65,31 +66,11 @@ public class HomeController implements ActionListener {
         this.homeView.QuickSort.addActionListener(this);
 
         homeView.setData.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                flag = 0;
-                if(homeView.data.getText().equals("")){
-                    JOptionPane.showMessageDialog(null, "Please enter a valid data set");
-                    flag = 1;
-                }
-                if(flag != 1) {
-                    flag = 0;
-                    String dataSet = homeView.data.getText();
-
-                    //Checking to make sure it is a comma separated list
-                    String pattern = "^(\\d+(,\\d+)*)?$";
-                    Pattern r = Pattern.compile(pattern);
-                    Matcher m = r.matcher(dataSet);
-                    if(m.find()) {
-                        homeModel.setInputtedElementsList(dataSet);
-                        DataAccess.SetData(homeModel.getInputtedElementsList());
-                        flag = 0;
-                    }
-                    else{
-                        flag = 1;
-                        JOptionPane.showMessageDialog(null, "Please enter a valid data set");
-                    }
+                if (DataAccess.SetData(homeView.data.getText()) == false) {
+                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (AppFrame.getScreenWidth() * 0.5), (int) (AppFrame.getScreenHeight() * 0.8));
+                    t.showtoast();
                 }
             }
         });

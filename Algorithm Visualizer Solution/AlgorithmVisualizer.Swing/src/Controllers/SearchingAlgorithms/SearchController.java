@@ -64,7 +64,7 @@ public class SearchController extends AlgorithmController {
                 view.getTimer().Stop();
 
                 if (DataAccess.SetData(view.getDataSetTextBox().getText()) == false) {
-                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (view.getScreenSize().width * 0.5), (int) (view.getScreenSize().height * 0.8));
+                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (AppFrame.getScreenWidth() * 0.5), (int) (AppFrame.getScreenHeight() * 0.8));
                     t.showtoast();
                 }
                 model.Panels.removeAll();
