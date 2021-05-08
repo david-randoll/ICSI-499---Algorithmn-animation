@@ -62,7 +62,7 @@ public class SorterModel implements ISorterModel {
             dataSetRectangle[i] = new RectangleElement();
             dataSetRectangle[i].setDataValue(arr[i]);
             dataSetRectangle[i].setBackgroundColor(Styles.RECTANGLE_BACKGROUND_COLOR);
-            dataSetRectangle[i].setForegroundColor(Styles.DATA_COLOR);
+            dataSetRectangle[i].setFontColor(Styles.DATA_COLOR);
         }
         return dataSetRectangle;
     }
@@ -91,7 +91,7 @@ public class SorterModel implements ISorterModel {
             if(indexes[i] < 0){
                 continue;
             }
-            rectangleElements[indexes[i]].setForegroundColor(color);
+            rectangleElements[indexes[i]].setFontColor(color);
         }
     }
     protected void updateBorderColor(RectangleElement[] rectangleElements, int [] indexes, Color color){

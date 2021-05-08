@@ -47,25 +47,21 @@ public class BinarySearchModel extends SearchModel implements Model {
 
             // If x greater, ignore left half
             if (arr[middle] < x) {
-                for (int i = left; i < middle + 1; i++) {
+                for (int i = left; i < middle; i++) {
                     updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.DISABLED_ELEMENT_COLOR);
                 }
-
                 left = middle + 1;
-
-
-
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output,new int[]{middle},"Searching for: " + x, Styles.OUTLINE_COLOR);
             }
             // If x is smaller, ignore right half
             else {
-                for (int i = middle; i < right + 1; i++) {
+                for (int i = middle + 1; i < right + 1; i++) {
                     updateBackgroundColor(dataSetRectangle, new int[]{i}, Styles.DISABLED_ELEMENT_COLOR);
                 }
 
                 right = middle - 1;
-                UpdateBorderColorAndAddToOutput(dataSetRectangle,output,new int[]{middle},"Searching for: " + x, Styles.OUTLINE_COLOR);
             }
+            UpdateBorderColorAndAddToOutput(dataSetRectangle,output,new int[]{middle},"Searching for: " + x, Styles.OUTLINE_COLOR);
+            updateBackgroundColor(dataSetRectangle, new int[]{middle}, Styles.DISABLED_ELEMENT_COLOR);
         }
         // if we reach here, then element was not present
         output.add( new Panel(getTitle(), dataSetRectangle,  String.format("%d not found.", x)));

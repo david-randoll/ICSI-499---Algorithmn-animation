@@ -44,15 +44,15 @@ public class Panel extends JPanel {
         INSTRUCTION = instruction;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));
-    }
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));   //This is used for the border layout
+    }                                                                                               //77% refers to the portion of the screen
 
     private RectangleElement[] cloneRectangleElement(RectangleElement[] elements) {
         RectangleElement[] output = new RectangleElement[elements.length];
         for (int i = 0; i < elements.length; i++) {
             output[i] = new RectangleElement();
             output[i].setDataValue(elements[i].getDataValue());
-            output[i].setForegroundColor(elements[i].getForegroundColor());
+            output[i].setFontColor(elements[i].getFontColor());
             output[i].setBackgroundColor(elements[i].getBackgroundColor());
             output[i].setBorderColor(elements[i].getBorderColor());
         }
@@ -88,7 +88,7 @@ public class Panel extends JPanel {
 
             g.setColor(ELEMENTS[i].getBackgroundColor());
             drawRectangle(g, currentRectangle);
-            drawElementData(g, currentValue, currentRectangle, metrics, ELEMENTS[i].getForegroundColor());
+            drawElementData(g, currentValue, currentRectangle, metrics, ELEMENTS[i].getFontColor());
 
             //if there is a border we need to outline it
             if (ELEMENTS[i].getBorderColor() != null) {

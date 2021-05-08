@@ -25,18 +25,18 @@ public class BubbleSortModel extends SorterModel implements IGeneratePanel {
 
         RectangleElement[] dataSetRectangle = InitializeRectangleElements(arr);
 
-        output.add( new Panel(getTitle(), dataSetRectangle,  ""));
+        output.add(new Panel(getTitle(), dataSetRectangle, ""));
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
 
-                UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "Is "+arr[j]+" greater than "+arr[j+1]+"?", Styles.OUTLINE_COLOR);
+                UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j + 1}, "Is " + arr[j] + " greater than " + arr[j + 1] + "?", Styles.OUTLINE_COLOR);
 
                 if (arr[j] > arr[j + 1]) {
-                    swap(dataSetRectangle,arr, j, j + 1);
-                    UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j,j+1}, "Yes, so we swap!", Styles.SWAP_COLOR);
-                }else {
-                    UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j+1}, "Nope", Styles.OUTLINE_COLOR);
+                    swap(dataSetRectangle, arr, j, j + 1);
+                    UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j + 1}, "Yes, so we swap!", Styles.SWAP_COLOR);
+                } else {
+                    UpdateBorderColorAndAddToOutput(dataSetRectangle, output, new int[]{j, j + 1}, "Nope", Styles.OUTLINE_COLOR);
                 }
             }
             updateBackgroundColor(dataSetRectangle, new int[]{arr.length - i - 1}, Styles.SORTED_BACKGROUND_COLOR);

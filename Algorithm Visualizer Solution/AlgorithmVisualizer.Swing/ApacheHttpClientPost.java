@@ -22,9 +22,9 @@ public class ApacheHttpClientPost {
         postRequest.setEntity(input);
         postRequest.setHeader("FeedBack", feedback);
 
-    
+
         HttpResponse response = httpClient.execute(postRequest);
-        
+
         //Failed to post
         if (response.getStatusLine().getStatusCode() != 201) {
             throw new RuntimeException("Failed : HTTP error code : "
@@ -46,7 +46,7 @@ public class ApacheHttpClientPost {
       } catch (MalformedURLException e) {
 
         e.printStackTrace();
-    
+
       } catch (IOException e) {
 
         e.printStackTrace();

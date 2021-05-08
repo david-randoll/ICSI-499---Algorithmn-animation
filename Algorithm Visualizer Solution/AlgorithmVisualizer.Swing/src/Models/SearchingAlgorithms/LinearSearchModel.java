@@ -13,7 +13,7 @@ public class LinearSearchModel extends SearchModel implements Model {
     public LinearSearchModel() {
         setTitle("Linear Search");
         int[] data = DataAccess.GetSortedData();
-        int searchValue = 46;
+        int searchValue = getSearchValue();
         ArrayList<Panel> panels = run(data, searchValue);
 
         for (int i = 0; i < panels.size(); i++) {
