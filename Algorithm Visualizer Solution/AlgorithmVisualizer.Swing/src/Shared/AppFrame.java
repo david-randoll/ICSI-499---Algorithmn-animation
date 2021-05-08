@@ -10,6 +10,8 @@ public class AppFrame {
 
     private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
+    public static boolean isMacOs = System.getProperty("os.name").toLowerCase().startsWith("mac os x");
+
     public AppFrame() {
         appFrame.setLayout(new BorderLayout());
         appFrame.pack();

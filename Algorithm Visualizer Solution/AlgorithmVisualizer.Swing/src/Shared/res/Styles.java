@@ -6,8 +6,7 @@ public class Styles {
 
     public static int PAGE_TITLE_FONTSIZE = 60;
 
-    public static Font WINDOWS_MEDIA_CONTROL_FONT = new Font("UTF-8", Font.PLAIN, 20);
-    public static Font MAC_MEDIA_CONTROL_FONT = new Font("Arial", Font.PLAIN, 20);
+    public static Font MEDIA_CONTROL_FONT = new Font("UTF-8", Font.PLAIN, 20);
     public static Font APP_FONT =  new Font("Arial", Font.PLAIN, 18);
     public static Color COLOR_WHITE = new Color(255,255,255);
 
