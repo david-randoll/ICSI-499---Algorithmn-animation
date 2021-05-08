@@ -1,6 +1,6 @@
 package Shared;
 
-public interface ITimer {
+public interface IAppTimer {
     boolean isTimerRunning();
     void setIsTimerRunning(boolean isTimerRunning);
 

@@ -2,14 +2,14 @@ package Models;
 
 import Shared.Components.Panel;
 import Shared.RectangleElement;
-import Shared.ITimer;
+import Shared.IAppTimer;
 import Shared.res.Styles;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class AlgorithmModel implements ITimer {
+public class AlgorithmModel implements IAppTimer {
     public JPanel Panels = new JPanel(new CardLayout());
 
     private String title;

@@ -8,10 +8,10 @@ import java.awt.event.ActionListener;
 
 public class AppTimer {
     private final IAlgorithmView view;
-    private final ITimer model;
+    private final IAppTimer model;
     private Timer timer;
 
-    public AppTimer(IAlgorithmView view, ITimer model) {
+    public AppTimer(IAlgorithmView view, IAppTimer model) {
         this.view = view;
         this.model = model;
 
