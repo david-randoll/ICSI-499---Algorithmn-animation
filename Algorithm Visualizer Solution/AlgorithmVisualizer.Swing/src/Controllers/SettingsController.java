@@ -112,11 +112,13 @@ public class SettingsController implements ActionListener {
             }
         }
         else if (e.getSource() == this.view.backgroundColorButton) { //background color button
-            setStyles(color , 1);
+            Styles.APP_BACKGROUNDCOLOR = this.backgroundColor;
+            setStyles(backgroundColor , 1);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
 
         else if(e.getSource() == this.view.DataColorSubmit){
+            Styles.DATA_COLOR = this.dataColor;
             setStyles(color, 2);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
@@ -153,7 +155,7 @@ public class SettingsController implements ActionListener {
         }
 
         else if (e.getSource() == this.view.titleColorsButton){
-            Styles.PAGE_TITLE_FOREGROUNGCOLOR = color;
+            Styles.PAGE_TITLE_FOREGROUNGCOLOR = this.color;
             setStyles(color, 3);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
@@ -229,8 +231,7 @@ public class SettingsController implements ActionListener {
             map.put("dataColor", this.dataColor.toString());
             map.put("background", this.backgroundColor.toString());
         }
-
-            Properties prop = new Properties();
+           Properties prop = new Properties();
 
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 prop.put(entry.getKey(), entry.getValue());
