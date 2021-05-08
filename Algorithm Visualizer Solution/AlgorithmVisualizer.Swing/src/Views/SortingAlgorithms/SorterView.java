@@ -7,6 +7,7 @@ import Shared.DataAccess;
 import Shared.res.Styles;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -76,7 +77,7 @@ public class SorterView extends JPanel implements ISorterView {
     private void InitializeToolBar() {
         toolBarPanel = new JPanel();
         toolBarPanel.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.15)));
+        toolBarPanel.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.13)));
 
         playPauseButton = new JButton("\u23F5");
         playPauseButton.setFont(Styles.UNICODE_FONT);
@@ -91,7 +92,6 @@ public class SorterView extends JPanel implements ISorterView {
         nextButton.setFont(Styles.UNICODE_FONT);
 
         Hashtable<Integer, JLabel> table = new Hashtable<Integer, JLabel>();
-        Font sliderFont = new Font("Arial", Font.PLAIN, 15);
 
         JLabel label = new JLabel("Faster");
         label.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
@@ -116,18 +116,31 @@ public class SorterView extends JPanel implements ISorterView {
         speedSlider.setBackground(Styles.APP_BACKGROUNDCOLOR);
         speedSlider.setForeground(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
         speedSlider.setInverted(true);
+        speedSlider.setBorder(new EmptyBorder(0, 50, 0, 0));
+        speedSlider.setPreferredSize(new Dimension(350, 40));
+
+        label = new JLabel("DataSet: ");
+        label.setForeground(Styles.COLOR_WHITE);
+        label.setBorder(new EmptyBorder(0, 50, 0, 0));
+        label.setFont(Styles.APP_FONT);
 
         dataSetTextBox = new JTextField();
         dataSetTextBox.setText(DataAccess.GetCommaSeparatedData());
-        dataSetTextBox.setPreferredSize(new Dimension(500, 25));
+        dataSetTextBox.setPreferredSize(new Dimension(500, 30));
+        dataSetTextBox.setBorder(new EmptyBorder(5, 5, 5, 0));
 
         changeDataSetButton = new JButton("Change DataSet");
+        changeDataSetButton.setPreferredSize(new Dimension(155, 30));
+        changeDataSetButton.setBorder(new EmptyBorder(5, 5, 5, 0));
 
         toolBarPanel.add(previousButton);
         toolBarPanel.add(playPauseButton);
         toolBarPanel.add(nextButton);
         toolBarPanel.add(resetButton);
+
         toolBarPanel.add(speedSlider);
+
+        toolBarPanel.add(label);
         toolBarPanel.add(dataSetTextBox);
         toolBarPanel.add(changeDataSetButton);
     }

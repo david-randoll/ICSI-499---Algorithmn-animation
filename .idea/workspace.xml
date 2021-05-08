@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="427d3d22-123f-40f7-99a5-ff9c247fd922" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ICSI-499---Algorithmn-animation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ICSI-499---Algorithmn-animation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Controllers/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/Components/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/Components/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/res/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/res/Styles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Startup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/HomeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SettingsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/SorterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Views/SortingAlgorithms/SorterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +194,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619408788762" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../499JSpring" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -192,6 +202,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ICSI-499---Algorithmn-animation" />
       <recent name="C:\ICSI-499---Algorithmn-animation\Algorithm Visualizer Solution\AlgorithmVisualizer.Swing\src" />
     </key>
   </component>

@@ -28,6 +28,8 @@ public class SettingsView extends JPanel {
 
     public JButton saveAll = new JButton("Save All Styles");
 
+    public JButton def = new JButton("Reset Styles");
+
     public JTextArea feedback = new JTextArea(5, 20);
     public JButton submit = new JButton("Submit");
 
@@ -60,6 +62,7 @@ public class SettingsView extends JPanel {
         DataColorSubmit.setBounds(350,300,75,25);
 
         saveAll.setBounds(100, 350, 150, 25);
+        def.setBounds(100, 390, 150, 25);
 
 
         submit.setBounds(100, 565, 100, 25);
@@ -80,6 +83,7 @@ public class SettingsView extends JPanel {
         super.add(DataColor);
         super.add(DataColorSubmit);
         super.add(saveAll);
+        super.add(def);
         super.setVisible(true);
     }
 

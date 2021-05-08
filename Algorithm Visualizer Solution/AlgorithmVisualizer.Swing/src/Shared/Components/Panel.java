@@ -43,7 +43,7 @@ public class Panel extends JPanel {
         CONDITION = condition;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.75)));
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));
     }
 
     public Panel(String title, int[] data, Integer[] enabledIndices, Integer[] highlightIndices, String condition) {
@@ -112,7 +112,7 @@ public class Panel extends JPanel {
                     drawRectangle(g, currentRectangle);
                     drawElementData(g, currentValue, currentRectangle, metrics, Styles.DATA_COLOR);
                 }
-            } else if (TITLE.equalsIgnoreCase("Bubble Sort")) {
+            } else if (TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")) {
                 try {
                     if (Arrays.asList(ENABLED_INDICES).contains(i)) {
                         g.setColor(Styles.PAGE_TITLE_FOREGROUNGCOLOR);
@@ -235,9 +235,9 @@ public class Panel extends JPanel {
         //Case for when swapping to highlight indices
         if (CONDITION.equals("swap") || CONDITION.equals("Yes, so we swap!")) {
             g2.setColor(Styles.SWAP_COLOR);
-        } else if (CONDITION.equals("found")) {
+        } else if (CONDITION.contains("found")) {
             g2.setColor(Styles.FOUND_COLOR);
-        } else if (CONDITION.equals("not found")) {
+        } else if (CONDITION.contains("not found")) {
             g2.setColor(Styles.APP_BACKGROUNDCOLOR);
         } else {
             g2.setColor(Styles.SEARCHING_COLOR);
@@ -262,7 +262,7 @@ public class Panel extends JPanel {
                 drawSearchValue(g, "Current minimum: " + CONDITION);
             }
         } catch (NumberFormatException e) { //USED FOR PSEUDOCDODE
-            if(TITLE.equalsIgnoreCase("Bubble Sort")){
+            if(TITLE.equalsIgnoreCase("Bubble Sort") || TITLE.equalsIgnoreCase("Quick Sort")){
                 drawSearchValue(g, CONDITION);
             }
         }

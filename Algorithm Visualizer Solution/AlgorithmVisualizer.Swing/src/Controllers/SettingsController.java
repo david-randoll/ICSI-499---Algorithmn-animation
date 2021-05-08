@@ -11,8 +11,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 import DB.ServerConnection;
+import com.google.gson.JsonObject;
 
 public class SettingsController implements ActionListener {
     public SettingsView view;
@@ -23,9 +31,18 @@ public class SettingsController implements ActionListener {
     private Color dataColor;
     private Color backgroundColor;
 
+    private Color titleDef = new Color(0x5D8EFF);
+    private Color dataDef = new Color(Color.red.getRGB());
+    private Color backgroundDef = new Color(0x343434);
+
     private String feedback;
 
+    private Map<String, String> map = new HashMap<>();
+
     public SettingsController(DefaultFrame frame) {
+        color = Styles.PAGE_TITLE_FOREGROUNGCOLOR;
+        dataColor = Styles.DATA_COLOR;
+        backgroundColor = Styles.APP_BACKGROUNDCOLOR;
         this.frame = frame;
         InitView();
         InitController();
@@ -69,6 +86,7 @@ public class SettingsController implements ActionListener {
         view.backgroundColorButton.addActionListener(this);
 
         view.saveAll.addActionListener(this);
+        view.def.addActionListener(this);
 
         view.feedback.addMouseListener(new MouseAdapter() {
             @Override
@@ -94,12 +112,12 @@ public class SettingsController implements ActionListener {
             }
         }
         else if (e.getSource() == this.view.backgroundColorButton) { //background color button
-            Styles.APP_BACKGROUNDCOLOR = this.backgroundColor;
+            setStyles(color , 1);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
 
         else if(e.getSource() == this.view.DataColorSubmit){
-            Styles.DATA_COLOR = this.dataColor;
+            setStyles(color, 2);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
         }
         else if (e.getSource() == this.view.Home) {
@@ -112,12 +130,57 @@ public class SettingsController implements ActionListener {
             Styles.PAGE_TITLE_FOREGROUNGCOLOR = this.color;
             Styles.DATA_COLOR = this.dataColor;
             Styles.APP_BACKGROUNDCOLOR = this.backgroundColor;
+
+            map.put("foreground", this.color.toString());
+            map.put("dataColor", this.dataColor.toString());
+            map.put("background", this.backgroundColor.toString());
+
+            Properties prop = new Properties();
+
+            for(Map.Entry<String, String> entry : map.entrySet()){
+                prop.put(entry.getKey(), entry.getValue());
+            }
+
+            //make stylespref file to save user saved styles
+            try {
+                File file = new File("Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/res", "stylepref.properties");
+                prop.store(new FileOutputStream(file), null);
+            }catch(IOException io){
+                io.printStackTrace();
+            }
+
             JOptionPane.showMessageDialog(null, "Styles Saved. Return Home to view the changes");
         }
 
         else if (e.getSource() == this.view.titleColorsButton){
             Styles.PAGE_TITLE_FOREGROUNGCOLOR = color;
+            setStyles(color, 3);
             JOptionPane.showMessageDialog(null, "Return Home to view the changes");
+        }
+        else if(e.getSource() == this.view.def){
+            Styles.PAGE_TITLE_FOREGROUNGCOLOR = titleDef;
+            Styles.DATA_COLOR = dataDef;
+            Styles.APP_BACKGROUNDCOLOR = backgroundDef;
+
+            map.put("foreground", this.titleDef.toString());
+            map.put("dataColor", this.dataDef.toString());
+            map.put("background", this.backgroundDef.toString());
+
+            Properties prop = new Properties();
+
+            for(Map.Entry<String, String> entry : map.entrySet()){
+                prop.put(entry.getKey(), entry.getValue());
+            }
+
+            //make stylespref file to save user saved styles
+            try {
+                File file = new File("Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/res", "stylepref.properties");
+                prop.store(new FileOutputStream(file), null);
+            }catch(IOException io){
+                io.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(null, "Return Home to view the changes");
+
         }
     }
 
@@ -148,5 +211,40 @@ public class SettingsController implements ActionListener {
         }
 
     }
+
+    //Used when styles are individually saved
+    public void setStyles(Color c, int flag) {
+        if (flag == 1) { //background
+            map.put("foreground", this.color.toString());
+            map.put("dataColor", this.dataColor.toString());
+            map.put("background", c.toString());
+        }
+        else if (flag == 2) { //datacolor
+            map.put("foreground", this.color.toString());
+            map.put("dataColor", c.toString());
+            map.put("background", this.backgroundColor.toString());
+        }
+        else if (flag == 3) { //foreground
+            map.put("foreground", c.toString());
+            map.put("dataColor", this.dataColor.toString());
+            map.put("background", this.backgroundColor.toString());
+        }
+
+            Properties prop = new Properties();
+
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                prop.put(entry.getKey(), entry.getValue());
+            }
+
+            //make stylespref file to save user saved styles
+            try {
+                File file = new File("Algorithm Visualizer Solution/AlgorithmVisualizer.Swing/src/Shared/res", "stylepref.properties");
+                prop.store(new FileOutputStream(file), null);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+
+
 
 }
