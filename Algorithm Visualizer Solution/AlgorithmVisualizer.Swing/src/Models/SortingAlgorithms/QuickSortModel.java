@@ -8,7 +8,7 @@ import Shared.res.Styles;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class QuickSortModel extends SorterModel implements IGeneratePanel {
+public class QuickSortModel extends SorterModel implements ISorterModel {
 
     RectangleElement[] dataSetRectangle;
 

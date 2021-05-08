@@ -1,15 +1,9 @@
 package Models.SortingAlgorithms;
 
+import Shared.Components.Panel;
+
+import java.util.ArrayList;
+
 public interface ISorterModel {
-    boolean isTimerRunning();
-    void setIsTimerRunning(boolean isTimerRunning);
-
-    int getSpeedValue();
-    void setSpeedValue(int speedValue);
-
-    int getCurrentIndex();
-    void setCurrentIndex(int currentIndex);
-
-    String getTitle();
-    void setTitle(String title);
+    ArrayList<Panel> run(int arr[]);
 }

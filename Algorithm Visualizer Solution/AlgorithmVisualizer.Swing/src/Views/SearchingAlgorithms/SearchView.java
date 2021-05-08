@@ -1,7 +1,9 @@
 package Views.SearchingAlgorithms;
 
 import Models.SearchingAlgorithms.SearchModel;
+import Models.SortingAlgorithms.SorterModel;
 import Shared.res.Styles;
+import Views.AlgorithmView;
 import Views.SortingAlgorithms.SorterView;
 
 import javax.swing.*;
@@ -9,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class SearchView extends SorterView {
+public class SearchView extends AlgorithmView {
     JTextField searchTextBox;
     JButton searchValueSubmit;
 

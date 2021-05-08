@@ -1,8 +1,8 @@
-package Views.SortingAlgorithms;
+package Views;
 
 import Models.Model;
 
-public interface ISorterView {
+public interface IAlgorithmView {
     void PaintNewPanelOnScreen();
     void UpdatePlayPauseButtonText(String text);
 }

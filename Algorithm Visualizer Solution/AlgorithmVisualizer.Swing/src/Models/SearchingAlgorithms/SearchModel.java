@@ -1,9 +1,10 @@
 package Models.SearchingAlgorithms;
+import Models.AlgorithmModel;
 import Models.SortingAlgorithms.SorterModel;
 
 import java.util.Random;
 
-public class SearchModel extends SorterModel {
+public class SearchModel extends AlgorithmModel {
     private int SEARCH_VALUE;
 
     public SearchModel() {

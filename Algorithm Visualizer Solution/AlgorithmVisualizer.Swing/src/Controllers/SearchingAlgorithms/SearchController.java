@@ -1,6 +1,8 @@
 package Controllers.SearchingAlgorithms;
 
+import Controllers.AlgorithmController;
 import Controllers.SortingAlgorithms.SorterController;
+import Models.AlgorithmModel;
 import Models.Model;
 import Models.SearchingAlgorithms.SearchModel;
 import Shared.AppFrame;
@@ -13,7 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class SearchController extends SorterController {
+public class SearchController extends AlgorithmController {
 
     private SearchView view;
     private SearchModel model;

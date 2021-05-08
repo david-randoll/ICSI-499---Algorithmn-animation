@@ -7,7 +7,7 @@ import Shared.res.Styles;
 
 import java.util.ArrayList;
 
-public class SelectionSortModel extends SorterModel implements IGeneratePanel {
+public class SelectionSortModel extends SorterModel implements ISorterModel {
 
     public SelectionSortModel() {
         setTitle("Selection Sort");

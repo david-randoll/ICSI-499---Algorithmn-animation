@@ -7,7 +7,7 @@ import Shared.res.Styles;
 
 import java.util.ArrayList;
 
-public class BubbleSortModel extends SorterModel implements IGeneratePanel {
+public class BubbleSortModel extends SorterModel implements ISorterModel {
 
     public BubbleSortModel() {
         super();

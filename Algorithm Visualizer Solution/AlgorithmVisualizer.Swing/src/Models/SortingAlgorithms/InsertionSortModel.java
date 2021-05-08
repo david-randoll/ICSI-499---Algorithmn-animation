@@ -7,7 +7,7 @@ import Shared.res.Styles;
 
 import java.util.ArrayList;
 
-public class InsertionSortModel extends SorterModel implements IGeneratePanel {
+public class InsertionSortModel extends SorterModel implements ISorterModel {
 
     public InsertionSortModel() {
         setTitle("Insertion Sort");
