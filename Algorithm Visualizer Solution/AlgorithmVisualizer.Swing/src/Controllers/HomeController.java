@@ -1,11 +1,11 @@
 package Controllers;
 
-import Controllers.SearchingAlgorithms.BinarySearchController;
-import Controllers.SearchingAlgorithms.LinearSearchController;
-import Controllers.SortingAlgorithms.BubbleSortController;
-import Controllers.SortingAlgorithms.InsertionSortController;
-import Controllers.SortingAlgorithms.QuickSortController;
-import Controllers.SortingAlgorithms.SelectionSortController;
+import Controllers.Algorithms.SearchingAlgorithms.BinarySearchController;
+import Controllers.Algorithms.SearchingAlgorithms.LinearSearchController;
+import Controllers.Algorithms.SortingAlgorithms.BubbleSortController;
+import Controllers.Algorithms.SortingAlgorithms.InsertionSortController;
+import Controllers.Algorithms.SortingAlgorithms.QuickSortController;
+import Controllers.Algorithms.SortingAlgorithms.SelectionSortController;
 import Models.HomeModel;
 import Shared.AppFrame;
 import Shared.Components.toast;
@@ -13,7 +13,6 @@ import Shared.DataAccess;
 import Shared.Components.DefaultFrame;
 import Views.HomeView;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,8 +21,6 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class HomeController implements ActionListener {
     private HomeModel homeModel;

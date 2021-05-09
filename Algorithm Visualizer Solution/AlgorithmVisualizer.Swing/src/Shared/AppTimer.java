@@ -1,6 +1,6 @@
 package Shared;
 
-import Views.IAlgorithmView;
+import Views.Algorithms.IAlgorithmView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
