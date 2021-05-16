@@ -25,35 +25,9 @@ import java.net.URISyntaxException;
 public class HomeController implements ActionListener {
     private HomeModel homeModel;
     public HomeView homeView;
-    private DefaultFrame frame;
-    private int flag = 0;
-
-    public HomeController() {
-        this.frame = new DefaultFrame();
-        InitView();
-        InitController();
-    }
-
-    //For settings page
-    public HomeController(DefaultFrame frame){
-        this.frame = frame;
-        InitView();
-        InitController();
-    }
+    private DefaultFrame frame = new DefaultFrame();
 
     private void InitView() {
-        homeView = new HomeView();
-        homeModel = new HomeModel();
-
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int ADJUSTED_MIDPOINT_HORIZONTAL = (screenSize.width / 2) - (frame.getWidth() / 2);
-
-        this.frame.add(this.homeView);
-        this.frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
-        this.frame.setVisible(true);
-    }
-
-    public void InitController() {
         this.homeView.settings.addActionListener(this);
         this.homeView.LinearSearch.addActionListener(this);
         this.homeView.BinarySearch.addActionListener(this);
@@ -61,17 +35,24 @@ public class HomeController implements ActionListener {
         this.homeView.InsertionSort.addActionListener(this);
         this.homeView.SelectionSort.addActionListener(this);
         this.homeView.QuickSort.addActionListener(this);
+    }
 
-        homeView.setData.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (DataAccess.SetData(homeView.data.getText()) == false) {
-                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (AppFrame.getScreenWidth() * 0.5), (int) (AppFrame.getScreenHeight() * 0.8));
-                    t.showtoast();
-                }
-            }
-        });
+    public void InitController() {
+        homeView = new HomeView();
+        homeModel = new HomeModel();
+        InitView();
 
+        int ADJUSTED_MIDPOINT_HORIZONTAL = (AppFrame.getScreenWidth() / 2) - (frame.getWidth() / 2);
+
+        this.frame.add(this.homeView);
+        this.frame.setBounds(ADJUSTED_MIDPOINT_HORIZONTAL, 0, frame.getWidth(), frame.getHeight());
+        this.frame.setVisible(true);
+
+        updateDataSetEventListener();
+        githubButtonEventListener();
+    }
+
+    private void githubButtonEventListener() {
         //Brings the user to the github
         this.homeView.gitHub.addMouseListener(new MouseAdapter() {
             @Override
@@ -84,8 +65,18 @@ public class HomeController implements ActionListener {
                 }
             }
         });
+    }
 
-
+    private void updateDataSetEventListener() {
+        homeView.setData.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (DataAccess.SetData(homeView.data.getText()) == false) {
+                    toast t = new toast("Not valid input! Only comma separated numbers are valid", (int) (AppFrame.getScreenWidth() * 0.5), (int) (AppFrame.getScreenHeight() * 0.8));
+                    t.showtoast();
+                }
+            }
+        });
     }
 
     public void actionPerformed(ActionEvent e) {

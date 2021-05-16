@@ -135,6 +135,7 @@ public class AlgorithmController implements IAlgorithmController {
                 AppFrame.appFrame.getContentPane().removeAll();
                 AppFrame.appFrame.dispose();
                 HomeController homeController = new HomeController();
+                homeController.InitController();
             }
         };
     }
