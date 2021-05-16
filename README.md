@@ -60,7 +60,9 @@
    Steps to install the app:
    1.  Download and install the latest version of the Java Runtime Environment for your computer
        - https://www.oracle.com/java/technologies/javase-jre8-downloads.html
-   3.  Download and run JAR file
+   2.  Download an IDE such as Intellij for example.
+   3.  Clone this repository
+   4.  Open up the repository in your IDE
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
