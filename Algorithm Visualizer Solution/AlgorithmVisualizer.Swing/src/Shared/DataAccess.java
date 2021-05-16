@@ -11,7 +11,7 @@ public class DataAccess {
     private static String dataString;
 
     //this is for testing purposes until home can give us data
-    public static void InitDefaultDataSet() {
+    public static void Run() {
         SetData(RandomData(15, 100));
         SetData(new int[]{5,50,52,3,70, 2, 7,46,4,8,436,8});
     }

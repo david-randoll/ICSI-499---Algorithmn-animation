@@ -44,15 +44,14 @@ public class Panel extends JPanel {
         INSTRUCTION = instruction;
         this.setLayout(null);//using no layout managers
         this.setBackground(Styles.APP_BACKGROUNDCOLOR);
-        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));   //This is used for the border layout
-    }                                                                                               //77% refers to the portion of the screen
-
-    private RectangleElement[] cloneRectangleElement(RectangleElement[] elements) {
+        this.setPreferredSize(new Dimension(screenSize.width, (int) (screenSize.height * 0.77)));
+    }
+    private RectangleElement[] cloneRectangleElement(RectangleElement[] elements){
         RectangleElement[] output = new RectangleElement[elements.length];
-        for (int i = 0; i < elements.length; i++) {
+        for(int i = 0; i < elements.length; i++){
             output[i] = new RectangleElement();
             output[i].setDataValue(elements[i].getDataValue());
-            output[i].setFontColor(elements[i].getFontColor());
+            output[i].setForegroundColor(elements[i].getForegroundColor());
             output[i].setBackgroundColor(elements[i].getBackgroundColor());
             output[i].setBorderColor(elements[i].getBorderColor());
         }
@@ -77,8 +76,8 @@ public class Panel extends JPanel {
     }
 
     void drawElements(Graphics g) {
-        int fontSize = RECTANGLES[0].height - 10;
-        Font stringFont = new Font("Arial", Font.PLAIN, (fontSize < 0) ? 0 : fontSize);
+        int fontSize = RECTANGLES[0].height - 15;
+        Font stringFont = new Font("Arial", Font.PLAIN, (fontSize < 0)? 0:fontSize);
         FontMetrics metrics = g.getFontMetrics(stringFont);
         g.setFont(stringFont);
 
@@ -88,10 +87,10 @@ public class Panel extends JPanel {
 
             g.setColor(ELEMENTS[i].getBackgroundColor());
             drawRectangle(g, currentRectangle);
-            drawElementData(g, currentValue, currentRectangle, metrics, ELEMENTS[i].getFontColor());
+            drawElementData(g, currentValue, currentRectangle, metrics, ELEMENTS[i].getForegroundColor());
 
             //if there is a border we need to outline it
-            if (ELEMENTS[i].getBorderColor() != null) {
+            if(ELEMENTS[i].getBorderColor() != null){
                 outlineRectangle(g, RECTANGLES[i], ELEMENTS[i].getBorderColor());
             }
         }
@@ -117,7 +116,7 @@ public class Panel extends JPanel {
         g.drawString(INSTRUCTION, MIDPOINT_HORIZONTAL - (metrics.stringWidth(INSTRUCTION) / 2), (int) (RECTANGLES[0].getY() - RECTANGLES[0].getHeight()));
     }
 
-    void outlineRectangle(Graphics g, Rectangle rectangle, Color borderColor) {
+    void outlineRectangle(Graphics g, Rectangle rectangle,Color borderColor) {
         int BORDER_SIZE = 5;
         int rectangleX = rectangle.x - BORDER_SIZE;
         int rectangleY = rectangle.y - BORDER_SIZE;
