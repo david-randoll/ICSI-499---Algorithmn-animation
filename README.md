@@ -48,7 +48,7 @@
 ![Selection Sort](GIFS/Selection_sort.gif)
 
 ## <a name="QuickSort"/>Quick Sort
-  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
+ Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called partition-exchange sort. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting. [[4]](#Citation4)
   
 ![Quick Sort](GIFS/Quick_sort.gif)
 
