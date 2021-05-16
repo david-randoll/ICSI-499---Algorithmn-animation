@@ -69,6 +69,10 @@
    2.  Download an IDE such as Intellij for example.
    3.  Clone this repository
    4.  Open up the repository in your IDE
+   5.  If you would like to try the database functionality within the settings page go to merge-home-and-main branch and follow below steps otherwise skip below
+   6.  Install Maven (https://maven.apache.org/install.html)
+   7.  Please check maven dependencies in both the Java spring application and the Algorithm Application. We reccomend to use Intellij to run the application.
+   8.  Installing Mysql (https://dev.mysql.com/doc/mysql-getting-started/en/)
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
