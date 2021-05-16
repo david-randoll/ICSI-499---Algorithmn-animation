@@ -6,7 +6,7 @@ public class Styles {
 
     public static int PAGE_TITLE_FONTSIZE = 60;
 
-    public static Font MEDIA_CONTROL_FONT = new Font("UTF-8", Font.PLAIN, 20);
+    public static Font UNICODE_FONT = new Font("Code2000", Font.PLAIN, 20);
     public static Font APP_FONT =  new Font("Arial", Font.PLAIN, 18);
     public static Color COLOR_WHITE = new Color(255,255,255);
 
@@ -28,7 +28,7 @@ public class Styles {
     public static Color RECTANGLE_BACKGROUND_COLOR = new Color(0x666671);
     public static Color DISABLED_ELEMENT_COLOR = APP_BACKGROUNDCOLOR;
 
-    //INSTRUCTION
+    //instruction
     public static Font INSTRUCTION_FONT = new Font("Arial", Font.PLAIN, 30);
     public static Color INSTRUCTION_FONT_COLOR = new Color(0x5D8EFF);
 }

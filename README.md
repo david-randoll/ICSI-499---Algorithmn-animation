@@ -60,13 +60,7 @@
    Steps to install the app:
    1.  Download and install the latest version of the Java Runtime Environment for your computer
        - https://www.oracle.com/java/technologies/javase-jre8-downloads.html
-   2.  Download an IDE such as Intellij for example.
-   3.  Clone this repository
-   4.  Open up the repository in your IDE
-   5.  If you would like to try the database functionality within the settings page go to merge-home-and-main branch and follow below steps otherwise skip below
-   6.  Install Maven (https://maven.apache.org/install.html)
-   7.  Please check maven dependencies in both the Java spring application and the Algorithm Application. We reccomend to use Intellij to run the application.
-   8.  Installing Mysql (https://dev.mysql.com/doc/mysql-getting-started/en/)
+   3.  Download and run JAR file
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
@@ -81,11 +75,11 @@
    
 # <a name="Contributions"/>Contribution
 This application was created by four hard-working students at the University at Albany:
- 
+
+   * Ahmad 
    * David
    * Kyler
    * Noah
-   * Ahmad
 <img src="Pictures/UAlbany-Logo.png" alt="SUNY University at Albany" width="300"/>
 
 

@@ -5,7 +5,7 @@ import java.awt.*;
 public class RectangleElement {
     private int dataValue;
     private Color backgroundColor;
-    private Color fontColor;
+    private Color foregroundColor;
     private Color borderColor;
 
     public int getDataValue() {
@@ -24,12 +24,12 @@ public class RectangleElement {
         this.backgroundColor = backgroundColor;
     }
 
-    public Color getFontColor() {
-        return fontColor;
+    public Color getForegroundColor() {
+        return foregroundColor;
     }
 
-    public void setFontColor(Color fontColor) {
-        this.fontColor = fontColor;
+    public void setForegroundColor(Color foregroundColor) {
+        this.foregroundColor = foregroundColor;
     }
 
     public Color getBorderColor() {

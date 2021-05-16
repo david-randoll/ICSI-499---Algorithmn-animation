@@ -1,17 +1,18 @@
 package Shared;
 
-import Views.Algorithms.IAlgorithmView;
+import Models.SortingAlgorithms.ISorterModel;
+import Views.SortingAlgorithms.ISorterView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AppTimer {
-    private final IAlgorithmView view;
-    private final IAppTimer model;
+    private final ISorterView view;
+    private final ISorterModel model;
     private Timer timer;
 
-    public AppTimer(IAlgorithmView view, IAppTimer model) {
+    public AppTimer(ISorterView view, ISorterModel model) {
         this.view = view;
         this.model = model;
 
