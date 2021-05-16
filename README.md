@@ -63,6 +63,9 @@
    2.  Download an IDE such as Intellij for example.
    3.  Clone this repository
    4.  Open up the repository in your IDE
+   5.  Install Maven (https://maven.apache.org/install.html)
+   6.  Please check maven dependencies in both the Java spring application and the Algorithm Application. We reccomend to use Intellij to run the application.
+   7.  Installing Mysql (https://dev.mysql.com/doc/mysql-getting-started/en/)
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
