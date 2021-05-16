@@ -2,13 +2,11 @@
 
 # Table Of Contents
    - [Description](#description)
-   - [Why Use Our Application](#Whyuseourapp)
+   - [Why use our app](#Whyuseourapp)
    - [Algorithms](#Algorithms)
       * [Bubble Sort](#BubbleSort)
       * [Insertion Sort](#InsertionSort)
       * [Selection Sort](#SelectionSort)
-      * [Quick Sort](#QuickSort)
-      * [Linear Search](#LinearSearch)
       * [Binary Search](#BinarySearch)
    - [Installation](#Installation)
    - [How to use](#Howtouse)
@@ -45,20 +43,16 @@
 ## <a name="SelectionSort"/>Selection Sort
   Selection sort is an algorithm that takes divides the input list into two parts: a sorted sublist of items which is built up from left to right at the front (left) of the list and a sublist of the remaining unsorted items that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right. [[3]](#Citation3)
   
-![Selection Sort](GIFS/Selection_sort.gif)
-
-## <a name="QuickSort"/>Quick Sort
- Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. For this reason, it is sometimes called partition-exchange sort. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting. [[4]](#Citation4)
-  
-![Quick Sort](GIFS/Quick_sort.gif)
+![Insertion Sort](GIFS/Selection_sort.gif)
 
 ## <a name="LinearSearch"/>Linear Search
-  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[5]](#Citation4)
+  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
   
 ![Linear Search](GIFS/Linear_Search.gif)
 
+
 ## <a name="BinarySearch"/>Binary Search
-  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[6]](#Citation4)
+  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[5]](#Citation4)
   
 ![Binary Search](GIFS/Binary_Search.gif)
 
@@ -66,9 +60,7 @@
    Steps to install the app:
    1.  Download and install the latest version of the Java Runtime Environment for your computer
        - https://www.oracle.com/java/technologies/javase-jre8-downloads.html
-   2.  Download an IDE such as Intellij for example.
-   3.  Clone this repository
-   4.  Open up the repository in your IDE
+   3.  Download and run JAR file
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
@@ -81,14 +73,13 @@
    The user will be able to visually learn the selected algorithm. The user will also be able to speed up or slow down the animation to aid them in understanding the algorithm. There is a pause/play button which allow the user to take their time learning. Additionally, the user will also be able to edit the data set by adding or deleting elements as they please, and all of this can be done right there on the learning page. Our searching algorithms will also allow the user search for a specific number in the data set.
    
    
-# <a name="Contributions"/>Contributions
-Sponsored by Dr. Qi Wang from SUNY, University at Albany.
- 
-Contributors:
+# <a name="Contributions"/>Contribution
+This application was created by four hard-working students at the University at Albany:
+
+   * Ahmad 
    * David
    * Kyler
    * Noah
-   * Ahmad
 <img src="Pictures/UAlbany-Logo.png" alt="SUNY University at Albany" width="300"/>
 
 
@@ -96,15 +87,13 @@ Contributors:
 1. <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 2. <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
 3. <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
-4. <a name="Citation4"/>Quick Sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Quicksort
-5. <a name="Citation5"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Linear_search
-6. <a name="Citation6"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
-7. Linear Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/linear-search/
-8. Binary Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/binary-search/
-9. Bubble Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/bubble-sort/
-10. Insertion Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/insertion-sort/
-11. Selection Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/selection-sort/
-12. Quick Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/quick-sort/
-13. Java Swing | Creating a Toast Message. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/java-swing-creating-toast-message/
+4. <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+5. <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+6. Linear Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/linear-search/
+7. Binary Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/binary-search/
+8. Bubble Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/bubble-sort/
+9. Insertion Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/insertion-sort/
+10. Selection Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/selection-sort/
+
 
 
