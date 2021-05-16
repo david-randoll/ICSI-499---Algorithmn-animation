@@ -7,6 +7,8 @@
       * [Bubble Sort](#BubbleSort)
       * [Insertion Sort](#InsertionSort)
       * [Selection Sort](#SelectionSort)
+      * [Quick Sort](#QuickSort)
+      * [Linear Search](#LinearSearch)
       * [Binary Search](#BinarySearch)
    - [Installation](#Installation)
    - [How to use](#Howtouse)
@@ -43,16 +45,20 @@
 ## <a name="SelectionSort"/>Selection Sort
   Selection sort is an algorithm that takes divides the input list into two parts: a sorted sublist of items which is built up from left to right at the front (left) of the list and a sublist of the remaining unsorted items that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right. [[3]](#Citation3)
   
-![Insertion Sort](GIFS/Selection_sort.gif)
+![Selection Sort](GIFS/Selection_sort.gif)
+
+## <a name="QuickSort"/>Quick Sort
+  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
+  
+![Quick Sort](GIFS/Quick_sort.gif)
 
 ## <a name="LinearSearch"/>Linear Search
-  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[4]](#Citation4)
+  In computer science, a linear search or sequential search is a method for finding an element within a list. It sequentially checks each element of the list until a match is found or the whole list has been searched. [[5]](#Citation4)
   
 ![Linear Search](GIFS/Linear_Search.gif)
 
-
 ## <a name="BinarySearch"/>Binary Search
-  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[5]](#Citation4)
+  Is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. [[6]](#Citation4)
   
 ![Binary Search](GIFS/Binary_Search.gif)
 
@@ -63,10 +69,6 @@
    2.  Download an IDE such as Intellij for example.
    3.  Clone this repository
    4.  Open up the repository in your IDE
-   5.  If you would like to try the database functionality within the settings page go to merge-home-and-main branch and follow below steps otherwise skip below
-   6.  Install Maven (https://maven.apache.org/install.html)
-   7.  Please check maven dependencies in both the Java spring application and the Algorithm Application. We reccomend to use Intellij to run the application.
-   8.  Installing Mysql (https://dev.mysql.com/doc/mysql-getting-started/en/)
 
 # <a name="Howtouse"/>How To Use
 ## Home Page
@@ -93,13 +95,14 @@ This application was created by four hard-working students at the University at 
 1. <a name="Citation1"/>Bubble sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Bubble_sort
 2. <a name="Citation2"/>Insertion sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Insertion_sort
 3. <a name="Citation3"/>Selection sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Selection_sort
-4. <a name="Citation4"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
-5. <a name="Citation5"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
-6. Linear Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/linear-search/
-7. Binary Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/binary-search/
-8. Bubble Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/bubble-sort/
-9. Insertion Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/insertion-sort/
-10. Selection Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/selection-sort/
-
+4. <a name="Citation4"/>Quick Sort. (2021). Wikipedia. https://en.wikipedia.org/wiki/Quicksort
+5. <a name="Citation5"/>Linear search. (2021). Wikipedia. https://en.wikipedia.org/wiki/Linear_search
+6. <a name="Citation6"/>Binary search algorithm. (2021). Wikipedia. https://en.wikipedia.org/wiki/Binary_search_algorithm
+7. Linear Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/linear-search/
+8. Binary Search. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/binary-search/
+9. Bubble Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/bubble-sort/
+10. Insertion Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/insertion-sort/
+11. Selection Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/selection-sort/
+12. Quick Sort. (2021). GeeksforGeeks. https://www.geeksforgeeks.org/quick-sort/
 
 
