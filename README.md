@@ -75,11 +75,11 @@
    
 # <a name="Contributions"/>Contribution
 This application was created by four hard-working students at the University at Albany:
-
-   * Ahmad 
+ 
    * David
    * Kyler
    * Noah
+   * Ahmad
 <img src="Pictures/UAlbany-Logo.png" alt="SUNY University at Albany" width="300"/>
 
 
