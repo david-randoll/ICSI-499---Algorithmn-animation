@@ -81,10 +81,10 @@
    The user will be able to visually learn the selected algorithm. The user will also be able to speed up or slow down the animation to aid them in understanding the algorithm. There is a pause/play button which allow the user to take their time learning. Additionally, the user will also be able to edit the data set by adding or deleting elements as they please, and all of this can be done right there on the learning page. Our searching algorithms will also allow the user search for a specific number in the data set.
    
    
-# <a name="Contributions"/>Contribution
-This application was created by four hard-working students at the University at Albany:
-Sponsore by Dr. Qi Wang from SUNY, University at Albany.
+# <a name="Contributions"/>Contributions
+Sponsored by Dr. Qi Wang from SUNY, University at Albany.
  
+Contributors:
    * David
    * Kyler
    * Noah
