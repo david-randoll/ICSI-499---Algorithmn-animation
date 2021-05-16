@@ -2,7 +2,7 @@
 
 # Table Of Contents
    - [Description](#description)
-   - [Why use our app](#Whyuseourapp)
+   - [Why Use Our Application](#Whyuseourapp)
    - [Algorithms](#Algorithms)
       * [Bubble Sort](#BubbleSort)
       * [Insertion Sort](#InsertionSort)
@@ -83,6 +83,7 @@
    
 # <a name="Contributions"/>Contribution
 This application was created by four hard-working students at the University at Albany:
+Sponsore by Dr. Qi Wang from SUNY, University at Albany.
  
    * David
    * Kyler
