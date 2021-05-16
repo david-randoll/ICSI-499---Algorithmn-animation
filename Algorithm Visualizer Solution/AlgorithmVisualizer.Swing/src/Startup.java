@@ -48,6 +48,6 @@ public class Startup {
             io.printStackTrace();
         }
         HomeController homeController = new HomeController();
-
+        homeController.InitController();
     }
 }

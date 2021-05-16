@@ -124,8 +124,9 @@ public class SettingsController implements ActionListener {
         }
         else if (e.getSource() == this.view.Home) {
             frame.getContentPane().removeAll();
-            this.frame.repaint();
-            HomeController homeController = new HomeController(this.frame);
+            frame.dispose();
+            HomeController homeController = new HomeController();
+            homeController.InitController();
         }
 
         else if(e.getSource() == this.view.saveAll){
